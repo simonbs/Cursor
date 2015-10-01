@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Cursor
+
+  Created by Simon Støvring on 01/10/2015.
+  Copyright © 2015 SimonBS. All rights reserved.
+*/
+
+"CURSOR_TITLE" = "Cursor";

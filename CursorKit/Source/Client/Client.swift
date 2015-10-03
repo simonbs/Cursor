@@ -10,10 +10,10 @@ import Alamofire
 import SwiftyJSON
 
 public class Client {
-    private let baseUrl = NSURL(string: "")!
+    private let baseUrl = NSURL(string: "http://ironman-server.herokuapp.com/")!
 
     public init() { }
-    
+
     internal func request<T>(method: Alamofire.Method, _ resource: Resource, params: [String: String]? = nil, rootElementPath: JSONSubscriptType..., mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<[T]> -> Void)? = nil) -> Alamofire.Request? {
         guard let url = createURL(resource) else { return nil }
         return request(method, url: url, params: params, rootElementPath: rootElementPath, mapFunc: mapFunc, completion: completion)
@@ -51,7 +51,8 @@ public class Client {
     internal func request<T>(method: Alamofire.Method, url: NSURL, params: [String: String]? = nil, mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Alamofire.Request {
         return Alamofire.request(method, url, parameters: params, encoding: .URL).responseSwiftyJSON { request, response, json, error in
             print(request.URL?.absoluteString)
-
+            print(params)
+            
             if let error = error {
                 completion?(FailableOf(error))
                 return

@@ -44,10 +44,16 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
 
         let navigationController = UINavigationController(rootViewController: CursorViewController())
+        navigationController.navigationBar.barStyle = .Black
+        
         addChildViewController(navigationController)
         view.addSubview(navigationController.view)
         navigationController.didMoveToParentViewController(self)
         navigationController.view.setEdgesEqualToSuperview()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 }
 

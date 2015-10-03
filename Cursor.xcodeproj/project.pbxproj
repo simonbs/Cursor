@@ -32,6 +32,20 @@
 		7273A02A1BBD39B8000DA7D2 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7273A0211BBD39AF000DA7D2 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7273A02C1BBD3C37000DA7D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7273A02B1BBD3C37000DA7D2 /* Localizable.strings */; settings = {ASSET_TAGS = (); }; };
 		7273A02E1BBD3C76000DA7D2 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273A02D1BBD3C76000DA7D2 /* Localize.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D51BBFB74900F01E09 /* CompassView.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6D81BBFB89400F01E09 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D71BBFB89400F01E09 /* Operators.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6DA1BBFB93400F01E09 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D91BBFB93400F01E09 /* Numeric.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6DC1BBFB99A00F01E09 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6DB1BBFB99A00F01E09 /* UIView.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6DE1BBFC3B300F01E09 /* CLLocationDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6DD1BBFC3B300F01E09 /* CLLocationDirection.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6E01BBFCAB100F01E09 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6DF1BBFCAB100F01E09 /* Array.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6E71BBFD46400F01E09 /* ControllableDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6E61BBFD46400F01E09 /* ControllableDevice.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6E91BBFD4D200F01E09 /* ClientDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6E81BBFD4D200F01E09 /* ClientDevices.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6EB1BBFDB1E00F01E09 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EA1BBFDB1E00F01E09 /* Coordinate.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6ED1BBFDE6A00F01E09 /* DevicesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6EF1BBFE9D000F01E09 /* VisibilityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */; settings = {ASSET_TAGS = (); }; };
+		72CAE6F11BBFFB3400F01E09 /* GroundPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6F01BBFFB3400F01E09 /* GroundPlanView.swift */; settings = {ASSET_TAGS = (); }; };
+		72EC1A851BBED716001F0140 /* Compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EC1A841BBED716001F0140 /* Compass.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +98,20 @@
 		7273A0211BBD39AF000DA7D2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		7273A02B1BBD3C37000DA7D2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7273A02D1BBD3C76000DA7D2 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassRoseView.swift; sourceTree = "<group>"; };
+		72CAE6D51BBFB74900F01E09 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
+		72CAE6D71BBFB89400F01E09 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		72CAE6D91BBFB93400F01E09 /* Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		72CAE6DB1BBFB99A00F01E09 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		72CAE6DD1BBFC3B300F01E09 /* CLLocationDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationDirection.swift; sourceTree = "<group>"; };
+		72CAE6DF1BBFCAB100F01E09 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		72CAE6E61BBFD46400F01E09 /* ControllableDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllableDevice.swift; sourceTree = "<group>"; };
+		72CAE6E81BBFD4D200F01E09 /* ClientDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientDevices.swift; sourceTree = "<group>"; };
+		72CAE6EA1BBFDB1E00F01E09 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesGridView.swift; sourceTree = "<group>"; };
+		72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibilityIndicatorView.swift; sourceTree = "<group>"; };
+		72CAE6F01BBFFB3400F01E09 /* GroundPlanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroundPlanView.swift; sourceTree = "<group>"; };
+		72EC1A841BBED716001F0140 /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +175,7 @@
 				722B78EC1BBD369600AD490E /* Application */,
 				722B78EE1BBD369600AD490E /* Controllers */,
 				722B78F01BBD369600AD490E /* Library */,
+				72CAE6E11BBFD15000F01E09 /* Models */,
 				722B78F21BBD369600AD490E /* Views */,
 			);
 			path = Source;
@@ -172,6 +201,7 @@
 		722B78F01BBD369600AD490E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				72EC1A841BBED716001F0140 /* Compass.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -179,7 +209,12 @@
 		722B78F11BBD369600AD490E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				72CAE6DF1BBFCAB100F01E09 /* Array.swift */,
 				7273A02D1BBD3C76000DA7D2 /* Localize.swift */,
+				72CAE6D71BBFB89400F01E09 /* Operators.swift */,
+				72CAE6D91BBFB93400F01E09 /* Numeric.swift */,
+				72CAE6DB1BBFB99A00F01E09 /* UIView.swift */,
+				72CAE6DD1BBFC3B300F01E09 /* CLLocationDirection.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -188,6 +223,11 @@
 			isa = PBXGroup;
 			children = (
 				722B78F71BBD36C600AD490E /* CursorView.swift */,
+				72CAE6F01BBFFB3400F01E09 /* GroundPlanView.swift */,
+				72CAE6D51BBFB74900F01E09 /* CompassView.swift */,
+				72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */,
+				72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */,
+				72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +292,8 @@
 		7273A0121BBD3878000DA7D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				72CAE6E61BBFD46400F01E09 /* ControllableDevice.swift */,
+				72CAE6EA1BBFDB1E00F01E09 /* Coordinate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +301,7 @@
 		7273A0131BBD3878000DA7D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				72CAE6E81BBFD4D200F01E09 /* ClientDevices.swift */,
 				7273A0141BBD3878000DA7D2 /* Resources.swift */,
 			);
 			path = Resources;
@@ -280,6 +323,13 @@
 				7273A0211BBD39AF000DA7D2 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72CAE6E11BBFD15000F01E09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,10 +466,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				722B78F41BBD369600AD490E /* CursorViewController.swift in Sources */,
+				72CAE6EF1BBFE9D000F01E09 /* VisibilityIndicatorView.swift in Sources */,
+				72CAE6D81BBFB89400F01E09 /* Operators.swift in Sources */,
+				72CAE6DE1BBFC3B300F01E09 /* CLLocationDirection.swift in Sources */,
+				72CAE6F11BBFFB3400F01E09 /* GroundPlanView.swift in Sources */,
 				722B78F31BBD369600AD490E /* AppDelegate.swift in Sources */,
+				72CAE6DC1BBFB99A00F01E09 /* UIView.swift in Sources */,
+				72EC1A851BBED716001F0140 /* Compass.swift in Sources */,
 				7273A02E1BBD3C76000DA7D2 /* Localize.swift in Sources */,
+				72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */,
+				72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */,
+				72CAE6E01BBFCAB100F01E09 /* Array.swift in Sources */,
 				722B78FA1BBD373D00AD490E /* RootViewController.swift in Sources */,
+				72CAE6DA1BBFB93400F01E09 /* Numeric.swift in Sources */,
 				722B78F81BBD36C600AD490E /* CursorView.swift in Sources */,
+				72CAE6ED1BBFDE6A00F01E09 /* DevicesGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,9 +488,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72CAE6E91BBFD4D200F01E09 /* ClientDevices.swift in Sources */,
+				72CAE6E71BBFD46400F01E09 /* ControllableDevice.swift in Sources */,
 				7273A01C1BBD3878000DA7D2 /* Utilities.swift in Sources */,
 				7273A0191BBD3878000DA7D2 /* Failable.swift in Sources */,
 				7273A01A1BBD3878000DA7D2 /* Request.swift in Sources */,
+				72CAE6EB1BBFDB1E00F01E09 /* Coordinate.swift in Sources */,
 				7273A0181BBD3878000DA7D2 /* Error.swift in Sources */,
 				7273A01B1BBD3878000DA7D2 /* Resources.swift in Sources */,
 				7273A0171BBD3878000DA7D2 /* Client.swift in Sources */,
@@ -651,6 +715,7 @@
 				72739FF81BBD3789000DA7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,6 +12,16 @@ internal protocol Resource {
     var resource: String { get }
 }
 
-internal enum Cusor {
+internal enum Cursor {
+    case Devices
+    case UpdateDevice
+}
 
+extension Cursor: Resource {
+    var resource: String {
+        switch self {
+        case .Devices: return "devices"
+        case .UpdateDevice: return ""
+        }
+    }
 }

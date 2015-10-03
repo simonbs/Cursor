@@ -97,7 +97,7 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
         guard let currentDegrees = currentDegrees else { return [] }
         return controllableDevices.filter { d in
             let radians = Double(atan2(self.userLocation.y - d.coordinate.y, self.userLocation.x - d.coordinate.x))
-            let degrees = radians.toDegrees() - 90 // Thinks east is north, adjust for that
+            let degrees = radians.toDegrees() - 90 // Thinks west is north, adjust for that
             let normalizedDegrees = degrees < 0 ? degrees + 360 : degrees
 
             var minDegrees = currentDegrees - Double(self.visibilityAngle / 2)

@@ -20,16 +20,6 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
             currentDegrees => contentView.displayDegrees
         }
     }
-//    private var currentDegrees: Double? {
-//        return currentHeading?.magneticHeading
-//    }
-//    private var currentHeading: CLHeading? {
-//        didSet {
-//            if currentHeading?.headingAccuracy > 0 {
-//                currentDegrees => contentView.displayDegrees
-//            }
-//        }
-//    }
     private var controllableDevices: [ControllableDevice] = [] {
         didSet {
             contentView.groundPlanView.gridView.deviceCoordinates = controllableDevices.map { $0.coordinate }

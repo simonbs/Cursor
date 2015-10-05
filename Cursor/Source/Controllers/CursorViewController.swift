@@ -16,15 +16,20 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
     private let visibilityAngle: Float = 30
     private let locationManager = CLLocationManager()
     private var currentDegrees: Double? {
-        return currentHeading?.magneticHeading
-    }
-    private var currentHeading: CLHeading? {
         didSet {
-            if currentHeading?.headingAccuracy > 0 {
-                currentDegrees => contentView.displayDegrees
-            }
+            currentDegrees => contentView.displayDegrees
         }
     }
+//    private var currentDegrees: Double? {
+//        return currentHeading?.magneticHeading
+//    }
+//    private var currentHeading: CLHeading? {
+//        didSet {
+//            if currentHeading?.headingAccuracy > 0 {
+//                currentDegrees => contentView.displayDegrees
+//            }
+//        }
+//    }
     private var controllableDevices: [ControllableDevice] = [] {
         didSet {
             contentView.groundPlanView.gridView.deviceCoordinates = controllableDevices.map { $0.coordinate }
@@ -34,6 +39,7 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
         didSet { contentView.displayAvailableDevices(availableDevices) }
     }
     
+    private let movingAverageSampleCount: Int = 10
     private var readingHistory: [Double] = []
     
     var contentView: CursorView {
@@ -117,9 +123,18 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    private func appendHeading(heading: CLHeading) {
+        readingHistory.insert(heading.magneticHeading, atIndex: 0)
+        readingHistory = readingHistory.take(movingAverageSampleCount)
+        currentDegrees = readingHistory.reduce(0, combine: +) / Double(readingHistory.count)
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        if newHeading.headingAccuracy > 0 {
+            appendHeading(newHeading)
+        }
+        
         contentView.showGroundPlan(animated: true)
-        currentHeading = newHeading
         availableDevices = controllableDevicesInLineOfSight()
     }
     

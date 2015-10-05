@@ -32,6 +32,8 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
     private let movingAverageSampleCount: Int = 10
     private var readingHistory: [Double] = []
     
+    private let motionRecognizer = MotionRecognizer()
+    
     var contentView: CursorView {
         return view as! CursorView
     }
@@ -58,18 +60,29 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingHeading()
         
         reloadControllableDevices()
+        
+        motionRecognizer.didDetectShake = { [weak self] in self?.didDetectShake() }
+        motionRecognizer.didDetectDoubleShake = { [weak self] in self?.didDetectDoubleShake() }
+        motionRecognizer.beginRecognizingGestures()
+        becomeFirstResponder()
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
     }
     
     deinit {
         locationManager.stopUpdatingHeading()
     }
     
-    func turnOn() {
+    private func didDetectShake() {
         sendAction("turnOn")
+        print("Did shake")
     }
     
-    func turnOff() {
+    private func didDetectDoubleShake() {
         sendAction("turnOff")
+        print("Did double shake")
     }
     
     private func sendAction(action: Action) {
@@ -134,6 +147,18 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManagerShouldDisplayHeadingCalibration(manager: CLLocationManager) -> Bool {
         return true
+    }
+    
+    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        motionRecognizer.motionBegan(motion, withEvent: event)
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        motionRecognizer.motionEnded(motion, withEvent: event)
+    }
+    
+    override func motionCancelled(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        motionRecognizer.motionCancelled(motion, withEvent: event)
     }
 }
 

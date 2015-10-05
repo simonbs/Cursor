@@ -51,7 +51,6 @@ public class Client {
     internal func request<T>(method: Alamofire.Method, url: NSURL, params: [String: String]? = nil, mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Alamofire.Request {
         return Alamofire.request(method, url, parameters: params, encoding: .URL).responseSwiftyJSON { request, response, json, error in
             print(request.URL?.absoluteString)
-            print(params)
             
             if let error = error {
                 completion?(FailableOf(error))

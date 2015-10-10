@@ -43,8 +43,9 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let navigationController = UINavigationController(rootViewController: CursorViewController())
+        let navigationController = UINavigationController(rootViewController: LocationsViewController())
         navigationController.navigationBar.barStyle = .Black
+        navigationController.navigationBar.tintColor = .whiteColor()
         
         addChildViewController(navigationController)
         view.addSubview(navigationController.view)

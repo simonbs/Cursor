@@ -12,7 +12,7 @@ import CursorKit
 
 class CursorView: UIView {
     let stackView = UIStackView()
-    let groundPlanView = GroundPlanView()
+    let devicesPlanView = DevicesPlanView()
     let degreesLabel = UILabel()
     let availableDevicesLabel = UILabel()
     let buttonsStackView = UIStackView()
@@ -22,7 +22,7 @@ class CursorView: UIView {
     init() {
         super.init(frame: CGRectZero)
         
-        backgroundColor = .blackColor()
+        backgroundColor = .whiteColor()
         
         let containerView = UIView()
         
@@ -32,7 +32,7 @@ class CursorView: UIView {
         
         stackView.axis = .Vertical
         
-        degreesLabel.textColor = .whiteColor()
+        degreesLabel.textColor = .blackColor()
         degreesLabel.font = .systemFontOfSize(64)
         degreesLabel.textAlignment = .Center
         
@@ -47,7 +47,7 @@ class CursorView: UIView {
         turnOnButton.setTitle(localize("TURN_ON"), forState: .Normal)
         turnOffButton.setTitle(localize("TURN_OFF"), forState: .Normal)
         
-        stackView.addArrangedSubview(groundPlanView)
+        stackView.addArrangedSubview(devicesPlanView)
         stackView.addArrangedSubview(degreesLabel)
         
         buttonsStackView.addArrangedSubview(turnOnButton)
@@ -60,7 +60,7 @@ class CursorView: UIView {
         
         stackView.setEdgesEqualToSuperview()
         
-        constraint(groundPlanView, .Height, .Equal, groundPlanView, .Width)
+        constraint(devicesPlanView, .Height, .Equal, devicesPlanView, .Width)
         
         containerView.setLeadingToSuperview()
         containerView.setTrailingToSuperview()
@@ -89,20 +89,20 @@ class CursorView: UIView {
     }
     
     func displayDegrees(degrees: Double) {
-        groundPlanView.compassView.pointToDegrees(degrees)
-        groundPlanView.gridView.transform = CGAffineTransformMakeRotation(CGFloat(-degrees.toRadians()))
+        devicesPlanView.compassView.pointToDegrees(degrees)
+        devicesPlanView.gridView.transform = CGAffineTransformMakeRotation(CGFloat(-degrees.toRadians()))
         degreesLabel.text = String(format: "%.0f°", arguments: [ degrees ])
     }
     
     func hideGroundPlan(animated animated: Bool = false) {
         UIView.perform(animated, animations: {
-            self.groundPlanView.alpha = 0
+            self.devicesPlanView.alpha = 0
         })
     }
     
     func showGroundPlan(animated animated: Bool = false) {
         UIView.perform(animated, animations: {
-            self.groundPlanView.alpha = 1
+            self.devicesPlanView.alpha = 1
         })
     }
 }

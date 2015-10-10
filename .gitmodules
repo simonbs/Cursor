@@ -1,0 +1,3 @@
+[submodule "Frameworks/iOS-Indoor-SDK"]
+	path = Frameworks/iOS-Indoor-SDK
+	url = git@github.com:Estimote/iOS-Indoor-SDK.git

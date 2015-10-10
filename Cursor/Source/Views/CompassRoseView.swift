@@ -20,9 +20,9 @@ class CompassRoseView: UIView {
         super.init(frame: CGRectZero)
         
         northLabel.textColor = .redColor()
-        eastLabel.textColor = .whiteColor()
-        southLabel.textColor = .whiteColor()
-        westLabel.textColor = .whiteColor()
+        eastLabel.textColor = .blackColor()
+        southLabel.textColor = .blackColor()
+        westLabel.textColor = .blackColor()
         
         northLabel.font = .boldSystemFontOfSize(17)
         eastLabel.font = .boldSystemFontOfSize(17)

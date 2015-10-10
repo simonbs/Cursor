@@ -1,5 +1,5 @@
 //
-//  GroundPlanView.swift
+//  DevicesPlanView.swift
 //  Cursor
 //
 //  Created by Simon Støvring on 03/10/2015.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GroundPlanView: UIView {
+class DevicesPlanView: UIView {
     let compassView = CompassView()
     let gridView = DevicesGridView()
     let visibilityIndicatorView = VisibilityIndicatorView()

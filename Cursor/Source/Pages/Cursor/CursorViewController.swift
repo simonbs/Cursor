@@ -22,7 +22,7 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
     }
     private var controllableDevices: [ControllableDevice] = [] {
         didSet {
-            contentView.groundPlanView.gridView.deviceCoordinates = controllableDevices.map { $0.coordinate }
+            contentView.devicesPlanView.gridView.deviceCoordinates = controllableDevices.map { $0.coordinate }
         }
     }
     private var availableDevices: [ControllableDevice] = [] {
@@ -47,8 +47,8 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
         
         title = localize("CURSOR_TITLE")
         
-        contentView.groundPlanView.visibilityIndicatorView.angle = visibilityAngle
-        contentView.groundPlanView.gridView.gridSize = gridSize
+        contentView.devicesPlanView.visibilityIndicatorView.angle = visibilityAngle
+        contentView.devicesPlanView.gridView.gridSize = gridSize
         contentView.hideGroundPlan()
         
         contentView.turnOnButton.addTarget(self, action: "turnOn", forControlEvents: .TouchUpInside)
@@ -77,12 +77,10 @@ class CursorViewController: UIViewController, CLLocationManagerDelegate {
     
     private func didDetectShake() {
         sendAction("turnOn")
-        print("Did shake")
     }
     
     private func didDetectDoubleShake() {
         sendAction("turnOff")
-        print("Did double shake")
     }
     
     private func sendAction(action: Action) {

@@ -15,7 +15,7 @@ class CompassView: UIView {
     init() {
         super.init(frame: CGRectZero)
         
-        compassRoseView.backgroundColor = .blackColor()
+        compassRoseView.backgroundColor = .whiteColor()
         compassRoseView.compassColor = UIColor(white: 0.20, alpha: 1)
         addSubview(compassRoseView)
         compassRoseView.setEdgesEqualToSuperview()

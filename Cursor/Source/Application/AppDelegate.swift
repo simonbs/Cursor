@@ -8,11 +8,16 @@
 
 import UIKit
 
+private let EstimoteAppID = "cursor-mxo"
+private let EstimoteAppToken = "909fbd6c816f629b8057e11c1724817f"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        ESTConfig.setupAppID(EstimoteAppID, andAppToken: EstimoteAppToken)
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()

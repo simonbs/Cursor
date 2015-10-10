@@ -7,9 +7,12 @@
 */
 
 "CURSOR_TITLE" = "Cursor";
+"LOCATIONS_TITLE" = "Locations";
+
 "NORTH_SHORT" = "N";
 "EAST_SHORT" = "E";
 "SOUTH_SHORT" = "S";
 "WEST_SHORT" = "W";
+
 "TURN_ON" = "Turn on";
 "TURN_OFF" = "Turn off";

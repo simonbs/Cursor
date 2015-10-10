@@ -17,4 +17,8 @@ extension Double {
     func toDegrees() -> Double {
         return self * 180 / M_PI
     }
+    
+    func cmToMeter() -> Double {
+        return self / 100
+    }
 }

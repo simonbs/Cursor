@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 extension UIView {
+    // layoutMargins are only available on iOS7<, therefore we introduce our own.
+    var cursorLayoutMargins: UIEdgeInsets {
+        return UIEdgeInsetsMake(10, 10, 10, 10)
+    }
+    
     class func animate(duration: NSTimeInterval = 0.30, delay: NSTimeInterval = 0, options: UIViewAnimationOptions = [ .BeginFromCurrentState ], animations: Void -> Void, completion: (Bool -> Void)? = nil) {
         UIView.animateWithDuration(duration, delay: delay, options: options, animations: animations, completion: completion)
     }

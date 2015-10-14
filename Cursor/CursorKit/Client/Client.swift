@@ -46,7 +46,7 @@ public class Client {
     }
     
     internal func request<T>(method: Method, url: NSURL, params: [String: String]? = nil, mapFunc: (JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Request {
-        return request(method, url, parameters: params, encoding: .URL).responseSwiftyJSON { request, response, json, error in
+        return Manager.sharedInstance.request(method, url, parameters: params, encoding: .URL).responseSwiftyJSON { request, response, json, error in
             print(request.URL?.absoluteString)
             
             if let error = error {

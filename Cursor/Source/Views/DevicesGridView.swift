@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CursorKit
 
 struct GridSize {
     let columns: Int

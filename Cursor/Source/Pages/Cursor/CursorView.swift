@@ -8,14 +8,11 @@
 
 import Foundation
 import UIKit
-import CursorKit
 
 class CursorView: UIView {
-    let stackView = UIStackView()
     let devicesPlanView = DevicesPlanView()
     let degreesLabel = UILabel()
     let availableDevicesLabel = UILabel()
-    let buttonsStackView = UIStackView()
     let turnOnButton = UIButton(type: .System)
     let turnOffButton = UIButton(type: .System)
     
@@ -25,12 +22,6 @@ class CursorView: UIView {
         backgroundColor = .whiteColor()
         
         let containerView = UIView()
-        
-        buttonsStackView.axis = .Horizontal
-        buttonsStackView.distribution = .FillEqually
-        buttonsStackView.hidden = true
-        
-        stackView.axis = .Vertical
         
         degreesLabel.textColor = .blackColor()
         degreesLabel.font = .systemFontOfSize(64)
@@ -47,33 +38,34 @@ class CursorView: UIView {
         turnOnButton.setTitle(localize("TURN_ON"), forState: .Normal)
         turnOffButton.setTitle(localize("TURN_OFF"), forState: .Normal)
         
-        stackView.addArrangedSubview(devicesPlanView)
-        stackView.addArrangedSubview(degreesLabel)
-        
-        buttonsStackView.addArrangedSubview(turnOnButton)
-        buttonsStackView.addArrangedSubview(turnOffButton)
-        
-        containerView.addSubview(stackView)
+        containerView.addSubview(devicesPlanView)
+        containerView.addSubview(degreesLabel)
         addSubview(containerView)
         addSubview(availableDevicesLabel)
-        addSubview(buttonsStackView)
+        addSubview(turnOnButton)
+        addSubview(turnOffButton)
         
-        stackView.setEdgesEqualToSuperview()
+        devicesPlanView.setLeadingToSuperview(constant: cursorLayoutMargins.left)
+        devicesPlanView.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
+        devicesPlanView.setTopToSuperview()
+        containerView.constraint(devicesPlanView, .Height, .Equal, devicesPlanView, .Width)
         
-        constraint(devicesPlanView, .Height, .Equal, devicesPlanView, .Width)
+        degreesLabel.setLeadingToSuperview()
+        degreesLabel.setTrailingToSuperview()
+        degreesLabel.setBottomToSuperview()
+        containerView.constraint(degreesLabel, .Top, .Equal, devicesPlanView, .Bottom, constant: 10)
         
         containerView.setLeadingToSuperview()
         containerView.setTrailingToSuperview()
         containerView.setCenterVerticallyInSuperview()
         
-        constraint(availableDevicesLabel, .Bottom, .Equal, buttonsStackView, .Top, constant: -layoutMargins.bottom)
-        availableDevicesLabel.setLeadingToSuperview(relation: .GreaterThanOrEqual, constant: layoutMargins.left)
-        availableDevicesLabel.setTrailingToSuperview(relation: .LessThanOrEqual, constant: -layoutMargins.right)
-        availableDevicesLabel.setCenterHorizontallyInSuperview()
+        turnOnButton.setLeadingToSuperview()
+        turnOnButton.setBottomToSuperview()
+        constraint(turnOnButton, .Trailing, .Equal, self, .CenterX)
         
-        buttonsStackView.setBottomToSuperview()
-        buttonsStackView.setLeadingToSuperview()
-        buttonsStackView.setTrailingToSuperview()
+        turnOffButton.setTrailingToSuperview()
+        turnOffButton.setBottomToSuperview()
+        constraint(turnOffButton, .Leading, .Equal, self, .CenterX)
         
         translatesAutoresizingMaskIntoConstraints = true
     }
@@ -85,7 +77,8 @@ class CursorView: UIView {
     func displayAvailableDevices(availableDevices: [ControllableDevice]) {
         availableDevicesLabel.text = availableDevices.map({ $0.name }).joinWithSeparator(", ")
         availableDevicesLabel.hidden = availableDevices.count == 0
-        buttonsStackView.hidden = availableDevices.count == 0
+        turnOnButton.hidden = availableDevices.count == 0
+        turnOffButton.hidden = availableDevices.count == 0
     }
     
     func displayDegrees(degrees: Double) {

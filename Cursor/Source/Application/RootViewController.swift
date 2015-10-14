@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Robolayout
-import CursorKit
 
 extension UIViewController {
     var rootViewController: RootViewController? {
@@ -28,13 +26,13 @@ extension UIViewController {
         return vc as? RootViewController
     }
     
-    var client: CursorKit.Client? {
+    var client: Client? {
         return rootViewController?.cursorClient
     }
 }
 
 class RootViewController: UIViewController {
-    let cursorClient = CursorKit.Client()
+    let cursorClient = Client()
     
     override var tabBarController: UITabBarController {
         return childViewControllers.first as! UITabBarController

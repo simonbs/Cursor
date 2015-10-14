@@ -18,7 +18,7 @@ class LocationView: UIView {
         backgroundColor = .whiteColor()
         
         addSubview(indoorLocationView)
-        indoorLocationView.setEdgesEqualToSuperview(layoutMargins)
+        indoorLocationView.setEdgesEqualToSuperview(cursorLayoutMargins)
         
         translatesAutoresizingMaskIntoConstraints = true
     }

@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreLocation
-import CursorKit
 
 class CursorViewController: UIViewController, CLLocationManagerDelegate {
     private let gridSize = GridSize(columns: 11, rows: 11)

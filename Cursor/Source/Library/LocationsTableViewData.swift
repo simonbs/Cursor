@@ -54,10 +54,10 @@ class LocationsTableViewData: NSObject, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = location?.name
     }
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        return [ UITableViewRowAction(style: .Destructive, title: "Delete", handler: {
-            [weak self] _, indexPath in indexPath => self?.deleteAction
-        }) ]
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            deleteAction?(indexPath)
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

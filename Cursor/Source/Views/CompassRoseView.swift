@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class CompassRoseView: UIView {
-    var compassColor: UIColor = .darkGrayColor()
+    var compassColor: UIColor = .lightGrayColor()
     private let northLabel = UILabel()
     private let eastLabel = UILabel()
     private let southLabel = UILabel()
@@ -39,13 +39,13 @@ class CompassRoseView: UIView {
         addSubview(southLabel)
         addSubview(westLabel)
         
-        northLabel.setTopToSuperview(constant: layoutMargins.top)
+        northLabel.setTopToSuperview(constant: cursorLayoutMargins.top)
         northLabel.setCenterHorizontallyInSuperview()
-        eastLabel.setTrailingToSuperview(constant: -layoutMargins.right)
+        eastLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
         eastLabel.setCenterVerticallyInSuperview()
-        southLabel.setBottomToSuperview(constant: -layoutMargins.bottom)
+        southLabel.setBottomToSuperview(constant: -cursorLayoutMargins.bottom)
         southLabel.setCenterHorizontallyInSuperview()
-        westLabel.setLeadingToSuperview(constant: layoutMargins.left)
+        westLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         westLabel.setCenterVerticallyInSuperview()
         
         translatesAutoresizingMaskIntoConstraints = true

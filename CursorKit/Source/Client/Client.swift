@@ -6,24 +6,21 @@
 //  Copyright © 2015 SimonBS. All rights reserved.
 //
 
-import Alamofire
-import SwiftyJSON
-
 public class Client {
     private let baseUrl = NSURL(string: "http://ironman-server.herokuapp.com/")!
 
     public init() { }
 
-    internal func request<T>(method: Alamofire.Method, _ resource: Resource, params: [String: String]? = nil, rootElementPath: JSONSubscriptType..., mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<[T]> -> Void)? = nil) -> Alamofire.Request? {
+    internal func request<T>(method: Method, _ resource: Resource, params: [String: String]? = nil, rootElementPath: JSONSubscriptType..., mapFunc: (JSON -> T?), completion: (FailableOf<[T]> -> Void)? = nil) -> Request? {
         guard let url = createURL(resource) else { return nil }
         return request(method, url: url, params: params, rootElementPath: rootElementPath, mapFunc: mapFunc, completion: completion)
     }
     
-    internal func request<T>(method: Alamofire.Method, url: NSURL, params: [String: String]? = nil, rootElementPath: JSONSubscriptType..., mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<[T]> -> Void)? = nil) -> Alamofire.Request {
+    internal func request<T>(method: Method, url: NSURL, params: [String: String]? = nil, rootElementPath: JSONSubscriptType..., mapFunc: (JSON -> T?), completion: (FailableOf<[T]> -> Void)? = nil) -> Request {
         return request(method, url: url, rootElementPath: rootElementPath, mapFunc: mapFunc, completion: completion)
     }
     
-    private func request<T>(method: Alamofire.Method, url: NSURL, params: [String: String]? = nil, rootElementPath: [JSONSubscriptType], mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<[T]> -> Void)? = nil) -> Alamofire.Request {
+    private func request<T>(method: Method, url: NSURL, params: [String: String]? = nil, rootElementPath: [JSONSubscriptType], mapFunc: (JSON -> T?), completion: (FailableOf<[T]> -> Void)? = nil) -> Request {
         let includingMapFunc: JSON -> [T]? = {
             let rootElement = $0[rootElementPath]
             guard let arr = rootElement.array else {
@@ -43,13 +40,13 @@ public class Client {
         return request(method, url: url, params: params, mapFunc: includingMapFunc, completion: completion)
     }
     
-    internal func request<T>(method: Alamofire.Method, _ resource: Resource, params: [String: String]? = nil, mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Alamofire.Request? {
+    internal func request<T>(method: Method, _ resource: Resource, params: [String: String]? = nil, mapFunc: (JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Request? {
         guard let url = createURL(resource) else { return nil }
         return request(method, url: url, params: params, mapFunc: mapFunc, completion: completion)
     }
     
-    internal func request<T>(method: Alamofire.Method, url: NSURL, params: [String: String]? = nil, mapFunc: (SwiftyJSON.JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Alamofire.Request {
-        return Alamofire.request(method, url, parameters: params, encoding: .URL).responseSwiftyJSON { request, response, json, error in
+    internal func request<T>(method: Method, url: NSURL, params: [String: String]? = nil, mapFunc: (JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Request {
+        return request(method, url, parameters: params, encoding: .URL).responseSwiftyJSON { request, response, json, error in
             print(request.URL?.absoluteString)
             
             if let error = error {

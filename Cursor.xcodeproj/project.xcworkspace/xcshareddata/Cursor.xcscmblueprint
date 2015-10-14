@@ -4,11 +4,13 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0,
     "E6E9AA0C38A34CCB3BFA4D4B8A05EA27AED61CB3" : 0,
     "8F2B5D0605825C532C65F83009F0E92144196004" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3E78520B-38EE-4E0E-8FDE-CCA804A75384",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "Cursor\/Alamofire\/",
     "E6E9AA0C38A34CCB3BFA4D4B8A05EA27AED61CB3" : "Cursor\/",
     "8F2B5D0605825C532C65F83009F0E92144196004" : "Cursor\/Frameworks\/iOS-Indoor-SDK\/"
   },
@@ -16,6 +18,11 @@
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Cursor.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Estimote\/iOS-Indoor-SDK.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

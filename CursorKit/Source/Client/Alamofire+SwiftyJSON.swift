@@ -6,11 +6,8 @@
 //  Copyright © 2015 SimonBS. All rights reserved.
 //
 
-import Alamofire
-import SwiftyJSON
-
-extension Request {    
-    func responseSwiftyJSON(queue: dispatch_queue_t? = nil, completion: (NSURLRequest, NSHTTPURLResponse?, SwiftyJSON.JSON, ErrorType?) -> Void) -> Self {
+extension Request {
+    func responseSwiftyJSON(queue: dispatch_queue_t? = nil, completion: (NSURLRequest, NSHTTPURLResponse?, JSON, ErrorType?) -> Void) -> Self {
         let options: NSJSONReadingOptions = [  .AllowFragments ]
         return response(queue: queue, responseSerializer: Request.JSONResponseSerializer(options: options)) { request, response, result in
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 infix operator => { associativity left precedence 160 }
 func =><T, U>(lhs: T?, rhs: (T -> U?)?) -> U? {

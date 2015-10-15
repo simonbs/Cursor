@@ -12,8 +12,9 @@ import UIKit
 class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate {
     let indoorManager = ESTIndoorLocationManager()
     let location: ESTLocation
-    
     private var controllableDevices: [ControllableDevice] = []
+    private var currentPosition: ESTOrientedPoint?
+    private let visibilityAngle: Double = 30
     
     var contentView: LocationView {
         return view as! LocationView
@@ -55,7 +56,9 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     }
     
     func indoorLocationManager(manager: ESTIndoorLocationManager!, didUpdatePosition position: ESTOrientedPoint!, withAccuracy positionAccuracy: ESTPositionAccuracy, inLocation location: ESTLocation!) {
+        currentPosition = position
         contentView.indoorLocationView.updatePosition(position)
+        contentView.displayAvailableDevices(controllableDevicesInLineOfSight())
     }
     
     private func reloadControllableDevices() {
@@ -85,6 +88,30 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             self.contentView.indoorLocationView.drawObjectInBackground(objectView,
                 withPosition: point,
                 identifier: String($0.id))
+        }
+    }
+
+    private func controllableDevicesInLineOfSight() -> [ControllableDevice] {
+        guard let currentPosition = currentPosition else { return [] }
+        return controllableDevices.filter { d in
+            let radians = atan2(Double(d.coordinate.x) - currentPosition.x, Double(d.coordinate.y) - currentPosition.y)
+            let degrees = radians.toDegrees()
+            let normalizedDegrees = degrees < 0 ? degrees + 360 : degrees
+            
+            var minDegrees = currentPosition.orientation - Double(self.visibilityAngle / 2)
+            var maxDegrees = currentPosition.orientation + Double(self.visibilityAngle / 2)
+        
+            minDegrees += minDegrees < 0 ? 360 : 0
+            maxDegrees += maxDegrees < 0 ? 360 : 0
+            
+            minDegrees -= minDegrees > 360 ? 360 : 0
+            maxDegrees -= maxDegrees > 360 ? 360 : 0
+            
+            if minDegrees < maxDegrees {
+                return normalizedDegrees >= minDegrees && normalizedDegrees <= maxDegrees
+            } else {
+                return normalizedDegrees >= minDegrees || normalizedDegrees <= maxDegrees
+            }
         }
     }
 }

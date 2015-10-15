@@ -79,9 +79,9 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     private func drawControllableDevices() {
         controllableDevices.forEach {
-            let point = ESTOrientedPoint(x: 2, y: 2, orientation: 0)
-            let objectView = UIView(frame: CGRectMake(0, 0, 40, 40))
-            objectView.backgroundColor = .blueColor()
+            let point = ESTOrientedPoint(x: Double($0.coordinate.x), y: Double($0.coordinate.y), orientation: 0)
+            let objectView = DeviceObjectView()
+            objectView.frame = CGRectMake(0, 0, 30, 30)
             self.contentView.indoorLocationView.drawObjectInBackground(objectView,
                 withPosition: point,
                 identifier: String($0.id))

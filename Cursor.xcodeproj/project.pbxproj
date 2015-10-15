@@ -93,6 +93,7 @@
 		72CAE6ED1BBFDE6A00F01E09 /* DevicesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */; };
 		72CAE6EF1BBFE9D000F01E09 /* VisibilityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */; };
 		72CAE6F11BBFFB3400F01E09 /* DevicesPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6F01BBFFB3400F01E09 /* DevicesPlanView.swift */; };
+		72F33B291BCF855B0092C363 /* DeviceObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F33B281BCF855B0092C363 /* DeviceObjectView.swift */; settings = {ASSET_TAGS = (); }; };
 		72F911651BC93BD700A0DED8 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911641BC93BD700A0DED8 /* Dispatch.swift */; };
 		72F9116B1BC9552A00A0DED8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116A1BC9552A00A0DED8 /* RootViewController.swift */; };
 		72F911761BC9553300A0DED8 /* CursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116E1BC9553300A0DED8 /* CursorView.swift */; };
@@ -240,6 +241,7 @@
 		72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesGridView.swift; sourceTree = "<group>"; };
 		72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibilityIndicatorView.swift; sourceTree = "<group>"; };
 		72CAE6F01BBFFB3400F01E09 /* DevicesPlanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesPlanView.swift; sourceTree = "<group>"; };
+		72F33B281BCF855B0092C363 /* DeviceObjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceObjectView.swift; sourceTree = "<group>"; };
 		72F911641BC93BD700A0DED8 /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		72F9116A1BC9552A00A0DED8 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		72F9116E1BC9553300A0DED8 /* CursorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorView.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */,
 				72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */,
 				72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */,
+				72F33B281BCF855B0092C363 /* DeviceObjectView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 				724928571BCEAC77009483F5 /* ResponseSerialization.swift in Sources */,
 				72CAE6E01BBFCAB100F01E09 /* Array.swift in Sources */,
 				724928851BCEAC9F009483F5 /* Client.swift in Sources */,
+				72F33B291BCF855B0092C363 /* DeviceObjectView.swift in Sources */,
 				72CAE6DA1BBFB93400F01E09 /* Numeric.swift in Sources */,
 				72F911781BC9553300A0DED8 /* LocationView.swift in Sources */,
 				72F911761BC9553300A0DED8 /* CursorView.swift in Sources */,

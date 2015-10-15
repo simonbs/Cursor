@@ -12,9 +12,13 @@ import UIKit
 class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate {
     let indoorManager = ESTIndoorLocationManager()
     let location: ESTLocation
+    private let motionRecognizer = MotionRecognizer()
     private var controllableDevices: [ControllableDevice] = []
     private var currentPosition: ESTOrientedPoint?
     private let visibilityAngle: Double = 30
+    private var availableDevices: [ControllableDevice] = [] {
+        didSet { contentView.displayAvailableDevices(availableDevices) }
+    }
     
     var contentView: LocationView {
         return view as! LocationView
@@ -43,9 +47,17 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contentView.turnOnButton.addTarget(self, action: "turnOn", forControlEvents: .TouchUpInside)
+        contentView.turnOffButton.addTarget(self, action: "turnOff", forControlEvents: .TouchUpInside)
+        
         contentView.indoorLocationView.rotateOnPositionUpdate = true
         contentView.indoorLocationView.drawLocation(location)
         reloadControllableDevices()
+        
+        motionRecognizer.didDetectShake = { [weak self] in self?.didDetectShake() }
+        motionRecognizer.didDetectDoubleShake = { [weak self] in self?.didDetectDoubleShake() }
+        motionRecognizer.beginRecognizingGestures()
+        becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,10 +67,28 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         redrawControllableDevices()
     }
     
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    private func didDetectShake() {
+        sendAction("turnOn")
+    }
+    
+    private func didDetectDoubleShake() {
+        sendAction("turnOff")
+    }
+    
+    private func sendAction(action: Action) {
+        availableDevices.forEach { device in
+            client?.updateDevice(device.id, action: action)
+        }
+    }
+    
     func indoorLocationManager(manager: ESTIndoorLocationManager!, didUpdatePosition position: ESTOrientedPoint!, withAccuracy positionAccuracy: ESTPositionAccuracy, inLocation location: ESTLocation!) {
         currentPosition = position
         contentView.indoorLocationView.updatePosition(position)
-        contentView.displayAvailableDevices(controllableDevicesInLineOfSight())
+        availableDevices = controllableDevicesInLineOfSight()
     }
     
     private func reloadControllableDevices() {

@@ -30,8 +30,8 @@ class LocationView: UIView {
         turnOnButton.backgroundColor = .lightGrayColor()
         turnOffButton.backgroundColor = .lightGrayColor()
         
-        turnOnButton.tintColor = .greenColor()
-        turnOffButton.tintColor = .redColor()
+        turnOnButton.tintColor = ControllableDevice.State.On.color
+        turnOffButton.tintColor = ControllableDevice.State.Off.color
         
         turnOnButton.setTitle(localize("TURN_ON"), forState: .Normal)
         turnOffButton.setTitle(localize("TURN_OFF"), forState: .Normal)

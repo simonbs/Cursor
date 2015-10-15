@@ -54,8 +54,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         contentView.indoorLocationView.drawLocation(location)
         reloadControllableDevices()
         
-        motionRecognizer.didDetectShake = { [weak self] in self?.didDetectShake() }
-        motionRecognizer.didDetectDoubleShake = { [weak self] in self?.didDetectDoubleShake() }
+        motionRecognizer.didDetectShake = { [weak self] in self?.turnOn() }
+        motionRecognizer.didDetectDoubleShake = { [weak self] in self?.turnOff() }
         motionRecognizer.beginRecognizingGestures()
         becomeFirstResponder()
     }
@@ -71,17 +71,19 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         return true
     }
     
-    private func didDetectShake() {
+    func turnOn() {
         sendAction("turnOn")
     }
     
-    private func didDetectDoubleShake() {
+    func turnOff() {
         sendAction("turnOff")
     }
     
     private func sendAction(action: Action) {
-        availableDevices.forEach { device in
-            client?.updateDevice(device.id, action: action)
+        availableDevices.forEach { [weak self] device in
+            self?.client?.updateDevice(device.id, action: action) { [weak self] result in
+                self?.reloadControllableDevices()
+            }
         }
     }
     
@@ -115,6 +117,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             let point = ESTOrientedPoint(x: Double($0.coordinate.x), y: Double($0.coordinate.y), orientation: 0)
             let objectView = DeviceObjectView()
             objectView.frame = CGRectMake(0, 0, 30, 30)
+            objectView.fillColor = $0.state.color
             self.contentView.indoorLocationView.drawObjectInBackground(objectView,
                 withPosition: point,
                 identifier: String($0.id))

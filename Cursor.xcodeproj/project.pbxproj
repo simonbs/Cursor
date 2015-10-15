@@ -83,6 +83,7 @@
 		72B800C21BC91DF200E761FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C11BC91DF200E761FE /* AVFoundation.framework */; };
 		72B800C41BC91DF800E761FE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C31BC91DF800E761FE /* MediaPlayer.framework */; };
 		72B800C61BC91DFE00E761FE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C51BC91DFE00E761FE /* MessageUI.framework */; };
+		72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C7CD351BCFEF4C0084B066 /* CursorKit.swift */; settings = {ASSET_TAGS = (); }; };
 		72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */; };
 		72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D51BBFB74900F01E09 /* CompassView.swift */; };
 		72CAE6D81BBFB89400F01E09 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D71BBFB89400F01E09 /* Operators.swift */; };
@@ -231,6 +232,7 @@
 		72B800C11BC91DF200E761FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		72B800C31BC91DF800E761FE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		72B800C51BC91DFE00E761FE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		72C7CD351BCFEF4C0084B066 /* CursorKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorKit.swift; sourceTree = "<group>"; };
 		72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassRoseView.swift; sourceTree = "<group>"; };
 		72CAE6D51BBFB74900F01E09 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		72CAE6D71BBFB89400F01E09 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
@@ -608,6 +610,7 @@
 		72CAE6E11BBFD15000F01E09 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				72C7CD351BCFEF4C0084B066 /* CursorKit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -788,6 +791,7 @@
 				72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */,
 				72F911791BC9553300A0DED8 /* LocationViewController.swift in Sources */,
 				7249288B1BCEAC9F009483F5 /* Resources.swift in Sources */,
+				72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */,
 				72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */,
 				72F911771BC9553300A0DED8 /* CursorViewController.swift in Sources */,
 				724928571BCEAC77009483F5 /* ResponseSerialization.swift in Sources */,

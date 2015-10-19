@@ -15,4 +15,9 @@
 #import "ESTLocationBuilder.h"
 #import "ESTConfig.h"
 
+#import "CustomView.h"
+#import "GestureDB.h"
+#import "GestureRecorder.h"
+#import "TrainingViewController.h"
+
 #endif /* Cursor_BridgingHeader_h */

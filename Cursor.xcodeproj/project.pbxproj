@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		686ED5AB1BD53F730096BC1E /* _DollerRecognizerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5931BD53F730096BC1E /* _DollerRecognizerAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5AC1BD53F730096BC1E /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5941BD53F730096BC1E /* CustomView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5AD1BD53F730096BC1E /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5951BD53F730096BC1E /* FirstViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5AE1BD53F730096BC1E /* Gesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5961BD53F730096BC1E /* Gesture.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5AF1BD53F730096BC1E /* GestureDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5971BD53F730096BC1E /* GestureDB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B01BD53F730096BC1E /* GestureLibraryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5981BD53F730096BC1E /* GestureLibraryTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B11BD53F730096BC1E /* GestureRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5991BD53F730096BC1E /* GestureRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B21BD53F730096BC1E /* IFButtonCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED59A1BD53F730096BC1E /* IFButtonCellController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B31BD53F730096BC1E /* IFChoiceCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED59B1BD53F730096BC1E /* IFChoiceCellController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B41BD53F730096BC1E /* IFChoiceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED59C1BD53F730096BC1E /* IFChoiceTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B51BD53F730096BC1E /* IFControlTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED59D1BD53F730096BC1E /* IFControlTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B61BD53F730096BC1E /* IFGenericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED59E1BD53F730096BC1E /* IFGenericTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B71BD53F730096BC1E /* IFLinkCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED59F1BD53F730096BC1E /* IFLinkCellController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B81BD53F730096BC1E /* IFNamedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A01BD53F730096BC1E /* IFNamedImage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5B91BD53F730096BC1E /* IFPreferencesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A11BD53F730096BC1E /* IFPreferencesModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5BA1BD53F730096BC1E /* IFSwitchCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A21BD53F730096BC1E /* IFSwitchCellController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5BB1BD53F730096BC1E /* IFTemporaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A31BD53F730096BC1E /* IFTemporaryModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5BC1BD53F730096BC1E /* IFTextCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A41BD53F730096BC1E /* IFTextCellController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5BD1BD53F730096BC1E /* IFTextViewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A51BD53F730096BC1E /* IFTextViewTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5BE1BD53F730096BC1E /* IFValueCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A61BD53F730096BC1E /* IFValueCellController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5BF1BD53F730096BC1E /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A71BD53F730096BC1E /* Matrix.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5C01BD53F730096BC1E /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A81BD53F730096BC1E /* Score.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5C11BD53F730096BC1E /* ThreeDollarGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5C21BD53F730096BC1E /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5AA1BD53F730096BC1E /* TrainingViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		686ED5C51BD542C80096BC1E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */; };
 		7220F1341BC2A41200FC3268 /* MotionRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */; };
 		722B78E11BBD364500AD490E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722B78E01BBD364500AD490E /* Assets.xcassets */; };
 		722B78E41BBD364500AD490E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722B78E21BBD364500AD490E /* LaunchScreen.storyboard */; };
@@ -118,6 +143,59 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		686ED5591BD4F2DD0096BC1E /* _DollerRecognizerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _DollerRecognizerAppDelegate.h; path = Classes/_DollerRecognizerAppDelegate.h; sourceTree = "<group>"; };
+		686ED55A1BD4F2DD0096BC1E /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomView.h; path = Classes/CustomView.h; sourceTree = "<group>"; };
+		686ED55B1BD4F2DD0096BC1E /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = Classes/FirstViewController.h; sourceTree = "<group>"; };
+		686ED55C1BD4F2DD0096BC1E /* Gesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gesture.h; path = Classes/Gesture.h; sourceTree = "<group>"; };
+		686ED55D1BD4F2DD0096BC1E /* GestureDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureDB.h; path = Classes/GestureDB.h; sourceTree = "<group>"; };
+		686ED55E1BD4F2DD0096BC1E /* GestureLibraryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureLibraryTableViewController.h; path = Classes/GestureLibraryTableViewController.h; sourceTree = "<group>"; };
+		686ED55F1BD4F2DD0096BC1E /* GestureRecognizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureRecognizerDelegate.h; path = Classes/GestureRecognizerDelegate.h; sourceTree = "<group>"; };
+		686ED5601BD4F2DD0096BC1E /* GestureRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureRecorder.h; path = Classes/GestureRecorder.h; sourceTree = "<group>"; };
+		686ED5611BD4F2DD0096BC1E /* GestureRecorderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestureRecorderDelegate.h; path = Classes/GestureRecorderDelegate.h; sourceTree = "<group>"; };
+		686ED5621BD4F2DD0096BC1E /* IFButtonCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFButtonCellController.h; path = Classes/IFButtonCellController.h; sourceTree = "<group>"; };
+		686ED5631BD4F2DD0096BC1E /* IFCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFCellController.h; path = Classes/IFCellController.h; sourceTree = "<group>"; };
+		686ED5641BD4F2DD0096BC1E /* IFCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFCellModel.h; path = Classes/IFCellModel.h; sourceTree = "<group>"; };
+		686ED5651BD4F2DD0096BC1E /* IFChoiceCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFChoiceCellController.h; path = Classes/IFChoiceCellController.h; sourceTree = "<group>"; };
+		686ED5661BD4F2DD0096BC1E /* IFChoiceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFChoiceTableViewController.h; path = Classes/IFChoiceTableViewController.h; sourceTree = "<group>"; };
+		686ED5671BD4F2DD0096BC1E /* IFControlTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFControlTableViewCell.h; path = Classes/IFControlTableViewCell.h; sourceTree = "<group>"; };
+		686ED5681BD4F2DD0096BC1E /* IFGenericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFGenericTableViewController.h; path = Classes/IFGenericTableViewController.h; sourceTree = "<group>"; };
+		686ED5691BD4F2DD0096BC1E /* IFLinkCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFLinkCellController.h; path = Classes/IFLinkCellController.h; sourceTree = "<group>"; };
+		686ED56A1BD4F2DD0096BC1E /* IFNamedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFNamedImage.h; path = Classes/IFNamedImage.h; sourceTree = "<group>"; };
+		686ED56B1BD4F2DD0096BC1E /* IFPreferencesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFPreferencesModel.h; path = Classes/IFPreferencesModel.h; sourceTree = "<group>"; };
+		686ED56C1BD4F2DD0096BC1E /* IFSwitchCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSwitchCellController.h; path = Classes/IFSwitchCellController.h; sourceTree = "<group>"; };
+		686ED56D1BD4F2DD0096BC1E /* IFTemporaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFTemporaryModel.h; path = Classes/IFTemporaryModel.h; sourceTree = "<group>"; };
+		686ED56E1BD4F2DD0096BC1E /* IFTextCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFTextCellController.h; path = Classes/IFTextCellController.h; sourceTree = "<group>"; };
+		686ED56F1BD4F2DD0096BC1E /* IFTextViewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFTextViewTableView.h; path = Classes/IFTextViewTableView.h; sourceTree = "<group>"; };
+		686ED5701BD4F2DD0096BC1E /* IFValueCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFValueCellController.h; path = Classes/IFValueCellController.h; sourceTree = "<group>"; };
+		686ED5711BD4F2DD0096BC1E /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matrix.h; path = Classes/Matrix.h; sourceTree = "<group>"; };
+		686ED5721BD4F2DD0096BC1E /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = Classes/Score.h; sourceTree = "<group>"; };
+		686ED5731BD4F2DD0096BC1E /* ThreeDollarGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeDollarGestureRecognizer.h; path = Classes/ThreeDollarGestureRecognizer.h; sourceTree = "<group>"; };
+		686ED5741BD4F2DD0096BC1E /* TrainingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainingViewController.h; path = Classes/TrainingViewController.h; sourceTree = "<group>"; };
+		686ED5931BD53F730096BC1E /* _DollerRecognizerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _DollerRecognizerAppDelegate.m; path = Classes/_DollerRecognizerAppDelegate.m; sourceTree = "<group>"; };
+		686ED5941BD53F730096BC1E /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomView.m; path = Classes/CustomView.m; sourceTree = "<group>"; };
+		686ED5951BD53F730096BC1E /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = Classes/FirstViewController.m; sourceTree = "<group>"; };
+		686ED5961BD53F730096BC1E /* Gesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Gesture.m; path = Classes/Gesture.m; sourceTree = "<group>"; };
+		686ED5971BD53F730096BC1E /* GestureDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GestureDB.m; path = Classes/GestureDB.m; sourceTree = "<group>"; };
+		686ED5981BD53F730096BC1E /* GestureLibraryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GestureLibraryTableViewController.m; path = Classes/GestureLibraryTableViewController.m; sourceTree = "<group>"; };
+		686ED5991BD53F730096BC1E /* GestureRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GestureRecorder.m; path = Classes/GestureRecorder.m; sourceTree = "<group>"; };
+		686ED59A1BD53F730096BC1E /* IFButtonCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFButtonCellController.m; path = Classes/IFButtonCellController.m; sourceTree = "<group>"; };
+		686ED59B1BD53F730096BC1E /* IFChoiceCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFChoiceCellController.m; path = Classes/IFChoiceCellController.m; sourceTree = "<group>"; };
+		686ED59C1BD53F730096BC1E /* IFChoiceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFChoiceTableViewController.m; path = Classes/IFChoiceTableViewController.m; sourceTree = "<group>"; };
+		686ED59D1BD53F730096BC1E /* IFControlTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFControlTableViewCell.m; path = Classes/IFControlTableViewCell.m; sourceTree = "<group>"; };
+		686ED59E1BD53F730096BC1E /* IFGenericTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFGenericTableViewController.m; path = Classes/IFGenericTableViewController.m; sourceTree = "<group>"; };
+		686ED59F1BD53F730096BC1E /* IFLinkCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFLinkCellController.m; path = Classes/IFLinkCellController.m; sourceTree = "<group>"; };
+		686ED5A01BD53F730096BC1E /* IFNamedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFNamedImage.m; path = Classes/IFNamedImage.m; sourceTree = "<group>"; };
+		686ED5A11BD53F730096BC1E /* IFPreferencesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFPreferencesModel.m; path = Classes/IFPreferencesModel.m; sourceTree = "<group>"; };
+		686ED5A21BD53F730096BC1E /* IFSwitchCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFSwitchCellController.m; path = Classes/IFSwitchCellController.m; sourceTree = "<group>"; };
+		686ED5A31BD53F730096BC1E /* IFTemporaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFTemporaryModel.m; path = Classes/IFTemporaryModel.m; sourceTree = "<group>"; };
+		686ED5A41BD53F730096BC1E /* IFTextCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFTextCellController.m; path = Classes/IFTextCellController.m; sourceTree = "<group>"; };
+		686ED5A51BD53F730096BC1E /* IFTextViewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFTextViewTableView.m; path = Classes/IFTextViewTableView.m; sourceTree = "<group>"; };
+		686ED5A61BD53F730096BC1E /* IFValueCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFValueCellController.m; path = Classes/IFValueCellController.m; sourceTree = "<group>"; };
+		686ED5A71BD53F730096BC1E /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Matrix.m; path = Classes/Matrix.m; sourceTree = "<group>"; };
+		686ED5A81BD53F730096BC1E /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = Classes/Score.m; sourceTree = "<group>"; };
+		686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeDollarGestureRecognizer.m; path = Classes/ThreeDollarGestureRecognizer.m; sourceTree = "<group>"; };
+		686ED5AA1BD53F730096BC1E /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingViewController.m; path = Classes/TrainingViewController.m; sourceTree = "<group>"; };
+		686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionRecognizer.swift; sourceTree = "<group>"; };
 		722B78D61BBD364500AD490E /* Cursor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cursor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		722B78E01BBD364500AD490E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,6 +336,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686ED5C51BD542C80096BC1E /* libsqlite3.0.tbd in Frameworks */,
 				72B800C61BC91DFE00E761FE /* MessageUI.framework in Frameworks */,
 				72B800C41BC91DF800E761FE /* MediaPlayer.framework in Frameworks */,
 				72B800C21BC91DF200E761FE /* AVFoundation.framework in Frameworks */,
@@ -275,6 +354,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		686ED5581BD4F2750096BC1E /* 3DollarRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				686ED5931BD53F730096BC1E /* _DollerRecognizerAppDelegate.m */,
+				686ED5941BD53F730096BC1E /* CustomView.m */,
+				686ED5951BD53F730096BC1E /* FirstViewController.m */,
+				686ED5961BD53F730096BC1E /* Gesture.m */,
+				686ED5971BD53F730096BC1E /* GestureDB.m */,
+				686ED5981BD53F730096BC1E /* GestureLibraryTableViewController.m */,
+				686ED5991BD53F730096BC1E /* GestureRecorder.m */,
+				686ED59A1BD53F730096BC1E /* IFButtonCellController.m */,
+				686ED59B1BD53F730096BC1E /* IFChoiceCellController.m */,
+				686ED59C1BD53F730096BC1E /* IFChoiceTableViewController.m */,
+				686ED59D1BD53F730096BC1E /* IFControlTableViewCell.m */,
+				686ED59E1BD53F730096BC1E /* IFGenericTableViewController.m */,
+				686ED59F1BD53F730096BC1E /* IFLinkCellController.m */,
+				686ED5A01BD53F730096BC1E /* IFNamedImage.m */,
+				686ED5A11BD53F730096BC1E /* IFPreferencesModel.m */,
+				686ED5A21BD53F730096BC1E /* IFSwitchCellController.m */,
+				686ED5A31BD53F730096BC1E /* IFTemporaryModel.m */,
+				686ED5A41BD53F730096BC1E /* IFTextCellController.m */,
+				686ED5A51BD53F730096BC1E /* IFTextViewTableView.m */,
+				686ED5A61BD53F730096BC1E /* IFValueCellController.m */,
+				686ED5A71BD53F730096BC1E /* Matrix.m */,
+				686ED5A81BD53F730096BC1E /* Score.m */,
+				686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */,
+				686ED5AA1BD53F730096BC1E /* TrainingViewController.m */,
+				686ED5591BD4F2DD0096BC1E /* _DollerRecognizerAppDelegate.h */,
+				686ED55A1BD4F2DD0096BC1E /* CustomView.h */,
+				686ED55B1BD4F2DD0096BC1E /* FirstViewController.h */,
+				686ED55C1BD4F2DD0096BC1E /* Gesture.h */,
+				686ED55D1BD4F2DD0096BC1E /* GestureDB.h */,
+				686ED55E1BD4F2DD0096BC1E /* GestureLibraryTableViewController.h */,
+				686ED55F1BD4F2DD0096BC1E /* GestureRecognizerDelegate.h */,
+				686ED5601BD4F2DD0096BC1E /* GestureRecorder.h */,
+				686ED5611BD4F2DD0096BC1E /* GestureRecorderDelegate.h */,
+				686ED5621BD4F2DD0096BC1E /* IFButtonCellController.h */,
+				686ED5631BD4F2DD0096BC1E /* IFCellController.h */,
+				686ED5641BD4F2DD0096BC1E /* IFCellModel.h */,
+				686ED5651BD4F2DD0096BC1E /* IFChoiceCellController.h */,
+				686ED5661BD4F2DD0096BC1E /* IFChoiceTableViewController.h */,
+				686ED5671BD4F2DD0096BC1E /* IFControlTableViewCell.h */,
+				686ED5681BD4F2DD0096BC1E /* IFGenericTableViewController.h */,
+				686ED5691BD4F2DD0096BC1E /* IFLinkCellController.h */,
+				686ED56A1BD4F2DD0096BC1E /* IFNamedImage.h */,
+				686ED56B1BD4F2DD0096BC1E /* IFPreferencesModel.h */,
+				686ED56C1BD4F2DD0096BC1E /* IFSwitchCellController.h */,
+				686ED56D1BD4F2DD0096BC1E /* IFTemporaryModel.h */,
+				686ED56E1BD4F2DD0096BC1E /* IFTextCellController.h */,
+				686ED56F1BD4F2DD0096BC1E /* IFTextViewTableView.h */,
+				686ED5701BD4F2DD0096BC1E /* IFValueCellController.h */,
+				686ED5711BD4F2DD0096BC1E /* Matrix.h */,
+				686ED5721BD4F2DD0096BC1E /* Score.h */,
+				686ED5731BD4F2DD0096BC1E /* ThreeDollarGestureRecognizer.h */,
+				686ED5741BD4F2DD0096BC1E /* TrainingViewController.h */,
+			);
+			name = 3DollarRecognizer;
+			path = Frameworks/3DollarRecognizer;
+			sourceTree = "<group>";
+		};
 		722B78CD1BBD364500AD490E = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +601,8 @@
 		7273A01E1BBD399F000DA7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */,
+				686ED5581BD4F2750096BC1E /* 3DollarRecognizer */,
 				7249283C1BCEAC77009483F5 /* Alamofire */,
 				7249284B1BCEAC77009483F5 /* Robolayout */,
 				7249284D1BCEAC77009483F5 /* SwiftyJSON */,
@@ -683,7 +824,7 @@
 				TargetAttributes = {
 					722B78D51BBD364500AD490E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 8NQFWJHC63;
+						DevelopmentTeam = Q2D3UPSQC3;
 					};
 				};
 			};
@@ -757,53 +898,77 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686ED5BF1BD53F730096BC1E /* Matrix.m in Sources */,
 				724928881BCEAC9F009483F5 /* ControllableDevice.swift in Sources */,
+				686ED5B61BD53F730096BC1E /* IFGenericTableViewController.m in Sources */,
 				7249284F1BCEAC77009483F5 /* Alamofire.swift in Sources */,
 				724928871BCEAC9F009483F5 /* Failable.swift in Sources */,
 				724928891BCEAC9F009483F5 /* Coordinate.swift in Sources */,
 				72CAE6EF1BBFE9D000F01E09 /* VisibilityIndicatorView.swift in Sources */,
 				72F9116B1BC9552A00A0DED8 /* RootViewController.swift in Sources */,
 				72CAE6D81BBFB89400F01E09 /* Operators.swift in Sources */,
+				686ED5B01BD53F730096BC1E /* GestureLibraryTableViewController.m in Sources */,
+				686ED5AD1BD53F730096BC1E /* FirstViewController.m in Sources */,
+				686ED5B71BD53F730096BC1E /* IFLinkCellController.m in Sources */,
 				724928561BCEAC77009483F5 /* Response.swift in Sources */,
 				7249288A1BCEAC9F009483F5 /* ClientDevices.swift in Sources */,
+				686ED5B91BD53F730096BC1E /* IFPreferencesModel.m in Sources */,
+				686ED5C01BD53F730096BC1E /* Score.m in Sources */,
+				686ED5C11BD53F730096BC1E /* ThreeDollarGestureRecognizer.m in Sources */,
 				72CAE6DE1BBFC3B300F01E09 /* CLLocationDirection.swift in Sources */,
 				724928841BCEAC9F009483F5 /* Alamofire+SwiftyJSON.swift in Sources */,
+				686ED5AC1BD53F730096BC1E /* CustomView.m in Sources */,
 				724928591BCEAC77009483F5 /* ServerTrustPolicy.swift in Sources */,
+				686ED5AE1BD53F730096BC1E /* Gesture.m in Sources */,
 				7249285E1BCEAC77009483F5 /* SwiftyJSON.swift in Sources */,
+				686ED5B81BD53F730096BC1E /* IFNamedImage.m in Sources */,
 				724928581BCEAC77009483F5 /* Result.swift in Sources */,
 				72F911651BC93BD700A0DED8 /* Dispatch.swift in Sources */,
 				724928551BCEAC77009483F5 /* Request.swift in Sources */,
+				686ED5B21BD53F730096BC1E /* IFButtonCellController.m in Sources */,
 				72F9117B1BC9553300A0DED8 /* LocationsViewController.swift in Sources */,
 				724928521BCEAC77009483F5 /* Manager.swift in Sources */,
 				72CAE6F11BBFFB3400F01E09 /* DevicesPlanView.swift in Sources */,
+				686ED5BA1BD53F730096BC1E /* IFSwitchCellController.m in Sources */,
 				7249285D1BCEAC77009483F5 /* Robolayout.swift in Sources */,
+				686ED5B31BD53F730096BC1E /* IFChoiceCellController.m in Sources */,
 				722B78F31BBD369600AD490E /* AppDelegate.swift in Sources */,
 				724928501BCEAC77009483F5 /* Download.swift in Sources */,
 				72CAE6DC1BBFB99A00F01E09 /* UIView.swift in Sources */,
+				686ED5BD1BD53F730096BC1E /* IFTextViewTableView.m in Sources */,
 				7273A02E1BBD3C76000DA7D2 /* Localize.swift in Sources */,
 				724928541BCEAC77009483F5 /* ParameterEncoding.swift in Sources */,
 				728E03DA1BC9336F008B8368 /* LocationsTableViewData.swift in Sources */,
 				724928531BCEAC77009483F5 /* MultipartFormData.swift in Sources */,
+				686ED5BC1BD53F730096BC1E /* IFTextCellController.m in Sources */,
 				724928861BCEAC9F009483F5 /* CursorKitError.swift in Sources */,
 				7249285B1BCEAC77009483F5 /* Upload.swift in Sources */,
 				7249285C1BCEAC77009483F5 /* Validation.swift in Sources */,
+				686ED5AB1BD53F730096BC1E /* _DollerRecognizerAppDelegate.m in Sources */,
 				7249285A1BCEAC77009483F5 /* Stream.swift in Sources */,
+				686ED5AF1BD53F730096BC1E /* GestureDB.m in Sources */,
 				72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */,
 				72F911791BC9553300A0DED8 /* LocationViewController.swift in Sources */,
+				686ED5C21BD53F730096BC1E /* TrainingViewController.m in Sources */,
 				7249288B1BCEAC9F009483F5 /* Resources.swift in Sources */,
+				686ED5B41BD53F730096BC1E /* IFChoiceTableViewController.m in Sources */,
+				686ED5BB1BD53F730096BC1E /* IFTemporaryModel.m in Sources */,
 				72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */,
 				72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */,
 				72F911771BC9553300A0DED8 /* CursorViewController.swift in Sources */,
+				686ED5BE1BD53F730096BC1E /* IFValueCellController.m in Sources */,
 				724928571BCEAC77009483F5 /* ResponseSerialization.swift in Sources */,
 				72CAE6E01BBFCAB100F01E09 /* Array.swift in Sources */,
 				724928851BCEAC9F009483F5 /* Client.swift in Sources */,
 				72F33B291BCF855B0092C363 /* DeviceObjectView.swift in Sources */,
+				686ED5B51BD53F730096BC1E /* IFControlTableViewCell.m in Sources */,
 				72CAE6DA1BBFB93400F01E09 /* Numeric.swift in Sources */,
 				72F911781BC9553300A0DED8 /* LocationView.swift in Sources */,
 				72F911761BC9553300A0DED8 /* CursorView.swift in Sources */,
 				72CAE6ED1BBFDE6A00F01E09 /* DevicesGridView.swift in Sources */,
 				724928511BCEAC77009483F5 /* Error.swift in Sources */,
 				7220F1341BC2A41200FC3268 /* MotionRecognizer.swift in Sources */,
+				686ED5B11BD53F730096BC1E /* GestureRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

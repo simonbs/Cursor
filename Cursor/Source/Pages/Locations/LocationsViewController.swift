@@ -29,7 +29,10 @@ class LocationsViewController: UITableViewController {
         refreshControl?.addTarget(self, action: "fetchLocations", forControlEvents: .ValueChanged)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addLocation")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations")
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations")
+        navigationItem.rightBarButtonItems = [UIBarButtonItem](arrayLiteral:
+            UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations"),
+            UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures"))
         
         data.attachToTableView(tableView)
         data.deleteAction = { [weak self] in self?.deleteLocation($0) }
@@ -37,6 +40,11 @@ class LocationsViewController: UITableViewController {
         
         fetchLocations()
      }
+    
+    func trainGestures() {
+        let trainingViewController = TrainingViewController(nibName: nil, bundle: nil)
+        navigationController?.pushViewController(trainingViewController, animated: true)
+    }
     
     func addLocation() {
         let locationBuilder = ESTLocationBuilder()
@@ -76,7 +84,8 @@ class LocationsViewController: UITableViewController {
     
     func editLocations() {
         tableView.setEditing(!tableView.editing, animated: true)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations")
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations")
+        navigationItem.rightBarButtonItems = [UIBarButtonItem](arrayLiteral: UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations"), UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures"))
     }
     
     func fetchLocations() {

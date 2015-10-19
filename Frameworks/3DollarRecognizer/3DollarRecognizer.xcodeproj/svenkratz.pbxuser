@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	1C26D81E110E2C9B00649C19 /* Matrix.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 585}";
+		};
+	};
+	1C26D81F110E2C9B00649C19 /* Matrix.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 1634}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{283, 934}";
+		};
+	};
+	1C2D7417110DE7C900E453DD /* GestureRecorder.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 850}";
+		};
+	};
+	1C2D7418110DE7C900E453DD /* GestureRecorder.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 2166}}";
+			sepNavSelRange = "{388, 0}";
+			sepNavVisRange = "{309, 896}";
+		};
+	};
+	1C2D741B110DE80300E453DD /* Gesture.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 822}";
+		};
+	};
+	1C2F8650110A544D0029977B /* TrainingViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1156, 1235}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1231}";
+		};
+	};
+	1C2F8651110A544D0029977B /* TrainingViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1308, 5985}}";
+			sepNavSelRange = "{1500, 0}";
+			sepNavVisRange = "{170, 484}";
+		};
+	};
+	1C7DE82E110F782D00729BAE /* GestureRecorderDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 690}}";
+			sepNavSelRange = "{253, 40}";
+			sepNavVisRange = "{0, 300}";
+		};
+	};
+	1C88D914110E6B0E00B07920 /* GestureDB.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 741}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{3, 1019}";
+		};
+	};
+	1C88D915110E6B0E00B07920 /* GestureDB.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 6460}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{319, 1149}";
+		};
+	};
+	1CE0331311148F8C00507ED9 /* GestureRecognizerDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 690}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 443}";
+		};
+	};
+	1CE033161114910D00507ED9 /* ThreeDollarGestureRecognizer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 1159}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1242}";
+		};
+	};
+	1D3623240D0F684500981E51 /* _DollerRecognizerAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1071, 690}}";
+			sepNavSelRange = "{394, 59}";
+			sepNavVisRange = "{0, 883}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* 3DollerRecognizer */ = {
+		activeExec = 0;
+		executables = (
+			25DD8A4A11203DF10069D3A2 /* 3DollerRecognizer */,
+		);
+	};
+	251E2B4411CF9AA7009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C26D81E110E2C9B00649C19 /* Matrix.h */;
+		name = "Matrix.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 585;
+		vrLoc = 0;
+	};
+	251E2B4511CF9AA7009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C26D81F110E2C9B00649C19 /* Matrix.m */;
+		name = "Matrix.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 934;
+		vrLoc = 283;
+	};
+	251E2BF111D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C2D741B110DE80300E453DD /* Gesture.h */;
+		name = "Gesture.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 822;
+		vrLoc = 0;
+	};
+	251E2BF211D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C2D7418110DE7C900E453DD /* GestureRecorder.m */;
+		name = "GestureRecorder.m: 16";
+		rLen = 0;
+		rLoc = 388;
+		rType = 0;
+		vrLen = 896;
+		vrLoc = 309;
+	};
+	251E2BF311D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C2D7417110DE7C900E453DD /* GestureRecorder.h */;
+		name = "GestureRecorder.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 850;
+		vrLoc = 0;
+	};
+	251E2BF411D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CE0331311148F8C00507ED9 /* GestureRecognizerDelegate.h */;
+		name = "GestureRecognizerDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 443;
+		vrLoc = 0;
+	};
+	251E2BF511D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C7DE82E110F782D00729BAE /* GestureRecorderDelegate.h */;
+		name = "GestureRecorderDelegate.h: 15";
+		rLen = 40;
+		rLoc = 253;
+		rType = 0;
+		vrLen = 300;
+		vrLoc = 0;
+	};
+	251E2BF611D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1CE033161114910D00507ED9 /* ThreeDollarGestureRecognizer.h */;
+		name = "ThreeDollarGestureRecognizer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1242;
+		vrLoc = 0;
+	};
+	251E2BF711D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* _DollerRecognizerAppDelegate.h */;
+		name = "_DollerRecognizerAppDelegate.h: 15";
+		rLen = 59;
+		rLoc = 394;
+		rType = 0;
+		vrLen = 883;
+		vrLoc = 0;
+	};
+	251E2BF811D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C88D915110E6B0E00B07920 /* GestureDB.m */;
+		name = "GestureDB.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1149;
+		vrLoc = 319;
+	};
+	251E2BF911D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C88D914110E6B0E00B07920 /* GestureDB.h */;
+		name = "GestureDB.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1019;
+		vrLoc = 3;
+	};
+	251E2BFA11D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C2F8650110A544D0029977B /* TrainingViewController.h */;
+		name = "TrainingViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1231;
+		vrLoc = 0;
+	};
+	251E2BFB11D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C2F8651110A544D0029977B /* TrainingViewController.m */;
+		name = "TrainingViewController.m: 140";
+		rLen = 97;
+		rLoc = 4069;
+		rType = 0;
+		vrLen = 769;
+		vrLoc = 3687;
+	};
+	251E2BFC11D4B36B009A449F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1C2F8651110A544D0029977B /* TrainingViewController.m */;
+		name = "TrainingViewController.m: 52";
+		rLen = 0;
+		rLoc = 1500;
+		rType = 0;
+		vrLen = 485;
+		vrLoc = 169;
+	};
+	25DD8A4A11203DF10069D3A2 /* 3DollerRecognizer */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = 3DollerRecognizer;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	25DD8A6211203DF90069D3A2 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	25DD8A6311203DF90069D3A2 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 25DD8A4A11203DF10069D3A2 /* 3DollerRecognizer */;
+		activeSDKPreference = iphonesimulator4.0;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* 3DollerRecognizer */;
+		codeSenseManager = 25DD8A6311203DF90069D3A2 /* Code sense */;
+		executables = (
+			25DD8A4A11203DF10069D3A2 /* 3DollerRecognizer */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					893,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 299608683;
+			PBXWorkspaceStateSaveDate = 299608683;
+		};
+		perUserProjectItems = {
+			251E2B4411CF9AA7009A449F = 251E2B4411CF9AA7009A449F /* PBXTextBookmark */;
+			251E2B4511CF9AA7009A449F = 251E2B4511CF9AA7009A449F /* PBXTextBookmark */;
+			251E2BF111D4B36B009A449F = 251E2BF111D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF211D4B36B009A449F = 251E2BF211D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF311D4B36B009A449F = 251E2BF311D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF411D4B36B009A449F = 251E2BF411D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF511D4B36B009A449F = 251E2BF511D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF611D4B36B009A449F = 251E2BF611D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF711D4B36B009A449F = 251E2BF711D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF811D4B36B009A449F = 251E2BF811D4B36B009A449F /* PBXTextBookmark */;
+			251E2BF911D4B36B009A449F = 251E2BF911D4B36B009A449F /* PBXTextBookmark */;
+			251E2BFA11D4B36B009A449F = 251E2BFA11D4B36B009A449F /* PBXTextBookmark */;
+			251E2BFB11D4B36B009A449F = 251E2BFB11D4B36B009A449F /* PBXTextBookmark */;
+			251E2BFC11D4B36B009A449F = 251E2BFC11D4B36B009A449F /* PBXTextBookmark */;
+		};
+		sourceControlManager = 25DD8A6211203DF90069D3A2 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+}

@@ -1,0 +1,17 @@
+//
+// Prefix header for all source files of the '3DollerRecognizer' target in the '3DollerRecognizer' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
+
+
+
+#ifdef DEBUG
+#    define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#    define NSLog(...) /* */
+#endif
+#define NSLog(...) NSLog(__VA_ARGS__)

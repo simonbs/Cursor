@@ -30,9 +30,10 @@ class LocationsViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addLocation")
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations")
-        navigationItem.rightBarButtonItems = [UIBarButtonItem](arrayLiteral:
+        navigationItem.rightBarButtonItems = [
             UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations"),
-            UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures"))
+            UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures")
+        ]
         
         data.attachToTableView(tableView)
         data.deleteAction = { [weak self] in self?.deleteLocation($0) }
@@ -85,7 +86,10 @@ class LocationsViewController: UITableViewController {
     func editLocations() {
         tableView.setEditing(!tableView.editing, animated: true)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations")
-        navigationItem.rightBarButtonItems = [UIBarButtonItem](arrayLiteral: UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations"), UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures"))
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations"),
+            UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures")
+        ]
     }
     
     func fetchLocations() {

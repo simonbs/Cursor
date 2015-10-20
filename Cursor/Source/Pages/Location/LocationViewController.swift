@@ -9,9 +9,11 @@
 import Foundation
 import UIKit
 
-class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate {
+class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate, GestureRecorderDelegate {
     let indoorManager = ESTIndoorLocationManager()
     let location: ESTLocation
+    let recognizer = ThreeDollarGestureRecognizer(resampleAmount: 50);
+    var gestureRecorder: GestureRecorder?
     private let motionRecognizer = MotionRecognizer()
     private var controllableDevices: [ControllableDevice] = []
     private var currentPosition: ESTOrientedPoint?
@@ -30,6 +32,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         title = location.name
         indoorManager.delegate = self
         indoorManager.startIndoorLocation(location)
+        self.gestureRecorder = GestureRecorder(nameForGesture: "RecordedGesture", andDelegate: self)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -58,6 +61,13 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         motionRecognizer.didDetectDoubleShake = { [weak self] in self?.turnOff() }
         motionRecognizer.beginRecognizingGestures()
         becomeFirstResponder()
+
+        gestureRecorder?.startRecording()
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        gestureRecorder?.stopRecording()
+        recognizer.recognizeGesture(gestureRecorder?.gesture, fromGestures: GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject])
+        gestureRecorder?.startRecording()
     }
     
     override func viewDidLayoutSubviews() {
@@ -91,6 +101,10 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         currentPosition = position
         contentView.indoorLocationView.updatePosition(position)
         availableDevices = controllableDevicesInLineOfSight()
+    }
+
+    func recorderForcedStop(sender: AnyObject!) {
+
     }
     
     private func reloadControllableDevices() {

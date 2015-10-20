@@ -38,7 +38,6 @@ class GesturesViewController: UITableViewController, UIAlertViewDelegate {
     }
     
     func refresh() {
-        refreshControl?.beginRefreshing()
         let gestureDatabase = GestureDB.sharedInstance()
         NSOperationQueue().addOperationWithBlock {
             gestureDatabase.readGesturesFromDatabase()

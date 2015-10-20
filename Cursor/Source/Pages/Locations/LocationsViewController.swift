@@ -17,9 +17,11 @@ class LocationsViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
         title = localize("LOCATIONS_TITLE")        
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addLocation")
-        navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations"),
-            UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations")
+        toolbarItems = [
+            UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(title: localize("GESTURES"), style: .Plain, target: self, action: "presentGestures"),
+            UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         ]
     }
     
@@ -30,6 +32,8 @@ class LocationsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.toolbarHidden = false
+        
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "fetchLocations", forControlEvents: .ValueChanged)
         
@@ -38,9 +42,19 @@ class LocationsViewController: UITableViewController {
         data.didSelect = { [weak self] in self?.didSelectLocation($0) }
         
         fetchLocations()
-     }
+    }
     
-    func trainGestures() {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setToolbarHidden(false, animated: true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setToolbarHidden(true, animated: true)
+    }
+    
+    func presentGestures() {
         let gesturesController = GesturesViewController()
         navigationController?.pushViewController(gesturesController, animated: true)
     }

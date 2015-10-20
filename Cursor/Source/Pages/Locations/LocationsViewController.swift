@@ -15,7 +15,12 @@ class LocationsViewController: UITableViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        title = localize("LOCATIONS_TITLE")
+        title = localize("LOCATIONS_TITLE")        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addLocation")
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations"),
+            UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures")
+        ]
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,13 +33,6 @@ class LocationsViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "fetchLocations", forControlEvents: .ValueChanged)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addLocation")
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations")
-        navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations"),
-            UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures")
-        ]
-        
         data.attachToTableView(tableView)
         data.deleteAction = { [weak self] in self?.deleteLocation($0) }
         data.didSelect = { [weak self] in self?.didSelectLocation($0) }
@@ -43,8 +41,8 @@ class LocationsViewController: UITableViewController {
      }
     
     func trainGestures() {
-        let trainingViewController = TrainingViewController(nibName: nil, bundle: nil)
-        navigationController?.pushViewController(trainingViewController, animated: true)
+        let gesturesController = GesturesViewController()
+        navigationController?.pushViewController(gesturesController, animated: true)
     }
     
     func addLocation() {
@@ -85,7 +83,6 @@ class LocationsViewController: UITableViewController {
     
     func editLocations() {
         tableView.setEditing(!tableView.editing, animated: true)
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations")
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations"),
             UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "trainGestures")

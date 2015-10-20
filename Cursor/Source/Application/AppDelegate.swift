@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         ESTConfig.setupAppID(EstimoteAppID, andAppToken: EstimoteAppToken)
+        GestureDB.sharedInstance()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = RootViewController()

@@ -32,6 +32,11 @@
 		686ED5C11BD53F730096BC1E /* ThreeDollarGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		686ED5C21BD53F730096BC1E /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5AA1BD53F730096BC1E /* TrainingViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		686ED5C51BD542C80096BC1E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */; };
+		7218A43F1BD625AF00199861 /* GestureTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43D1BD625AF00199861 /* GestureTrainingView.swift */; settings = {ASSET_TAGS = (); }; };
+		7218A4401BD625AF00199861 /* GestureTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43E1BD625AF00199861 /* GestureTrainingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7218A4451BD627EA00199861 /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4441BD627EA00199861 /* GesturesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		7218A4471BD6295900199861 /* LocationsTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4461BD6295900199861 /* LocationsTableViewData.swift */; settings = {ASSET_TAGS = (); }; };
+		7218A4491BD6296500199861 /* GesturesTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4481BD6296500199861 /* GesturesTableViewData.swift */; settings = {ASSET_TAGS = (); }; };
 		7220F1341BC2A41200FC3268 /* MotionRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */; };
 		722B78E11BBD364500AD490E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722B78E01BBD364500AD490E /* Assets.xcassets */; };
 		722B78E41BBD364500AD490E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722B78E21BBD364500AD490E /* LaunchScreen.storyboard */; };
@@ -62,7 +67,6 @@
 		7249288B1BCEAC9F009483F5 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724928811BCEAC9F009483F5 /* Resources.swift */; };
 		7273A02C1BBD3C37000DA7D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7273A02B1BBD3C37000DA7D2 /* Localizable.strings */; };
 		7273A02E1BBD3C76000DA7D2 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273A02D1BBD3C76000DA7D2 /* Localize.swift */; };
-		728E03DA1BC9336F008B8368 /* LocationsTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E03D91BC9336F008B8368 /* LocationsTableViewData.swift */; };
 		72B800911BC91DB100E761FE /* libEstimoteIndoorSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800511BC91DB100E761FE /* libEstimoteIndoorSDK.a */; };
 		72B800921BC91DB100E761FE /* 5a.mov in Resources */ = {isa = PBXBuildFile; fileRef = 72B800531BC91DB100E761FE /* 5a.mov */; };
 		72B800931BC91DB100E761FE /* 5b.mov in Resources */ = {isa = PBXBuildFile; fileRef = 72B800541BC91DB100E761FE /* 5b.mov */; };
@@ -119,6 +123,8 @@
 		72CAE6ED1BBFDE6A00F01E09 /* DevicesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */; };
 		72CAE6EF1BBFE9D000F01E09 /* VisibilityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */; };
 		72CAE6F11BBFFB3400F01E09 /* DevicesPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6F01BBFFB3400F01E09 /* DevicesPlanView.swift */; };
+		72EBEAC21BD6486B00142466 /* Gestures.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 72EBEAC11BD6486B00142466 /* Gestures.sqlite */; settings = {ASSET_TAGS = (); }; };
+		72EBEAC41BD64B2200142466 /* TrainedGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBEAC31BD64B2200142466 /* TrainedGesture.swift */; settings = {ASSET_TAGS = (); }; };
 		72F33B291BCF855B0092C363 /* DeviceObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F33B281BCF855B0092C363 /* DeviceObjectView.swift */; settings = {ASSET_TAGS = (); }; };
 		72F911651BC93BD700A0DED8 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911641BC93BD700A0DED8 /* Dispatch.swift */; };
 		72F9116B1BC9552A00A0DED8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116A1BC9552A00A0DED8 /* RootViewController.swift */; };
@@ -196,6 +202,11 @@
 		686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeDollarGestureRecognizer.m; path = Classes/ThreeDollarGestureRecognizer.m; sourceTree = "<group>"; };
 		686ED5AA1BD53F730096BC1E /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingViewController.m; path = Classes/TrainingViewController.m; sourceTree = "<group>"; };
 		686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7218A43D1BD625AF00199861 /* GestureTrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTrainingView.swift; sourceTree = "<group>"; };
+		7218A43E1BD625AF00199861 /* GestureTrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTrainingViewController.swift; sourceTree = "<group>"; };
+		7218A4441BD627EA00199861 /* GesturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturesViewController.swift; sourceTree = "<group>"; };
+		7218A4461BD6295900199861 /* LocationsTableViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsTableViewData.swift; sourceTree = "<group>"; };
+		7218A4481BD6296500199861 /* GesturesTableViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturesTableViewData.swift; sourceTree = "<group>"; };
 		7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionRecognizer.swift; sourceTree = "<group>"; };
 		722B78D61BBD364500AD490E /* Cursor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cursor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		722B78E01BBD364500AD490E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -229,7 +240,6 @@
 		7273A02B1BBD3C37000DA7D2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7273A02D1BBD3C76000DA7D2 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		728E03D41BC91E89008B8368 /* Cursor-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Cursor-BridgingHeader.h"; path = "Source/Cursor-BridgingHeader.h"; sourceTree = "<group>"; };
-		728E03D91BC9336F008B8368 /* LocationsTableViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsTableViewData.swift; sourceTree = "<group>"; };
 		72B800461BC91DB100E761FE /* ESTIndoorLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTIndoorLocationManager.h; sourceTree = "<group>"; };
 		72B800471BC91DB100E761FE /* ESTIndoorLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTIndoorLocationView.h; sourceTree = "<group>"; };
 		72B800481BC91DB100E761FE /* ESTIndoorSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTIndoorSDK.h; sourceTree = "<group>"; };
@@ -321,6 +331,8 @@
 		72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesGridView.swift; sourceTree = "<group>"; };
 		72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisibilityIndicatorView.swift; sourceTree = "<group>"; };
 		72CAE6F01BBFFB3400F01E09 /* DevicesPlanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesPlanView.swift; sourceTree = "<group>"; };
+		72EBEAC11BD6486B00142466 /* Gestures.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Gestures.sqlite; sourceTree = "<group>"; };
+		72EBEAC31BD64B2200142466 /* TrainedGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainedGesture.swift; sourceTree = "<group>"; };
 		72F33B281BCF855B0092C363 /* DeviceObjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceObjectView.swift; sourceTree = "<group>"; };
 		72F911641BC93BD700A0DED8 /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		72F9116A1BC9552A00A0DED8 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +369,7 @@
 		686ED5581BD4F2750096BC1E /* 3DollarRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				72EBEAC11BD6486B00142466 /* Gestures.sqlite */,
 				686ED5931BD53F730096BC1E /* _DollerRecognizerAppDelegate.m */,
 				686ED5941BD53F730096BC1E /* CustomView.m */,
 				686ED5951BD53F730096BC1E /* FirstViewController.m */,
@@ -414,6 +427,24 @@
 			path = Frameworks/3DollarRecognizer;
 			sourceTree = "<group>";
 		};
+		7218A43C1BD625AF00199861 /* GestureTraining */ = {
+			isa = PBXGroup;
+			children = (
+				7218A43D1BD625AF00199861 /* GestureTrainingView.swift */,
+				7218A43E1BD625AF00199861 /* GestureTrainingViewController.swift */,
+			);
+			path = GestureTraining;
+			sourceTree = "<group>";
+		};
+		7218A4411BD627D600199861 /* Gestures */ = {
+			isa = PBXGroup;
+			children = (
+				7218A4481BD6296500199861 /* GesturesTableViewData.swift */,
+				7218A4441BD627EA00199861 /* GesturesViewController.swift */,
+			);
+			path = Gestures;
+			sourceTree = "<group>";
+		};
 		722B78CD1BBD364500AD490E = {
 			isa = PBXGroup;
 			children = (
@@ -469,7 +500,6 @@
 			isa = PBXGroup;
 			children = (
 				7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */,
-				728E03D91BC9336F008B8368 /* LocationsTableViewData.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -752,6 +782,7 @@
 			isa = PBXGroup;
 			children = (
 				72C7CD351BCFEF4C0084B066 /* CursorKit.swift */,
+				72EBEAC31BD64B2200142466 /* TrainedGesture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -762,6 +793,8 @@
 				72F9116D1BC9553300A0DED8 /* Cursor */,
 				72F911701BC9553300A0DED8 /* Location */,
 				72F911731BC9553300A0DED8 /* Locations */,
+				7218A4411BD627D600199861 /* Gestures */,
+				7218A43C1BD625AF00199861 /* GestureTraining */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -787,6 +820,7 @@
 		72F911731BC9553300A0DED8 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				7218A4461BD6295900199861 /* LocationsTableViewData.swift */,
 				72F911751BC9553300A0DED8 /* LocationsViewController.swift */,
 			);
 			path = Locations;
@@ -824,7 +858,7 @@
 				TargetAttributes = {
 					722B78D51BBD364500AD490E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = Q2D3UPSQC3;
+						DevelopmentTeam = 8NQFWJHC63;
 					};
 				};
 			};
@@ -880,6 +914,7 @@
 				72B800A31BC91DB100E761FE /* beaconIcySmall.png in Resources */,
 				72B800B11BC91DB100E761FE /* welcome@2x.png in Resources */,
 				7273A02C1BBD3C37000DA7D2 /* Localizable.strings in Resources */,
+				72EBEAC21BD6486B00142466 /* Gestures.sqlite in Resources */,
 				722B78E11BBD364500AD490E /* Assets.xcassets in Resources */,
 				72B800B21BC91DB100E761FE /* SixBeaconsView.xib in Resources */,
 				72B800A71BC91DB100E761FE /* beaconMintSmall@2x.png in Resources */,
@@ -919,11 +954,13 @@
 				724928841BCEAC9F009483F5 /* Alamofire+SwiftyJSON.swift in Sources */,
 				686ED5AC1BD53F730096BC1E /* CustomView.m in Sources */,
 				724928591BCEAC77009483F5 /* ServerTrustPolicy.swift in Sources */,
+				7218A4491BD6296500199861 /* GesturesTableViewData.swift in Sources */,
 				686ED5AE1BD53F730096BC1E /* Gesture.m in Sources */,
 				7249285E1BCEAC77009483F5 /* SwiftyJSON.swift in Sources */,
 				686ED5B81BD53F730096BC1E /* IFNamedImage.m in Sources */,
 				724928581BCEAC77009483F5 /* Result.swift in Sources */,
 				72F911651BC93BD700A0DED8 /* Dispatch.swift in Sources */,
+				7218A43F1BD625AF00199861 /* GestureTrainingView.swift in Sources */,
 				724928551BCEAC77009483F5 /* Request.swift in Sources */,
 				686ED5B21BD53F730096BC1E /* IFButtonCellController.m in Sources */,
 				72F9117B1BC9553300A0DED8 /* LocationsViewController.swift in Sources */,
@@ -938,9 +975,10 @@
 				686ED5BD1BD53F730096BC1E /* IFTextViewTableView.m in Sources */,
 				7273A02E1BBD3C76000DA7D2 /* Localize.swift in Sources */,
 				724928541BCEAC77009483F5 /* ParameterEncoding.swift in Sources */,
-				728E03DA1BC9336F008B8368 /* LocationsTableViewData.swift in Sources */,
 				724928531BCEAC77009483F5 /* MultipartFormData.swift in Sources */,
+				7218A4471BD6295900199861 /* LocationsTableViewData.swift in Sources */,
 				686ED5BC1BD53F730096BC1E /* IFTextCellController.m in Sources */,
+				72EBEAC41BD64B2200142466 /* TrainedGesture.swift in Sources */,
 				724928861BCEAC9F009483F5 /* CursorKitError.swift in Sources */,
 				7249285B1BCEAC77009483F5 /* Upload.swift in Sources */,
 				7249285C1BCEAC77009483F5 /* Validation.swift in Sources */,
@@ -949,8 +987,10 @@
 				686ED5AF1BD53F730096BC1E /* GestureDB.m in Sources */,
 				72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */,
 				72F911791BC9553300A0DED8 /* LocationViewController.swift in Sources */,
+				7218A4401BD625AF00199861 /* GestureTrainingViewController.swift in Sources */,
 				686ED5C21BD53F730096BC1E /* TrainingViewController.m in Sources */,
 				7249288B1BCEAC9F009483F5 /* Resources.swift in Sources */,
+				7218A4451BD627EA00199861 /* GesturesViewController.swift in Sources */,
 				686ED5B41BD53F730096BC1E /* IFChoiceTableViewController.m in Sources */,
 				686ED5BB1BD53F730096BC1E /* IFTemporaryModel.m in Sources */,
 				72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */,

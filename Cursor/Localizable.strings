@@ -16,3 +16,17 @@
 
 "TURN_ON" = "Turn on";
 "TURN_OFF" = "Turn off";
+
+"GESTURES" = "Gestures";
+"ADD_GESTURE" = "Add Gesture";
+"ENTER_GESTURE_NAME" = "Enter name of the new gesture";
+"GESTURE_TRAINING_DESCRIPTION" = "Press and hold the below button and perform the gesture you want to add. Release the button when you have performed the gesture. Repeat this five to ten times.";
+"PRESS_HOLD_TO_TRAIN" = "Press and hold to train";
+"TRAIN_COUNT_SINGULARIS" = "You have trained the gesture %i time.";
+"TRAIN_COUNT_PLURALIS" = "You have trained the gesture %i times.";
+
+"SHORT_TRAIN_COUNT_SINGULARIS" = "Trained %i time";
+"SHORT_TRAIN_COUNT_PLURALIS" = "Trained %i times";
+
+"CANCEL" = "Cancel";
+"CONTINUE" = "Continue";

@@ -108,6 +108,7 @@ class GestureTrainingViewController: UIViewController, GestureRecorderDelegate {
         contentView.activityIndicator.stopAnimating()
         gestureRecorder = nil
         isTraining = false
+        trainingForceStopped = false
     }
     
     func enableSave() {

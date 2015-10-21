@@ -90,10 +90,10 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             NSOperationQueue.mainQueue().addOperationWithBlock {
                 if gesture != nil {
                     self.contentView.gestureNameLabel.text = gesture
+                    self.flipDeviceSwitches()
                 } else {
                     self.contentView.gestureNameLabel.text = "No gesture"
                 }
-                self.flipDeviceSwitches()
                 self.contentView.gestureButton.enabled = true
             }
         }

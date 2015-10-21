@@ -27,6 +27,8 @@ class LocationView: UIView {
         gestureButton.setTitle(localize("PRESS_HOLD_TO_GESTURE"), forState: .Normal)
 //        gestureButton.hidden = true
         
+        gestureNameLabel.textAlignment = .Center
+        
         addSubview(indoorLocationView)
         addSubview(availableDevicesLabel)
         addSubview(gestureButton)
@@ -45,7 +47,6 @@ class LocationView: UIView {
         
         gestureNameLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         gestureNameLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
-        gestureNameLabel.setTopToSuperview(constant: cursorLayoutMargins.top)
         
         translatesAutoresizingMaskIntoConstraints = true
     }

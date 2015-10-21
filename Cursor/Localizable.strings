@@ -18,6 +18,7 @@
 "TURN_OFF" = "Turn off";
 
 "PRESS_HOLD_TO_GESTURE" = "Press and hold to perform gesture";
+"NO_GESTURE" = "No gesture"
 
 "GESTURES" = "Gestures";
 "ADD_GESTURE" = "Add Gesture";

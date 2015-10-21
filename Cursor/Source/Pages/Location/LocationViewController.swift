@@ -58,6 +58,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         contentView.indoorLocationView.rotateOnPositionUpdate = true
         contentView.indoorLocationView.drawLocation(location)
         reloadControllableDevices()
+        
+        contentView.constraintToLayoutSupport(contentView.gestureNameLabel, .Top, .Equal, topLayoutGuide, .Bottom, constant: contentView.cursorLayoutMargins.top)
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,8 +94,9 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
                     self.contentView.gestureNameLabel.text = gesture
                     self.flipDeviceSwitches()
                 } else {
-                    self.contentView.gestureNameLabel.text = "No gesture"
+                    self.contentView.gestureNameLabel.text = localize("NO_GESTURE")
                 }
+                
                 self.contentView.gestureButton.enabled = true
             }
         }

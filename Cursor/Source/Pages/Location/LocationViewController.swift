@@ -21,6 +21,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     private var availableDevices: [ControllableDevice] = [] {
         didSet { contentView.displayAvailableDevices(availableDevices) }
     }
+    private var devicesPointedAt: [ControllableDevice] = []
     
     var contentView: LocationView {
         return view as! LocationView
@@ -49,9 +50,6 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        contentView.turnOnButton.addTarget(self, action: "turnOn", forControlEvents: .TouchUpInside)
-//        contentView.turnOffButton.addTarget(self, action: "turnOff", forControlEvents: .TouchUpInside)
-        
         contentView.gestureButton.addTarget(self, action: "startPerformingGesture", forControlEvents: .TouchDown)
         contentView.gestureButton.addTarget(self, action: "endPerformingGesture", forControlEvents: .TouchUpInside)
         contentView.gestureButton.addTarget(self, action: "endPerformingGesture", forControlEvents: .TouchUpOutside)
@@ -60,11 +58,6 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         contentView.indoorLocationView.rotateOnPositionUpdate = true
         contentView.indoorLocationView.drawLocation(location)
         reloadControllableDevices()
-        
-        motionRecognizer.didDetectShake = { [weak self] in self?.turnOn() }
-        motionRecognizer.didDetectDoubleShake = { [weak self] in self?.turnOff() }
-        motionRecognizer.beginRecognizingGestures()
-        becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
@@ -80,6 +73,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     func startPerformingGesture() {
         guard gestureRecorder == nil else { return }
+        devicesPointedAt = availableDevices
         gestureRecorder = GestureRecorder(nameForGesture: "RecordedGesture", andDelegate: self)
         gestureRecorder?.startRecording()
     }
@@ -93,6 +87,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             let gesture = self.recognizer.recognizeGesture(self.gestureRecorder?.gesture, fromGestures: knownGestures)
             self.gestureRecorder = nil
             NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.flipDeviceSwitches()
                 self.contentView.gestureButton.enabled = true
             }
         }
@@ -103,19 +98,15 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         gestureRecorder = nil
     }
     
-    func turnOn() {
-        sendAction("turnOn")
+    private func flipDeviceSwitches() {
+        devicesPointedAt.forEach { device in
+            self.sendAction(device.state == .On ? "turnOff" : "turnOn", device: device)
+        }
     }
     
-    func turnOff() {
-        sendAction("turnOff")
-    }
-    
-    private func sendAction(action: Action) {
-        availableDevices.forEach { [weak self] device in
-            self?.client?.updateDevice(device.id, action: action) { [weak self] result in
-                self?.reloadControllableDevices()
-            }
+    private func sendAction(action: Action, device: ControllableDevice) {
+        client?.updateDevice(device.id, action: action) { [weak self] result in
+            self?.reloadControllableDevices()
         }
     }
     

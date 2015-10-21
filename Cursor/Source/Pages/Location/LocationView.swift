@@ -24,7 +24,7 @@ class LocationView: UIView {
         availableDevicesLabel.hidden = true
         
         gestureButton.setTitle(localize("PRESS_HOLD_TO_GESTURE"), forState: .Normal)
-        gestureButton.hidden = true
+//        gestureButton.hidden = true
         
         addSubview(indoorLocationView)
         addSubview(availableDevicesLabel)
@@ -51,6 +51,6 @@ class LocationView: UIView {
     func displayAvailableDevices(availableDevices: [ControllableDevice]) {
         availableDevicesLabel.text = availableDevices.map({ $0.name }).joinWithSeparator(", ")
         availableDevicesLabel.hidden = availableDevices.count == 0
-        gestureButton.hidden = availableDevices.count == 0
+//        gestureButton.hidden = availableDevices.count == 0
     }
 }

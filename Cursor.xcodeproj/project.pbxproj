@@ -32,11 +32,11 @@
 		686ED5C11BD53F730096BC1E /* ThreeDollarGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		686ED5C21BD53F730096BC1E /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5AA1BD53F730096BC1E /* TrainingViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		686ED5C51BD542C80096BC1E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */; };
-		7218A43F1BD625AF00199861 /* GestureTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43D1BD625AF00199861 /* GestureTrainingView.swift */; settings = {ASSET_TAGS = (); }; };
-		7218A4401BD625AF00199861 /* GestureTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43E1BD625AF00199861 /* GestureTrainingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7218A4451BD627EA00199861 /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4441BD627EA00199861 /* GesturesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		7218A4471BD6295900199861 /* LocationsTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4461BD6295900199861 /* LocationsTableViewData.swift */; settings = {ASSET_TAGS = (); }; };
-		7218A4491BD6296500199861 /* GesturesTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4481BD6296500199861 /* GesturesTableViewData.swift */; settings = {ASSET_TAGS = (); }; };
+		7218A43F1BD625AF00199861 /* GestureTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43D1BD625AF00199861 /* GestureTrainingView.swift */; };
+		7218A4401BD625AF00199861 /* GestureTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43E1BD625AF00199861 /* GestureTrainingViewController.swift */; };
+		7218A4451BD627EA00199861 /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4441BD627EA00199861 /* GesturesViewController.swift */; };
+		7218A4471BD6295900199861 /* LocationsTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4461BD6295900199861 /* LocationsTableViewData.swift */; };
+		7218A4491BD6296500199861 /* GesturesTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4481BD6296500199861 /* GesturesTableViewData.swift */; };
 		7220F1341BC2A41200FC3268 /* MotionRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */; };
 		722B78E11BBD364500AD490E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 722B78E01BBD364500AD490E /* Assets.xcassets */; };
 		722B78E41BBD364500AD490E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722B78E21BBD364500AD490E /* LaunchScreen.storyboard */; };
@@ -112,7 +112,7 @@
 		72B800C21BC91DF200E761FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C11BC91DF200E761FE /* AVFoundation.framework */; };
 		72B800C41BC91DF800E761FE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C31BC91DF800E761FE /* MediaPlayer.framework */; };
 		72B800C61BC91DFE00E761FE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C51BC91DFE00E761FE /* MessageUI.framework */; };
-		72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C7CD351BCFEF4C0084B066 /* CursorKit.swift */; settings = {ASSET_TAGS = (); }; };
+		72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C7CD351BCFEF4C0084B066 /* CursorKit.swift */; };
 		72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */; };
 		72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D51BBFB74900F01E09 /* CompassView.swift */; };
 		72CAE6D81BBFB89400F01E09 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D71BBFB89400F01E09 /* Operators.swift */; };
@@ -123,9 +123,9 @@
 		72CAE6ED1BBFDE6A00F01E09 /* DevicesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EC1BBFDE6A00F01E09 /* DevicesGridView.swift */; };
 		72CAE6EF1BBFE9D000F01E09 /* VisibilityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6EE1BBFE9D000F01E09 /* VisibilityIndicatorView.swift */; };
 		72CAE6F11BBFFB3400F01E09 /* DevicesPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6F01BBFFB3400F01E09 /* DevicesPlanView.swift */; };
-		72EBEAC21BD6486B00142466 /* Gestures.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 72EBEAC11BD6486B00142466 /* Gestures.sqlite */; settings = {ASSET_TAGS = (); }; };
-		72EBEAC41BD64B2200142466 /* TrainedGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBEAC31BD64B2200142466 /* TrainedGesture.swift */; settings = {ASSET_TAGS = (); }; };
-		72F33B291BCF855B0092C363 /* DeviceObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F33B281BCF855B0092C363 /* DeviceObjectView.swift */; settings = {ASSET_TAGS = (); }; };
+		72EBEAC21BD6486B00142466 /* Gestures.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 72EBEAC11BD6486B00142466 /* Gestures.sqlite */; };
+		72EBEAC41BD64B2200142466 /* TrainedGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBEAC31BD64B2200142466 /* TrainedGesture.swift */; };
+		72F33B291BCF855B0092C363 /* DeviceObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F33B281BCF855B0092C363 /* DeviceObjectView.swift */; };
 		72F911651BC93BD700A0DED8 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911641BC93BD700A0DED8 /* Dispatch.swift */; };
 		72F9116B1BC9552A00A0DED8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116A1BC9552A00A0DED8 /* RootViewController.swift */; };
 		72F911761BC9553300A0DED8 /* CursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116E1BC9553300A0DED8 /* CursorView.swift */; };
@@ -858,7 +858,6 @@
 				TargetAttributes = {
 					722B78D51BBD364500AD490E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 8NQFWJHC63;
 					};
 				};
 			};

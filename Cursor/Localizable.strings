@@ -17,6 +17,8 @@
 "TURN_ON" = "Turn on";
 "TURN_OFF" = "Turn off";
 
+"PRESS_HOLD_TO_GESTURE" = "Press and hold to perform gesture";
+
 "GESTURES" = "Gestures";
 "ADD_GESTURE" = "Add Gesture";
 "ENTER_GESTURE_NAME" = "Enter name of the new gesture";

@@ -32,7 +32,6 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         title = location.name
         indoorManager.delegate = self
         indoorManager.startIndoorLocation(location)
-        self.gestureRecorder = GestureRecorder(nameForGesture: "RecordedGesture", andDelegate: self)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -50,8 +49,13 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.turnOnButton.addTarget(self, action: "turnOn", forControlEvents: .TouchUpInside)
-        contentView.turnOffButton.addTarget(self, action: "turnOff", forControlEvents: .TouchUpInside)
+//        contentView.turnOnButton.addTarget(self, action: "turnOn", forControlEvents: .TouchUpInside)
+//        contentView.turnOffButton.addTarget(self, action: "turnOff", forControlEvents: .TouchUpInside)
+        
+        contentView.gestureButton.addTarget(self, action: "startPerformingGesture", forControlEvents: .TouchDown)
+        contentView.gestureButton.addTarget(self, action: "endPerformingGesture", forControlEvents: .TouchUpInside)
+        contentView.gestureButton.addTarget(self, action: "endPerformingGesture", forControlEvents: .TouchUpOutside)
+        contentView.gestureButton.addTarget(self, action: "cancelPerformingGesture", forControlEvents: .TouchCancel)
         
         contentView.indoorLocationView.rotateOnPositionUpdate = true
         contentView.indoorLocationView.drawLocation(location)
@@ -61,13 +65,6 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         motionRecognizer.didDetectDoubleShake = { [weak self] in self?.turnOff() }
         motionRecognizer.beginRecognizingGestures()
         becomeFirstResponder()
-
-        gestureRecorder?.startRecording()
-    }
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        gestureRecorder?.stopRecording()
-        recognizer.recognizeGesture(gestureRecorder?.gesture, fromGestures: GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject])
-        gestureRecorder?.startRecording()
     }
     
     override func viewDidLayoutSubviews() {
@@ -79,6 +76,31 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     override func canBecomeFirstResponder() -> Bool {
         return true
+    }
+    
+    func startPerformingGesture() {
+        guard gestureRecorder == nil else { return }
+        gestureRecorder = GestureRecorder(nameForGesture: "RecordedGesture", andDelegate: self)
+        gestureRecorder?.startRecording()
+    }
+    
+    func endPerformingGesture() {
+        guard let recorder = gestureRecorder where recorder.isRecording else { return }
+        contentView.gestureButton.enabled = false
+        NSOperationQueue().addOperationWithBlock {
+            self.gestureRecorder?.stopRecording()
+            let knownGestures = GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject]
+            let gesture = self.recognizer.recognizeGesture(self.gestureRecorder?.gesture, fromGestures: knownGestures)
+            self.gestureRecorder = nil
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.contentView.gestureButton.enabled = true
+            }
+        }
+    }
+    
+    func cancelPerformingGesture() {
+        gestureRecorder?.stopRecording()
+        gestureRecorder = nil
     }
     
     func turnOn() {
@@ -104,7 +126,9 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     }
 
     func recorderForcedStop(sender: AnyObject!) {
-
+        print("Recording was force stopped")
+        gestureRecorder?.stopRecording()
+        gestureRecorder = nil
     }
     
     private func reloadControllableDevices() {

@@ -85,13 +85,14 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             self.gestureRecorder?.stopRecording()
             let knownGestures = GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject]
             let gesture = self.recognizer.recognizeGesture(self.gestureRecorder?.gesture, fromGestures: knownGestures)
-            if gesture != nil {
-                print(gesture)
-            } else {
-                print("No gesture")
-            }
+            
             self.gestureRecorder = nil
             NSOperationQueue.mainQueue().addOperationWithBlock {
+                if gesture != nil {
+                    self.contentView.gestureNameLabel.text = gesture
+                } else {
+                    self.contentView.gestureNameLabel.text = "No gesture"
+                }
                 self.flipDeviceSwitches()
                 self.contentView.gestureButton.enabled = true
             }

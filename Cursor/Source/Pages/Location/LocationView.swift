@@ -13,6 +13,7 @@ class LocationView: UIView {
     let indoorLocationView = ESTIndoorLocationView()
     let availableDevicesLabel = UILabel()
     let gestureButton = UIButton(type: .System)
+    let gestureNameLabel = UILabel()
     
     init() {
         super.init(frame: CGRectZero)
@@ -29,6 +30,7 @@ class LocationView: UIView {
         addSubview(indoorLocationView)
         addSubview(availableDevicesLabel)
         addSubview(gestureButton)
+        addSubview(gestureNameLabel)
         
         indoorLocationView.setEdgesEqualToSuperview(cursorLayoutMargins)
         
@@ -40,6 +42,10 @@ class LocationView: UIView {
         availableDevicesLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         availableDevicesLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
         constraint(availableDevicesLabel, .Bottom, .Equal, gestureButton, .Top, constant: -cursorLayoutMargins.top)
+        
+        gestureNameLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
+        gestureNameLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
+        gestureNameLabel.setTopToSuperview(constant: cursorLayoutMargins.top)
         
         translatesAutoresizingMaskIntoConstraints = true
     }

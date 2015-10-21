@@ -92,7 +92,10 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             }
             self.gestureRecorder = nil
             NSOperationQueue.mainQueue().addOperationWithBlock {
-                self.flipDeviceSwitches()
+                if gesture != nil {
+                    self.flipDeviceSwitches()
+                }
+                
                 self.contentView.gestureButton.enabled = true
             }
         }

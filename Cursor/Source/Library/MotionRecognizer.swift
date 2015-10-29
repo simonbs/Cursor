@@ -18,7 +18,6 @@ class MotionRecognizer: NSObject {
     var didDetectShake: (Void -> Void)?
     var didDetectDoubleShake: (Void -> Void)?
     
-    
     func beginRecognizingGestures() {
         isRecognizingGestures = true
     }

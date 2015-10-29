@@ -67,6 +67,7 @@
 		7249288B1BCEAC9F009483F5 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724928811BCEAC9F009483F5 /* Resources.swift */; };
 		7273A02C1BBD3C37000DA7D2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7273A02B1BBD3C37000DA7D2 /* Localizable.strings */; };
 		7273A02E1BBD3C76000DA7D2 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273A02D1BBD3C76000DA7D2 /* Localize.swift */; };
+		729D4BB21BE224010072B01B /* PointDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729D4BB11BE224010072B01B /* PointDetector.swift */; };
 		72B800911BC91DB100E761FE /* libEstimoteIndoorSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800511BC91DB100E761FE /* libEstimoteIndoorSDK.a */; };
 		72B800921BC91DB100E761FE /* 5a.mov in Resources */ = {isa = PBXBuildFile; fileRef = 72B800531BC91DB100E761FE /* 5a.mov */; };
 		72B800931BC91DB100E761FE /* 5b.mov in Resources */ = {isa = PBXBuildFile; fileRef = 72B800541BC91DB100E761FE /* 5b.mov */; };
@@ -240,6 +241,7 @@
 		7273A02B1BBD3C37000DA7D2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		7273A02D1BBD3C76000DA7D2 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		728E03D41BC91E89008B8368 /* Cursor-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Cursor-BridgingHeader.h"; path = "Source/Cursor-BridgingHeader.h"; sourceTree = "<group>"; };
+		729D4BB11BE224010072B01B /* PointDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointDetector.swift; sourceTree = "<group>"; };
 		72B800461BC91DB100E761FE /* ESTIndoorLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTIndoorLocationManager.h; sourceTree = "<group>"; };
 		72B800471BC91DB100E761FE /* ESTIndoorLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTIndoorLocationView.h; sourceTree = "<group>"; };
 		72B800481BC91DB100E761FE /* ESTIndoorSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESTIndoorSDK.h; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 		722B78F01BBD369600AD490E /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				729D4BB11BE224010072B01B /* PointDetector.swift */,
 				7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */,
 			);
 			path = Library;
@@ -989,6 +992,7 @@
 				7218A4401BD625AF00199861 /* GestureTrainingViewController.swift in Sources */,
 				686ED5C21BD53F730096BC1E /* TrainingViewController.m in Sources */,
 				7249288B1BCEAC9F009483F5 /* Resources.swift in Sources */,
+				729D4BB21BE224010072B01B /* PointDetector.swift in Sources */,
 				7218A4451BD627EA00199861 /* GesturesViewController.swift in Sources */,
 				686ED5B41BD53F730096BC1E /* IFChoiceTableViewController.m in Sources */,
 				686ED5BB1BD53F730096BC1E /* IFTemporaryModel.m in Sources */,

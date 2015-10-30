@@ -12,6 +12,7 @@ import UIKit
 class LocationView: UIView {
     let indoorLocationView = ESTIndoorLocationView()
     let availableDevicesLabel = UILabel()
+    let endGestureButton = UIButton(type: .System)
     let gestureNameLabel = UILabel()
     
     init() {
@@ -23,17 +24,26 @@ class LocationView: UIView {
         availableDevicesLabel.textAlignment = .Center
         availableDevicesLabel.hidden = true
         
+        endGestureButton.setTitle(localize("END_GESTURE"), forState: .Normal)
+        endGestureButton.hidden = true
+        
         gestureNameLabel.textAlignment = .Center
         
         addSubview(indoorLocationView)
         addSubview(availableDevicesLabel)
+        addSubview(endGestureButton)
         addSubview(gestureNameLabel)
         
         indoorLocationView.setEdgesEqualToSuperview(cursorLayoutMargins)
         
+        endGestureButton.setLeadingToSuperview()
+        endGestureButton.setTrailingToSuperview()
+        endGestureButton.setBottomToSuperview()
+        endGestureButton.setHeightEqual(60)
+        
         availableDevicesLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         availableDevicesLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
-        availableDevicesLabel.setBottomToSuperview(constant: -cursorLayoutMargins.bottom)
+        constraint(availableDevicesLabel, .Bottom, .Equal, endGestureButton, .Top, constant: -cursorLayoutMargins.top)
         
         gestureNameLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         gestureNameLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
@@ -48,10 +58,11 @@ class LocationView: UIView {
     func displayAvailableDevices(availableDevices: [ControllableDevice]) {
         availableDevicesLabel.text = availableDevices.map({ $0.name }).joinWithSeparator(", ")
         availableDevicesLabel.hidden = availableDevices.count == 0
+        endGestureButton.hidden = availableDevices.count == 0
     }
-
+    
     func showReadyForGesture() {
-        backgroundColor = UIColor(red: 182/255, green: 255/255, blue: 170/255, alpha: 1)
+        backgroundColor = UIColor(red: 207/255, green: 247/255, blue: 213/255, alpha: 1)
     }
     
     func showNotReadyForGesture() {

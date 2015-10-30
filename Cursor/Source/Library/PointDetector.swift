@@ -24,6 +24,7 @@ class PointDetector {
     
     func beginDetecting(handler: (Void -> Void)) {
         guard !isDetecting else { return }
+        isDetecting = true
         pointDetectedHandler = handler
         motionManager.deviceMotionUpdateInterval = 0.05
         motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) { [weak self] data, error in
@@ -36,6 +37,7 @@ class PointDetector {
         guard isDetecting else { return }
         pointDetectedHandler = nil
         motionManager.stopDeviceMotionUpdates()
+        isDetecting = false
     }
     
     private func didUpdateMotionData(data: CMDeviceMotion) {

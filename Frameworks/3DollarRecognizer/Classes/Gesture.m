@@ -21,12 +21,12 @@
 		gestureTrace = [[Matrix alloc] initMatrixWithRows:maxSamples andCols:3];
 		[gestureTrace retain];
 
-		self,gestureAdded = [NSDate date];
+		self.gestureAdded = [NSDate date];
 		self.gestureID = aName;
 		self.databaseID = -1;
-		NSLog(@"Gesture '%@' initialized", self.gestureID);
-		NSLog(@"gestureTrace rows: %d,cols: %d", self.gestureTrace.rows,self.gestureTrace.cols);
-	}	
+//		NSLog(@"Gesture '%@' initialized", self.gestureID);
+//		NSLog(@"gestureTrace rows: %d,cols: %d", self.gestureTrace.rows,self.gestureTrace.cols);
+	}
 	return self;
 }
 - (id) initWithName: (NSString*) aName databaseID: (uint) aDatabaseID creationDate: (NSDate*) date  andTrace:(Matrix *) trace;
@@ -37,7 +37,7 @@
 		gestureTrace = trace;
 		[gestureTrace retain];
 		
-		self,gestureAdded = date;
+		self.gestureAdded = date;
 		self.gestureID = aName;
 		self.databaseID = -1;
 

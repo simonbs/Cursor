@@ -26,6 +26,9 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     private let pointDetector = PointDetector()
     private var isDelayingGestureFromPoint = false
     private var delayGestureFromPointTimer: NSTimer?
+    private var pointEndsGestureTimer: NSTimer?
+    
+    private var pointEndsGesture = false
     
     var contentView: LocationView {
         return view as! LocationView
@@ -101,6 +104,14 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
                 } else {
                     self.contentView.gestureNameLabel.text = localize("NO_GESTURE")
                 }
+
+                UIView.animate(animations: {
+                    self.contentView.gestureNameLabel.alpha = 1
+                })
+                
+                UIView.animate(delay: 3, animations: {
+                    self.contentView.gestureNameLabel.alpha = 0
+                })
                 
                 self.beginPointDetection()
             }
@@ -127,6 +138,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
 
     func recorderForcedStop(sender: AnyObject!) {
         print("Recording was force stopped")
+        pointEndsGesture = false
         gestureRecorder = nil
         contentView.showDefault()
         beginPointDetection()
@@ -199,8 +211,18 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     private func didDetectPoint() {
         guard !isDelayingGestureFromPoint else { return }
+        if pointEndsGesture {
+            print("Did detect ending point")
+            pointEndsGesture = false
+            endPointDetection()
+            endPerformingGesture()
+            return
+        }
+        
         guard availableDevices.count > 0 else { return }
-        print("Did detect point")
+        
+        print("Did detect beginning point")
+        
         contentView.showPointDetected()
         devicesPointedAt = availableDevices
         endPointDetection()
@@ -212,5 +234,11 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         print("Did delay gesture from point")
         isDelayingGestureFromPoint = false
         startPerformingGesture()
+        pointEndsGestureTimer = .scheduledTimerWithTimeInterval(1, target: self, selector: "pointEndsGestureTimerTriggered:", userInfo: nil, repeats: false)
+    }
+    
+    dynamic private func pointEndsGestureTimerTriggered(timer: NSTimer) {
+        beginPointDetection()
+        pointEndsGesture = true
     }
 }

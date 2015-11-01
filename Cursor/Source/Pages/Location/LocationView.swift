@@ -58,14 +58,17 @@ class LocationView: UIView {
     func displayAvailableDevices(availableDevices: [ControllableDevice]) {
         availableDevicesLabel.text = availableDevices.map({ $0.name }).joinWithSeparator(", ")
         availableDevicesLabel.hidden = availableDevices.count == 0
-        endGestureButton.hidden = availableDevices.count == 0
+    }
+    
+    func showPointDetected() {
+        backgroundColor = UIColor(red: 255/255, green: 227/255, blue: 172/255, alpha: 1)
     }
     
     func showReadyForGesture() {
         backgroundColor = UIColor(red: 207/255, green: 247/255, blue: 213/255, alpha: 1)
     }
     
-    func showNotReadyForGesture() {
+    func showDefault() {
         backgroundColor = .whiteColor()
     }
 }

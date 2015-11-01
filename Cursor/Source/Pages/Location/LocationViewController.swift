@@ -36,8 +36,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         super.init(nibName: nil, bundle: nil)
         title = location.name
         indoorManager.delegate = self
-//        indoorManager.startIndoorLocation(location)
-        gestureRecorder = GestureRecorder(nameForGesture: "RecordedGesture", andDelegate: self)
+        indoorManager.startIndoorLocation(location)
         beginPointDetection()
     }
 
@@ -58,9 +57,9 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        contentView.indoorLocationView.rotateOnPositionUpdate = true
-//        contentView.indoorLocationView.drawLocation(location)
-//        reloadControllableDevices()
+        contentView.indoorLocationView.rotateOnPositionUpdate = true
+        contentView.indoorLocationView.drawLocation(location)
+        reloadControllableDevices()
         
         contentView.endGestureButton.addTarget(self, action: "endPerformingGesture", forControlEvents: .TouchUpInside)
         
@@ -70,8 +69,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-//        contentView.indoorLocationView.drawLocation(location)
-//        redrawControllableDevices()
+        contentView.indoorLocationView.drawLocation(location)
+        redrawControllableDevices()
     }
     
     override func canBecomeFirstResponder() -> Bool {
@@ -80,19 +79,20 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     func startPerformingGesture() {
         contentView.showReadyForGesture()
-        devicesPointedAt = availableDevices
+        gestureRecorder = GestureRecorder(nameForGesture: "RecordedGesture", andDelegate: self)
         gestureRecorder?.startRecording()
         contentView.endGestureButton.hidden = false
     }
     
     func endPerformingGesture() {
         guard let recorder = gestureRecorder where recorder.isRecording else { return }
-        contentView.showNotReadyForGesture()
+        contentView.showDefault()
         contentView.endGestureButton.hidden = true
         NSOperationQueue().addOperationWithBlock {
             self.gestureRecorder?.stopRecording()
             let knownGestures = GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject]
             let gesture = self.recognizer.recognizeGesture(self.gestureRecorder?.gesture, fromGestures: knownGestures)
+            self.gestureRecorder = nil
             
             NSOperationQueue.mainQueue().addOperationWithBlock {
                 if gesture != nil {
@@ -105,11 +105,6 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
                 self.beginPointDetection()
             }
         }
-    }
-    
-    func cancelPerformingGesture() {
-        contentView.showNotReadyForGesture()
-        gestureRecorder?.stopRecording()
     }
     
     private func flipDeviceSwitches() {
@@ -132,7 +127,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
 
     func recorderForcedStop(sender: AnyObject!) {
         print("Recording was force stopped")
-        contentView.showNotReadyForGesture()
+        gestureRecorder = nil
+        contentView.showDefault()
         beginPointDetection()
     }
     
@@ -203,7 +199,10 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     private func didDetectPoint() {
         guard !isDelayingGestureFromPoint else { return }
+        guard availableDevices.count > 0 else { return }
         print("Did detect point")
+        contentView.showPointDetected()
+        devicesPointedAt = availableDevices
         endPointDetection()
         isDelayingGestureFromPoint = true
         delayGestureFromPointTimer = .scheduledTimerWithTimeInterval(1, target: self, selector: "didDelayGestureFromPoint:", userInfo: nil, repeats: false)

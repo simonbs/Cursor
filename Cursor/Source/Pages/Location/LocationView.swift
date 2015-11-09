@@ -15,10 +15,7 @@ class LocationView: UIView {
     let gestureNameLabel = UILabel()
     
     let loggingButton = UIButton(type: .System)
-    private var isLogging = false
-    var didStartLogging: (Void -> Void)?
-    var didStopLogging: (Void -> Void)?
-    
+
     init() {
         super.init(frame: CGRectZero)
         
@@ -29,8 +26,6 @@ class LocationView: UIView {
         availableDevicesLabel.hidden = true
         
         gestureNameLabel.textAlignment = .Center
-        
-        loggingButton.addTarget(self, action: "loggingButtonPressed:", forControlEvents: .TouchUpInside)
         
         addSubview(indoorLocationView)
         addSubview(availableDevicesLabel)
@@ -74,15 +69,5 @@ class LocationView: UIView {
     
     func showDefault() {
         backgroundColor = .whiteColor()
-    }
-    
-    dynamic private func loggingButtonPressed(sender: UIButton) {
-        isLogging = !isLogging
-        loggingButton.setTitle(isLogging ? "Stop logging" : "Start logging", forState: .Normal)
-        if isLogging {
-            didStartLogging?()
-        } else {
-            didStopLogging?()
-        }
     }
 }

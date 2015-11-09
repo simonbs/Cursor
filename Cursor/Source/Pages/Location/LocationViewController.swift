@@ -67,9 +67,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         contentView.indoorLocationView.rotateOnPositionUpdate = true
         contentView.indoorLocationView.drawLocation(location)
         reloadControllableDevices()
-        
-        contentView.didStartLogging = { [weak self] in self?.logger.startLogging([ "Date", "X", "Y" ]) }
-        contentView.didStopLogging = { [weak self] in self?.logger.stopLogging() }
+
+        contentView.loggingButton.addTarget(self, action: "loggingButtonPressed:", forControlEvents: .TouchUpInside)
         
         contentView.constraintToLayoutSupport(contentView.gestureNameLabel, .Top, .Equal, topLayoutGuide, .Bottom, constant: contentView.cursorLayoutMargins.top)
     }
@@ -83,6 +82,20 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     override func canBecomeFirstResponder() -> Bool {
         return true
+    }
+    
+    dynamic private func loggingButtonPressed(sender: UIButton) {
+        if logger.isLogging {
+            logger.stopLogging()
+        } else {
+            logger.startLogging([
+                "Date",
+                "X",
+                "Y"
+            ])
+        }
+        
+        contentView.loggingButton.setTitle(logger.isLogging ? "Stop logging" : "Start logging", forState: .Normal)
     }
     
     func startPerformingGesture() {

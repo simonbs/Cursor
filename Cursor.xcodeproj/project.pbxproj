@@ -134,6 +134,7 @@
 		72F911781BC9553300A0DED8 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911711BC9553300A0DED8 /* LocationView.swift */; };
 		72F911791BC9553300A0DED8 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911721BC9553300A0DED8 /* LocationViewController.swift */; };
 		72F9117B1BC9553300A0DED8 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911751BC9553300A0DED8 /* LocationsViewController.swift */; };
+		72F92F701BF0B04E001DC13B /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F92F6F1BF0B04E001DC13B /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -343,6 +344,7 @@
 		72F911711BC9553300A0DED8 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		72F911721BC9553300A0DED8 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		72F911751BC9553300A0DED8 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		72F92F6F1BF0B04E001DC13B /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +505,7 @@
 			children = (
 				729D4BB11BE224010072B01B /* PointDetector.swift */,
 				7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */,
+				72F92F6F1BF0B04E001DC13B /* Logger.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 				7218A4451BD627EA00199861 /* GesturesViewController.swift in Sources */,
 				686ED5B41BD53F730096BC1E /* IFChoiceTableViewController.m in Sources */,
 				686ED5BB1BD53F730096BC1E /* IFTemporaryModel.m in Sources */,
+				72F92F701BF0B04E001DC13B /* Logger.swift in Sources */,
 				72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */,
 				72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */,
 				72F911771BC9553300A0DED8 /* CursorViewController.swift in Sources */,

@@ -12,8 +12,12 @@ import UIKit
 class LocationView: UIView {
     let indoorLocationView = ESTIndoorLocationView()
     let availableDevicesLabel = UILabel()
-    let endGestureButton = UIButton(type: .System)
     let gestureNameLabel = UILabel()
+    
+    let loggingButton = UIButton(type: .System)
+    private var isLogging = false
+    var didStartLogging: (Void -> Void)?
+    var didStopLogging: (Void -> Void)?
     
     init() {
         super.init(frame: CGRectZero)
@@ -24,26 +28,26 @@ class LocationView: UIView {
         availableDevicesLabel.textAlignment = .Center
         availableDevicesLabel.hidden = true
         
-        endGestureButton.setTitle(localize("END_GESTURE"), forState: .Normal)
-        endGestureButton.hidden = true
-        
         gestureNameLabel.textAlignment = .Center
+        
+        loggingButton.addTarget(self, action: "loggingButtonPressed:", forControlEvents: .TouchUpInside)
         
         addSubview(indoorLocationView)
         addSubview(availableDevicesLabel)
-        addSubview(endGestureButton)
         addSubview(gestureNameLabel)
+        addSubview(loggingButton)
+        
+        loggingButton.setTitle("Start logging", forState: .Normal)
+        loggingButton.setLeadingToSuperview()
+        loggingButton.setTrailingToSuperview()
+        loggingButton.setHeightEqual(60)
+        constraint(loggingButton, .Bottom, .Equal, availableDevicesLabel, .Top)
         
         indoorLocationView.setEdgesEqualToSuperview(cursorLayoutMargins)
         
-        endGestureButton.setLeadingToSuperview()
-        endGestureButton.setTrailingToSuperview()
-        endGestureButton.setBottomToSuperview()
-        endGestureButton.setHeightEqual(60)
-        
         availableDevicesLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         availableDevicesLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
-        constraint(availableDevicesLabel, .Bottom, .Equal, endGestureButton, .Top, constant: -cursorLayoutMargins.top)
+        availableDevicesLabel.setBottomToSuperview()
         
         gestureNameLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         gestureNameLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
@@ -70,5 +74,15 @@ class LocationView: UIView {
     
     func showDefault() {
         backgroundColor = .whiteColor()
+    }
+    
+    dynamic private func loggingButtonPressed(sender: UIButton) {
+        isLogging = !isLogging
+        loggingButton.setTitle(isLogging ? "Stop logging" : "Start logging", forState: .Normal)
+        if isLogging {
+            didStartLogging?()
+        } else {
+            didStopLogging?()
+        }
     }
 }

@@ -30,6 +30,9 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     
     private var pointEndsGesture = false
     
+    private let logger = Logger()
+    private let loggingDateFormatter = NSDateFormatter()
+    
     var contentView: LocationView {
         return view as! LocationView
     }
@@ -41,6 +44,7 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         indoorManager.delegate = self
         indoorManager.startIndoorLocation(location)
         beginPointDetection()
+        loggingDateFormatter.dateFormat = "yyyy-MM-dd HH.mm.ss"
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -64,7 +68,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         contentView.indoorLocationView.drawLocation(location)
         reloadControllableDevices()
         
-        contentView.endGestureButton.addTarget(self, action: "endPerformingGesture", forControlEvents: .TouchUpInside)
+        contentView.didStartLogging = { [weak self] in self?.logger.startLogging([ "Date", "X", "Y" ]) }
+        contentView.didStopLogging = { [weak self] in self?.logger.stopLogging() }
         
         contentView.constraintToLayoutSupport(contentView.gestureNameLabel, .Top, .Equal, topLayoutGuide, .Bottom, constant: contentView.cursorLayoutMargins.top)
     }
@@ -84,13 +89,11 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         contentView.showReadyForGesture()
         gestureRecorder = GestureRecorder(nameForGesture: "RecordedGesture", andDelegate: self)
         gestureRecorder?.startRecording()
-        contentView.endGestureButton.hidden = false
     }
     
     func endPerformingGesture() {
         guard let recorder = gestureRecorder where recorder.isRecording else { return }
         contentView.showDefault()
-        contentView.endGestureButton.hidden = true
         NSOperationQueue().addOperationWithBlock {
             self.gestureRecorder?.stopRecording()
             let knownGestures = GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject]
@@ -134,6 +137,11 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         currentPosition = position
         contentView.indoorLocationView.updatePosition(position)
         availableDevices = controllableDevicesInLineOfSight()
+        logger.log([
+            loggingDateFormatter.stringFromDate(NSDate()),
+            String(position.x),
+            String(position.y)
+        ])
     }
 
     func recorderForcedStop(sender: AnyObject!) {

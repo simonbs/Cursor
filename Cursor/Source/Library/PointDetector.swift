@@ -56,7 +56,7 @@ class PointDetector {
         }
     }
     
-    // Check whether or not a data sample is a pointing gesture
+    // Check whether tor not a data sample is a pointing gesture
     private func isMotionDataAPointingGesture(data: CMDeviceMotion) -> Bool {
         if dataFitsWithinThreshold(data, threshold: tableThreshold) {
             return false

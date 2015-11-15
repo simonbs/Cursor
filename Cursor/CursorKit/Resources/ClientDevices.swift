@@ -11,6 +11,7 @@ import Foundation
 extension Client {
     public func devices(completion: (FailableOf<[ControllableDevice]> -> Void)) -> Request? {
         return request(.GET, Cursor.Devices,
+            rootElementPath: "devices",
             mapFunc: ControllableDevice.init,
             completion: completion)
     }

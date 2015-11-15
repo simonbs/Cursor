@@ -7,7 +7,7 @@
 //
 
 public class Client {
-    private let baseUrl = NSURL(string: "http://ironman-server.herokuapp.com/")!
+    private let baseUrl = NSURL(string: "http://abc.ngrok.com:5000/")!
 
     public init() { }
 

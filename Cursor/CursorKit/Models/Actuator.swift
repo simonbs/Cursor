@@ -1,5 +1,5 @@
 //
-//  ControllableDevice.swift
+//  Actuator.swift
 //  Cursor
 //
 //  Created by Simon Støvring on 03/10/2015.
@@ -10,7 +10,7 @@ import Foundation
 
 public typealias Action = String
 
-public struct ControllableDevice {
+public struct Actuator {
     public enum State: String {
         case On = "on"
         case Off = "off"

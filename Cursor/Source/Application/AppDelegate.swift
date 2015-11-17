@@ -11,6 +11,8 @@ import UIKit
 private let EstimoteAppID = "cursor-mxo"
 private let EstimoteAppToken = "909fbd6c816f629b8057e11c1724817f"
 
+let client = Client()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -19,8 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ESTConfig.setupAppID(EstimoteAppID, andAppToken: EstimoteAppToken)
         GestureDB.sharedInstance()
         
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            NavigationController(rootViewController: LocationsViewController()),
+            NavigationController(rootViewController: ActionsViewController())
+        ]
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = RootViewController()
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         return true
     }

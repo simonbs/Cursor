@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension ControllableDevice.State {
+extension Actuator.State {
     var color: UIColor {
         switch self {
         case .On: return .greenColor()

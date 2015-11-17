@@ -15,14 +15,10 @@ class LocationsViewController: UITableViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        title = localize("LOCATIONS_TITLE")        
+        title = localize("LOCATIONS_TITLE")
+        tabBarItem.image = UIImage(named: "home")
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addLocation")
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editLocations")
-        toolbarItems = [
-            UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(title: localize("GESTURES"), style: .Plain, target: self, action: "presentGestures"),
-            UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        ]
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,8 +28,6 @@ class LocationsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.toolbarHidden = false
-        
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "fetchLocations", forControlEvents: .ValueChanged)
         
@@ -42,24 +36,17 @@ class LocationsViewController: UITableViewController {
         data.didSelect = { [weak self] in self?.didSelectLocation($0) }
         
         fetchLocations()
+        
+        client.updateDevice(1, action: "turnOn") { result in
+            print(result.error)
+        }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setToolbarHidden(false, animated: true)
+    dynamic private func presentActions() {
+        navigationController?.pushViewController(ActionsViewController(), animated: true)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setToolbarHidden(true, animated: true)
-    }
-    
-    func presentGestures() {
-        let gesturesController = GesturesViewController()
-        navigationController?.pushViewController(gesturesController, animated: true)
-    }
-    
-    func addLocation() {
+    dynamic private func addLocation() {
 //        let locationBuilder = ESTLocationBuilder()
 //        locationBuilder.setLocationBoundaryPoints([
 //            ESTPoint(x: 0.cmToMeter(), y: 0.cmToMeter()),
@@ -73,9 +60,9 @@ class LocationsViewController: UITableViewController {
         let locationBuilder = ESTLocationBuilder()
         locationBuilder.setLocationBoundaryPoints([
             ESTPoint(x: 0.cmToMeter(), y: 0.cmToMeter()),
-            ESTPoint(x: 900.cmToMeter(), y: 0.cmToMeter()),
-            ESTPoint(x: 900.cmToMeter(), y: 740.cmToMeter()),
-            ESTPoint(x: 0.cmToMeter(), y: 740.cmToMeter())
+            ESTPoint(x: 1790.cmToMeter(), y: 0.cmToMeter()),
+            ESTPoint(x: 1790.cmToMeter(), y: 1790.cmToMeter()),
+            ESTPoint(x: 0.cmToMeter(), y: 1790.cmToMeter())
         ])
         
         let ice3 = "dec18deac0c5"
@@ -83,6 +70,7 @@ class LocationsViewController: UITableViewController {
         let ice2 = "d470d26d33f3"
         let mint3 = "e6d39dee79c9"
         
+        // Gros stue
 //        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 422.cmToMeter(), fromSide: .RightSide)
 //        locationBuilder.addBeaconIdentifiedByMac(ice3, atBoundarySegmentIndex: 3, inDistance: 222.cmToMeter(), fromSide: .RightSide)
 //        locationBuilder.addBeaconIdentifiedByMac(mint3, atBoundarySegmentIndex: 4, inDistance: 335.cmToMeter(), fromSide: .LeftSide)
@@ -90,12 +78,21 @@ class LocationsViewController: UITableViewController {
 //        locationBuilder.setLocationOrientation(130)
 //        locationBuilder.setLocationName("Gros Stue")
         
-        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 450.cmToMeter(), fromSide: .RightSide)
-        locationBuilder.addBeaconIdentifiedByMac(mint3, atBoundarySegmentIndex: 1, inDistance: 370.cmToMeter(), fromSide: .RightSide)
-        locationBuilder.addBeaconIdentifiedByMac(ice2, atBoundarySegmentIndex: 2, inDistance: 450.cmToMeter(), fromSide: .LeftSide)
-        locationBuilder.addBeaconIdentifiedByMac(ice3, atBoundarySegmentIndex: 3, inDistance: 370.cmToMeter(), fromSide: .LeftSide)
-        locationBuilder.setLocationOrientation(268)
-        locationBuilder.setLocationName("0.2.12")
+        // Outside
+        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 940.cmToMeter(), fromSide: .RightSide)
+        locationBuilder.addBeaconIdentifiedByMac(mint3, atBoundarySegmentIndex: 1, inDistance: 850.cmToMeter(), fromSide: .RightSide)
+        locationBuilder.addBeaconIdentifiedByMac(ice2, atBoundarySegmentIndex: 2, inDistance: 940.cmToMeter(), fromSide: .RightSide)
+        locationBuilder.addBeaconIdentifiedByMac(ice3, atBoundarySegmentIndex: 3, inDistance: 850.cmToMeter(), fromSide: .RightSide)
+        locationBuilder.setLocationOrientation(219)
+        locationBuilder.setLocationName("Outside")
+        
+        // Auditorium
+//        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 400.cmToMeter(), fromSide: .RightSide)
+//        locationBuilder.addBeaconIdentifiedByMac(mint3, atBoundarySegmentIndex: 1, inDistance: 400.cmToMeter(), fromSide: .RightSide)
+//        locationBuilder.addBeaconIdentifiedByMac(ice2, atBoundarySegmentIndex: 2, inDistance: 400.cmToMeter(), fromSide: .LeftSide)
+//        locationBuilder.addBeaconIdentifiedByMac(ice3, atBoundarySegmentIndex: 3, inDistance: 400.cmToMeter(), fromSide: .LeftSide)
+//        locationBuilder.setLocationOrientation(138)
+//        locationBuilder.setLocationName("Auditorium")
         
         let location = locationBuilder.build()
         indoorManager.addNewLocation(location, success: { [weak self] newLocation in
@@ -110,14 +107,14 @@ class LocationsViewController: UITableViewController {
         }
     }
     
-    func editLocations() {
+    dynamic private func editLocations() {
         tableView.setEditing(!tableView.editing, animated: true)
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(barButtonSystemItem: tableView.editing ? .Done : .Edit, target: self, action: "editLocations")
         ]
     }
     
-    func fetchLocations() {
+    dynamic private func fetchLocations() {
         refreshControl?.beginRefreshing()
         indoorManager.fetchUserLocationsWithSuccess({ [weak self] locations in
             guard let locations = locations as? [ESTLocation] else {

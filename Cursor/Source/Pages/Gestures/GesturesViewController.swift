@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class GesturesViewController: UITableViewController, UIAlertViewDelegate {
-    let data = GesturesTableViewData()
+    private let data = GesturesTableViewData()
+    var didSelectGesture: (TrainedGesture -> Void)?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -18,6 +19,7 @@ class GesturesViewController: UITableViewController, UIAlertViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addGesture")
         data.attachToTableView(tableView)
         data.deleteAction = { [weak self] in self?.deleteGesture($0) }
+        data.didSelect = { [weak self] in self?.didSelect($0) }
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didAddGesture:", name: GestureTrainingViewController.DidSaveGestureNotification, object: nil)
     }
 
@@ -37,7 +39,7 @@ class GesturesViewController: UITableViewController, UIAlertViewDelegate {
         refresh()
     }
     
-    func refresh() {
+    dynamic private func refresh() {
         let gestureDatabase = GestureDB.sharedInstance()
         NSOperationQueue().addOperationWithBlock {
             gestureDatabase.readGesturesFromDatabase()
@@ -50,7 +52,7 @@ class GesturesViewController: UITableViewController, UIAlertViewDelegate {
         }
     }
     
-    func addGesture() {
+    dynamic private func addGesture() {
         let alertView = UIAlertView(
             title: localize("ADD_GESTURE"),
             message: localize("ENTER_GESTURE_NAME"),
@@ -62,13 +64,13 @@ class GesturesViewController: UITableViewController, UIAlertViewDelegate {
         alertView.show()
     }
     
-    func deleteGesture(indexPath: NSIndexPath) {
+    private func deleteGesture(indexPath: NSIndexPath) {
         let gestureDatabase = GestureDB.sharedInstance()
         data.gestures[safe: indexPath.row]?.name => gestureDatabase.deleteGesturesWithNames
         data.deleteCell(indexPath.row)
     }
     
-    func presentGestureTraining(gestureName: String) {
+    private func presentGestureTraining(gestureName: String) {
         let gestureTrainingController = GestureTrainingViewController(gestureName: gestureName)
         navigationController?.pushViewController(gestureTrainingController, animated: true)
     }
@@ -79,7 +81,11 @@ class GesturesViewController: UITableViewController, UIAlertViewDelegate {
         }
     }
     
-    func didAddGesture(notification: NSNotification) {
+    dynamic private func didAddGesture(notification: NSNotification) {
         refresh()
+    }
+    
+    private func didSelect(indexPath: NSIndexPath) {
+        data.gestures[safe: indexPath.row] => didSelectGesture
     }
 }

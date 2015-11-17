@@ -61,7 +61,7 @@
 		724928851BCEAC9F009483F5 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724928791BCEAC9F009483F5 /* Client.swift */; };
 		724928861BCEAC9F009483F5 /* CursorKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249287A1BCEAC9F009483F5 /* CursorKitError.swift */; };
 		724928871BCEAC9F009483F5 /* Failable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249287B1BCEAC9F009483F5 /* Failable.swift */; };
-		724928881BCEAC9F009483F5 /* ControllableDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249287D1BCEAC9F009483F5 /* ControllableDevice.swift */; };
+		724928881BCEAC9F009483F5 /* Actuator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249287D1BCEAC9F009483F5 /* Actuator.swift */; };
 		724928891BCEAC9F009483F5 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7249287E1BCEAC9F009483F5 /* Coordinate.swift */; };
 		7249288A1BCEAC9F009483F5 /* ClientDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724928801BCEAC9F009483F5 /* ClientDevices.swift */; };
 		7249288B1BCEAC9F009483F5 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724928811BCEAC9F009483F5 /* Resources.swift */; };
@@ -114,6 +114,10 @@
 		72B800C41BC91DF800E761FE /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C31BC91DF800E761FE /* MediaPlayer.framework */; };
 		72B800C61BC91DFE00E761FE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B800C51BC91DFE00E761FE /* MessageUI.framework */; };
 		72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C7CD351BCFEF4C0084B066 /* CursorKit.swift */; };
+		72CA66CA1BFB084800A21983 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA66C91BFB084800A21983 /* ActionsViewController.swift */; };
+		72CA66CC1BFB085000A21983 /* ActionsTableViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA66CB1BFB085000A21983 /* ActionsTableViewData.swift */; };
+		72CA66CE1BFB097700A21983 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA66CD1BFB097700A21983 /* NavigationController.swift */; };
+		72CA66D51BFB137700A21983 /* GestureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CA66D41BFB137700A21983 /* GestureStore.swift */; };
 		72CAE6D21BBFAED100F01E09 /* CompassRoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */; };
 		72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D51BBFB74900F01E09 /* CompassView.swift */; };
 		72CAE6D81BBFB89400F01E09 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CAE6D71BBFB89400F01E09 /* Operators.swift */; };
@@ -128,9 +132,6 @@
 		72EBEAC41BD64B2200142466 /* TrainedGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72EBEAC31BD64B2200142466 /* TrainedGesture.swift */; };
 		72F33B291BCF855B0092C363 /* DeviceObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F33B281BCF855B0092C363 /* DeviceObjectView.swift */; };
 		72F911651BC93BD700A0DED8 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911641BC93BD700A0DED8 /* Dispatch.swift */; };
-		72F9116B1BC9552A00A0DED8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116A1BC9552A00A0DED8 /* RootViewController.swift */; };
-		72F911761BC9553300A0DED8 /* CursorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116E1BC9553300A0DED8 /* CursorView.swift */; };
-		72F911771BC9553300A0DED8 /* CursorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F9116F1BC9553300A0DED8 /* CursorViewController.swift */; };
 		72F911781BC9553300A0DED8 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911711BC9553300A0DED8 /* LocationView.swift */; };
 		72F911791BC9553300A0DED8 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911721BC9553300A0DED8 /* LocationViewController.swift */; };
 		72F9117B1BC9553300A0DED8 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F911751BC9553300A0DED8 /* LocationsViewController.swift */; };
@@ -235,7 +236,7 @@
 		724928791BCEAC9F009483F5 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		7249287A1BCEAC9F009483F5 /* CursorKitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorKitError.swift; sourceTree = "<group>"; };
 		7249287B1BCEAC9F009483F5 /* Failable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Failable.swift; sourceTree = "<group>"; };
-		7249287D1BCEAC9F009483F5 /* ControllableDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllableDevice.swift; sourceTree = "<group>"; };
+		7249287D1BCEAC9F009483F5 /* Actuator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actuator.swift; sourceTree = "<group>"; };
 		7249287E1BCEAC9F009483F5 /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		724928801BCEAC9F009483F5 /* ClientDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientDevices.swift; sourceTree = "<group>"; };
 		724928811BCEAC9F009483F5 /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
@@ -324,6 +325,10 @@
 		72B800C31BC91DF800E761FE /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		72B800C51BC91DFE00E761FE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		72C7CD351BCFEF4C0084B066 /* CursorKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorKit.swift; sourceTree = "<group>"; };
+		72CA66C91BFB084800A21983 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
+		72CA66CB1BFB085000A21983 /* ActionsTableViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsTableViewData.swift; sourceTree = "<group>"; };
+		72CA66CD1BFB097700A21983 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		72CA66D41BFB137700A21983 /* GestureStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureStore.swift; sourceTree = "<group>"; };
 		72CAE6D11BBFAED100F01E09 /* CompassRoseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassRoseView.swift; sourceTree = "<group>"; };
 		72CAE6D51BBFB74900F01E09 /* CompassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		72CAE6D71BBFB89400F01E09 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
@@ -338,9 +343,6 @@
 		72EBEAC31BD64B2200142466 /* TrainedGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainedGesture.swift; sourceTree = "<group>"; };
 		72F33B281BCF855B0092C363 /* DeviceObjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceObjectView.swift; sourceTree = "<group>"; };
 		72F911641BC93BD700A0DED8 /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
-		72F9116A1BC9552A00A0DED8 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		72F9116E1BC9553300A0DED8 /* CursorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorView.swift; sourceTree = "<group>"; };
-		72F9116F1BC9553300A0DED8 /* CursorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorViewController.swift; sourceTree = "<group>"; };
 		72F911711BC9553300A0DED8 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		72F911721BC9553300A0DED8 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		72F911751BC9553300A0DED8 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
@@ -495,7 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				722B78ED1BBD369600AD490E /* AppDelegate.swift */,
-				72F9116A1BC9552A00A0DED8 /* RootViewController.swift */,
+				72CA66CD1BFB097700A21983 /* NavigationController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -506,6 +508,7 @@
 				729D4BB11BE224010072B01B /* PointDetector.swift */,
 				7220F1331BC2A41200FC3268 /* MotionRecognizer.swift */,
 				72F92F6F1BF0B04E001DC13B /* Logger.swift */,
+				72CA66D41BFB137700A21983 /* GestureStore.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -619,7 +622,7 @@
 		7249287C1BCEAC9F009483F5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7249287D1BCEAC9F009483F5 /* ControllableDevice.swift */,
+				7249287D1BCEAC9F009483F5 /* Actuator.swift */,
 				7249287E1BCEAC9F009483F5 /* Coordinate.swift */,
 			);
 			path = Models;
@@ -784,6 +787,15 @@
 			name = System;
 			sourceTree = "<group>";
 		};
+		72CA66C81BFB07F600A21983 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				72CA66CB1BFB085000A21983 /* ActionsTableViewData.swift */,
+				72CA66C91BFB084800A21983 /* ActionsViewController.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		72CAE6E11BBFD15000F01E09 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,22 +808,13 @@
 		72F9116C1BC9553300A0DED8 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				72F9116D1BC9553300A0DED8 /* Cursor */,
-				72F911701BC9553300A0DED8 /* Location */,
 				72F911731BC9553300A0DED8 /* Locations */,
+				72F911701BC9553300A0DED8 /* Location */,
+				72CA66C81BFB07F600A21983 /* Actions */,
 				7218A4411BD627D600199861 /* Gestures */,
 				7218A43C1BD625AF00199861 /* GestureTraining */,
 			);
 			path = Pages;
-			sourceTree = "<group>";
-		};
-		72F9116D1BC9553300A0DED8 /* Cursor */ = {
-			isa = PBXGroup;
-			children = (
-				72F9116E1BC9553300A0DED8 /* CursorView.swift */,
-				72F9116F1BC9553300A0DED8 /* CursorViewController.swift */,
-			);
-			path = Cursor;
 			sourceTree = "<group>";
 		};
 		72F911701BC9553300A0DED8 /* Location */ = {
@@ -939,13 +942,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				686ED5BF1BD53F730096BC1E /* Matrix.m in Sources */,
-				724928881BCEAC9F009483F5 /* ControllableDevice.swift in Sources */,
+				724928881BCEAC9F009483F5 /* Actuator.swift in Sources */,
 				686ED5B61BD53F730096BC1E /* IFGenericTableViewController.m in Sources */,
 				7249284F1BCEAC77009483F5 /* Alamofire.swift in Sources */,
 				724928871BCEAC9F009483F5 /* Failable.swift in Sources */,
 				724928891BCEAC9F009483F5 /* Coordinate.swift in Sources */,
 				72CAE6EF1BBFE9D000F01E09 /* VisibilityIndicatorView.swift in Sources */,
-				72F9116B1BC9552A00A0DED8 /* RootViewController.swift in Sources */,
 				72CAE6D81BBFB89400F01E09 /* Operators.swift in Sources */,
 				686ED5B01BD53F730096BC1E /* GestureLibraryTableViewController.m in Sources */,
 				686ED5AD1BD53F730096BC1E /* FirstViewController.m in Sources */,
@@ -972,7 +974,10 @@
 				724928521BCEAC77009483F5 /* Manager.swift in Sources */,
 				72CAE6F11BBFFB3400F01E09 /* DevicesPlanView.swift in Sources */,
 				686ED5BA1BD53F730096BC1E /* IFSwitchCellController.m in Sources */,
+				72CA66D51BFB137700A21983 /* GestureStore.swift in Sources */,
+				72CA66CC1BFB085000A21983 /* ActionsTableViewData.swift in Sources */,
 				7249285D1BCEAC77009483F5 /* Robolayout.swift in Sources */,
+				72CA66CA1BFB084800A21983 /* ActionsViewController.swift in Sources */,
 				686ED5B31BD53F730096BC1E /* IFChoiceCellController.m in Sources */,
 				722B78F31BBD369600AD490E /* AppDelegate.swift in Sources */,
 				724928501BCEAC77009483F5 /* Download.swift in Sources */,
@@ -1002,7 +1007,6 @@
 				72F92F701BF0B04E001DC13B /* Logger.swift in Sources */,
 				72C7CD361BCFEF4C0084B066 /* CursorKit.swift in Sources */,
 				72CAE6D61BBFB74900F01E09 /* CompassView.swift in Sources */,
-				72F911771BC9553300A0DED8 /* CursorViewController.swift in Sources */,
 				686ED5BE1BD53F730096BC1E /* IFValueCellController.m in Sources */,
 				724928571BCEAC77009483F5 /* ResponseSerialization.swift in Sources */,
 				72CAE6E01BBFCAB100F01E09 /* Array.swift in Sources */,
@@ -1011,7 +1015,7 @@
 				686ED5B51BD53F730096BC1E /* IFControlTableViewCell.m in Sources */,
 				72CAE6DA1BBFB93400F01E09 /* Numeric.swift in Sources */,
 				72F911781BC9553300A0DED8 /* LocationView.swift in Sources */,
-				72F911761BC9553300A0DED8 /* CursorView.swift in Sources */,
+				72CA66CE1BFB097700A21983 /* NavigationController.swift in Sources */,
 				72CAE6ED1BBFDE6A00F01E09 /* DevicesGridView.swift in Sources */,
 				724928511BCEAC77009483F5 /* Error.swift in Sources */,
 				7220F1341BC2A41200FC3268 /* MotionRecognizer.swift in Sources */,

@@ -9,17 +9,16 @@
 import Foundation
 
 extension Client {
-    public func devices(completion: (FailableOf<[ControllableDevice]> -> Void)) -> Request? {
+    public func devices(completion: (FailableOf<[Actuator]> -> Void)) -> Request? {
         return request(.GET, Cursor.Devices,
             rootElementPath: "devices",
-            mapFunc: ControllableDevice.init,
+            mapFunc: Actuator.init,
             completion: completion)
     }
     
-    public func updateDevice(id: Int, action: Action, completion: (FailableOf<Void> -> Void)? = nil) -> Request? {
+    public func updateDevice(id: Int, action: Action, completion: (Failable -> Void)? = nil) -> Request? {
         return request(.POST, Cursor.UpdateDevice,
             params: [ "id": String(id), "action": action ],
-            mapFunc: { _ in return },
             completion: completion)
     }
 }

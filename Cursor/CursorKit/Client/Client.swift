@@ -7,7 +7,7 @@
 //
 
 public class Client {
-    private let baseUrl = NSURL(string: "http://abc.ngrok.com:5000/")!
+    private let baseUrl = NSURL(string: "http://34180550.ngrok.com")!
 
     public init() { }
 
@@ -45,8 +45,9 @@ public class Client {
         return request(method, url: url, params: params, mapFunc: mapFunc, completion: completion)
     }
     
-    internal func request<T>(method: Method, url: NSURL, params: [String: String]? = nil, mapFunc: (JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Request {
-        return Manager.sharedInstance.request(method, url, parameters: params, encoding: .URL).responseSwiftyJSON { request, response, json, error in
+    internal func request<T>(method: Method, url: NSURL, params: [String: AnyObject]? = nil, headers: [String: String]? = nil, mapFunc: (JSON -> T?), completion: (FailableOf<T> -> Void)? = nil) -> Request {
+        let encoding: ParameterEncoding = method == .GET ? .URL : .JSON
+        return Manager.sharedInstance.request(method, url, parameters: params, headers: headers, encoding: encoding).responseSwiftyJSON { [weak self] request, response, json, error in
             print(request.URL?.absoluteString)
             
             if let error = error {
@@ -55,25 +56,11 @@ public class Client {
             }
             
             guard json != JSON.null else {
-                let error = NSError(code: .NoJSONReceived, description: "No JSON response received.")
-                completion?(FailableOf(error))
-                return
-            }
-                    
-            if let lastFMErrorCode = json["error"].int {
-                let errorCode = ErrorCode(rawValue: lastFMErrorCode) ?? .UnknownError
-                let error = NSError(code: errorCode, description: json["message"].string)
-                completion?(FailableOf(error))
+                completion?(FailableOf(NSError(code: .NoJSONReceived, description: "No JSON response received.")))
                 return
             }
             
-            if let errorDict = json["error"].dictionary {
-                var errorCode: ErrorCode = .UnknownError
-                if let lastFMErrorCode = errorDict["code"]?.int {
-                    errorCode = ErrorCode(rawValue: lastFMErrorCode) ?? .UnknownError
-                }
-                
-                let error = NSError(code: errorCode, description: errorDict["message"]?.string)
+            if let error = self?.errorFromJSON(json) {
                 completion?(FailableOf(error))
                 return
             }
@@ -85,6 +72,36 @@ public class Client {
                 completion?(FailableOf(error))
             }
         }
+    }
+    
+    internal func request(method: Method, _ resource: Resource, params: [String: AnyObject]? = nil, headers: [String: String]? = nil, completion: (Failable -> Void)? = nil) -> Request? {
+        guard let url = createURL(resource) else { return nil }
+        return request(method, url: url, params: params, headers: headers, completion: completion)
+    }
+    
+    internal func request(method: Method, url: NSURL, params: [String: AnyObject]? = nil, headers: [String: String]? = nil, completion: (Failable -> Void)? = nil) -> Request {
+        let encoding: ParameterEncoding = method == .GET ? .URL : .JSON
+        return Manager.sharedInstance.request(method, url, parameters: params, headers: headers, encoding: encoding).responseSwiftyJSON { [weak self] request, response, json, error in
+            print(request.URL?.absoluteString)
+            
+            if let error = error {
+                completion?(Failable.Failure(error))
+                return
+            }
+            
+            if let error = self?.errorFromJSON(json) {
+                completion?(Failable.Failure(error))
+                return
+            }
+            
+            completion?(Failable.Success)
+        }
+    }
+    
+    // Subclasses may override this to provide an error from a JSON response.
+    // If nil is returned, the JSON response is assumed to be valid (i.e. no error)
+    func errorFromJSON(json: JSON) -> NSError? {
+        return nil
     }
     
     private func createURL(resource: Resource) -> NSURL? {

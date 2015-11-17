@@ -9,7 +9,7 @@
 import Foundation
 
 class LocationsTableViewData: NSObject, UITableViewDataSource, UITableViewDelegate {
-    private let cellIdentifier = "LocationCell"
+    private let cellIdentifier = "Cell"
     private weak var tableView: UITableView?
     private var privateLocations: [ESTLocation] = []
     var locations: [ESTLocation] {

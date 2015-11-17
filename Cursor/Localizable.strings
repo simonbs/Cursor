@@ -20,7 +20,9 @@
 "END_GESTURE" = "Tap to end gesture";
 "NO_GESTURE" = "No gesture";
 
-"GESTURES" = "Gestures";
+"ACTIONS" = "Actions";
+"REMOVE_GESTURE" = "Remove gesture";
+
 "ADD_GESTURE" = "Add Gesture";
 "ENTER_GESTURE_NAME" = "Enter name of the new gesture";
 "GESTURE_TRAINING_DESCRIPTION" = "Press and hold the below button and perform the gesture you want to add. Release the button when you have performed the gesture. Repeat this five to ten times.";

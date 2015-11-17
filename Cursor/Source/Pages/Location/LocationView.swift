@@ -54,7 +54,7 @@ class LocationView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func displayAvailableDevices(availableDevices: [ControllableDevice]) {
+    func displayAvailableDevices(availableDevices: [Actuator]) {
         availableDevicesLabel.text = availableDevices.map({ $0.name }).joinWithSeparator(", ")
         availableDevicesLabel.hidden = availableDevices.count == 0
     }

@@ -32,6 +32,8 @@
 		686ED5C11BD53F730096BC1E /* ThreeDollarGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		686ED5C21BD53F730096BC1E /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686ED5AA1BD53F730096BC1E /* TrainingViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		686ED5C51BD542C80096BC1E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */; };
+		68E2A9781C032CA600584936 /* GesturePerformanceTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E2A9771C032CA500584936 /* GesturePerformanceTestView.swift */; };
+		68E2A97A1C032CCB00584936 /* GesturePerformanceTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E2A9791C032CCB00584936 /* GesturePerformanceTestViewController.swift */; };
 		7218A43F1BD625AF00199861 /* GestureTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43D1BD625AF00199861 /* GestureTrainingView.swift */; };
 		7218A4401BD625AF00199861 /* GestureTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A43E1BD625AF00199861 /* GestureTrainingViewController.swift */; };
 		7218A4451BD627EA00199861 /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218A4441BD627EA00199861 /* GesturesViewController.swift */; };
@@ -205,6 +207,8 @@
 		686ED5A91BD53F730096BC1E /* ThreeDollarGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeDollarGestureRecognizer.m; path = Classes/ThreeDollarGestureRecognizer.m; sourceTree = "<group>"; };
 		686ED5AA1BD53F730096BC1E /* TrainingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainingViewController.m; path = Classes/TrainingViewController.m; sourceTree = "<group>"; };
 		686ED5C41BD542C80096BC1E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		68E2A9771C032CA500584936 /* GesturePerformanceTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePerformanceTestView.swift; sourceTree = "<group>"; };
+		68E2A9791C032CCB00584936 /* GesturePerformanceTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturePerformanceTestViewController.swift; sourceTree = "<group>"; };
 		7218A43D1BD625AF00199861 /* GestureTrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTrainingView.swift; sourceTree = "<group>"; };
 		7218A43E1BD625AF00199861 /* GestureTrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureTrainingViewController.swift; sourceTree = "<group>"; };
 		7218A4441BD627EA00199861 /* GesturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GesturesViewController.swift; sourceTree = "<group>"; };
@@ -431,6 +435,15 @@
 			);
 			name = 3DollarRecognizer;
 			path = Frameworks/3DollarRecognizer;
+			sourceTree = "<group>";
+		};
+		68E2A9761C032C8500584936 /* GesturePerformanceTest */ = {
+			isa = PBXGroup;
+			children = (
+				68E2A9771C032CA500584936 /* GesturePerformanceTestView.swift */,
+				68E2A9791C032CCB00584936 /* GesturePerformanceTestViewController.swift */,
+			);
+			name = GesturePerformanceTest;
 			sourceTree = "<group>";
 		};
 		7218A43C1BD625AF00199861 /* GestureTraining */ = {
@@ -808,6 +821,7 @@
 		72F9116C1BC9553300A0DED8 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				68E2A9761C032C8500584936 /* GesturePerformanceTest */,
 				72F911731BC9553300A0DED8 /* Locations */,
 				72F911701BC9553300A0DED8 /* Location */,
 				72CA66C81BFB07F600A21983 /* Actions */,
@@ -867,6 +881,7 @@
 				TargetAttributes = {
 					722B78D51BBD364500AD490E = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = Q2D3UPSQC3;
 					};
 				};
 			};
@@ -956,6 +971,7 @@
 				7249288A1BCEAC9F009483F5 /* ClientDevices.swift in Sources */,
 				686ED5B91BD53F730096BC1E /* IFPreferencesModel.m in Sources */,
 				686ED5C01BD53F730096BC1E /* Score.m in Sources */,
+				68E2A97A1C032CCB00584936 /* GesturePerformanceTestViewController.swift in Sources */,
 				686ED5C11BD53F730096BC1E /* ThreeDollarGestureRecognizer.m in Sources */,
 				72CAE6DE1BBFC3B300F01E09 /* CLLocationDirection.swift in Sources */,
 				724928841BCEAC9F009483F5 /* Alamofire+SwiftyJSON.swift in Sources */,
@@ -977,6 +993,7 @@
 				72CA66D51BFB137700A21983 /* GestureStore.swift in Sources */,
 				72CA66CC1BFB085000A21983 /* ActionsTableViewData.swift in Sources */,
 				7249285D1BCEAC77009483F5 /* Robolayout.swift in Sources */,
+				68E2A9781C032CA600584936 /* GesturePerformanceTestView.swift in Sources */,
 				72CA66CA1BFB084800A21983 /* ActionsViewController.swift in Sources */,
 				686ED5B31BD53F730096BC1E /* IFChoiceCellController.m in Sources */,
 				722B78F31BBD369600AD490E /* AppDelegate.swift in Sources */,

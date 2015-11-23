@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
             NavigationController(rootViewController: LocationsViewController()),
-            NavigationController(rootViewController: ActionsViewController())
+            NavigationController(rootViewController: ActionsViewController()),
+            NavigationController(rootViewController: GesturePerformanceTestViewController())
         ]
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)

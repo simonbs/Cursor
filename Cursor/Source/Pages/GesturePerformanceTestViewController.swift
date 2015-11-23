@@ -11,6 +11,12 @@ import UIKit
 
 class GesturePerformanceTestViewController: UIViewController {
     private let gestureRecognizer = ThreeDollarGestureRecognizer(resampleAmount: 50)
+    private let logger = Logger()
+    private let loggingDateFormatter = NSDateFormatter()
+    private let totalGestureCount = 20
+    private let trainingCount = 5
+    private let iterationCount = 1000
+    private let recognizer = ThreeDollarGestureRecognizer(resampleAmount: 50);
     
     var contentView: GesturePerformanceTestView {
         return view as! GesturePerformanceTestView
@@ -33,25 +39,48 @@ class GesturePerformanceTestViewController: UIViewController {
     }
     
     func TestGesturePerformance(){
-        // Setup
-        let recognizer = ThreeDollarGestureRecognizer(resampleAmount: 50);
-        let knownGestures = GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject]
-        let testGesture = knownGestures.values.first![0] as! Gesture
-        let start = NSDate(); // Start time
-        let iterationCount = 1000
-        // Warmup
-        for index in 1...10{
-            recognizer.recognizeGesture(testGesture, fromGestures: knownGestures)
+        // Empty the DB
+        let gestureDB = GestureDB.sharedInstance()
+        gestureDB.gestures!.forEach {
+            gestureDB.deleteGesturesWithNames($0.gestureID)
+        }
+
+        // Start up the logger
+        if !logger.isLogging {
+            logger.startLogging([
+                "gestureNo",
+                "time"
+                ])
         }
         
-        // Test
-        for index in 1...iterationCount{
-            recognizer.recognizeGesture(testGesture, fromGestures: knownGestures)
+        for _ in 1...totalGestureCount{
+            // Add new gesture traces to the DB
+            for _ in 1...trainingCount {
+                GestureDB.sharedInstance().addGesture(CreateRandomGesture())
+            }
+            let knownGestures = GestureDB.sharedInstance().gestureDict as [NSObject: AnyObject]
+            let testGesture = CreateRandomGesture()
+            
+            // Warmup
+            for _ in 1...10{
+                recognizer.recognizeGesture(testGesture, fromGestures: knownGestures)
+            }
+            
+            // Test
+            let start = NSDate(); // Start time
+            for _ in 1...iterationCount{
+                recognizer.recognizeGesture(testGesture, fromGestures: knownGestures)
+            }
+            let end = NSDate();   // End time
+            
+            let timeInterval: Double = end.timeIntervalSinceDate(start); // <<<<< Difference in seconds (double)
+            
+            logger.log([
+                String(index),
+                String(timeInterval)
+                ])
         }
-        let end = NSDate();   // End time
-        
-        let timeInterval: Double = end.timeIntervalSinceDate(start); // <<<<< Difference in seconds (double)
-        print("Time to evaluate \(iterationCount) gestures: \(timeInterval) seconds");
+        logger.stopLogging()
     }
     
     func CreateRandomGesture() -> Gesture {

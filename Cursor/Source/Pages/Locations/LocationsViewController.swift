@@ -57,18 +57,50 @@ class LocationsViewController: UITableViewController {
 //            ESTPoint(x: 0.cmToMeter(), y: 385.cmToMeter()),
 //        ])
         
+//        let locationBuilder = ESTLocationBuilder()
+//        locationBuilder.setLocationBoundaryPoints([
+//            ESTPoint(x: 0.cmToMeter(), y: 0.cmToMeter()),
+//            ESTPoint(x: 1790.cmToMeter(), y: 0.cmToMeter()),
+//            ESTPoint(x: 1790.cmToMeter(), y: 1790.cmToMeter()),
+//            ESTPoint(x: 0.cmToMeter(), y: 1790.cmToMeter())
+//        ])
+        
+        // 0.2.11
         let locationBuilder = ESTLocationBuilder()
         locationBuilder.setLocationBoundaryPoints([
             ESTPoint(x: 0.cmToMeter(), y: 0.cmToMeter()),
-            ESTPoint(x: 1790.cmToMeter(), y: 0.cmToMeter()),
-            ESTPoint(x: 1790.cmToMeter(), y: 1790.cmToMeter()),
-            ESTPoint(x: 0.cmToMeter(), y: 1790.cmToMeter())
+            ESTPoint(x: 495.cmToMeter(), y: 0.cmToMeter()),
+            ESTPoint(x: 495.cmToMeter(), y: 995.cmToMeter()),
+            ESTPoint(x: 0.cmToMeter(), y: 995.cmToMeter())
         ])
         
-        let ice3 = "dec18deac0c5"
-        let blueberry3 = "f13173ad3185"
-        let ice2 = "d470d26d33f3"
-        let mint3 = "e6d39dee79c9"
+//        let ice3 = "dec18deac0c5"
+//        let blueberry3 = "f13173ad3185"
+//        let ice2 = "d470d26d33f3"
+//        let mint3 = "e6d39dee79c9"
+        let beacon1 = "f91c2ce28dea"
+        let beacon2 = "e7d5ee85b0f2"
+        let beacon3 = "ec5b3f949c47"
+        let beacon4 = "ceab2c161e4b"
+        
+        let beacon5 = "e6d39dee79c9"
+        let beacon6 = "f49f29a4ae60"
+        let beacon7 = "dec18deac0c5"
+        let beacon8 = "d470d26d33f3"
+        
+        // 0.2.11
+        locationBuilder.addBeaconIdentifiedByMac(beacon1, atBoundarySegmentIndex: 0, inDistance: 163.cmToMeter(), fromSide: .RightSide)
+        locationBuilder.addBeaconIdentifiedByMac(beacon2, atBoundarySegmentIndex: 1, inDistance: 332.cmToMeter(), fromSide: .RightSide)
+        locationBuilder.addBeaconIdentifiedByMac(beacon3, atBoundarySegmentIndex: 2, inDistance: 163.cmToMeter(), fromSide: .RightSide)
+        locationBuilder.addBeaconIdentifiedByMac(beacon4, atBoundarySegmentIndex: 3, inDistance: 332.cmToMeter(), fromSide: .RightSide)
+        
+        locationBuilder.addBeaconIdentifiedByMac(beacon5, atBoundarySegmentIndex: 0, inDistance: 163.cmToMeter(), fromSide: .LeftSide)
+        locationBuilder.addBeaconIdentifiedByMac(beacon6, atBoundarySegmentIndex: 1, inDistance: 332.cmToMeter(), fromSide: .LeftSide)
+        locationBuilder.addBeaconIdentifiedByMac(beacon7, atBoundarySegmentIndex: 2, inDistance: 163.cmToMeter(), fromSide: .LeftSide)
+        locationBuilder.addBeaconIdentifiedByMac(beacon8, atBoundarySegmentIndex: 3, inDistance: 332.cmToMeter(), fromSide: .LeftSide)
+        
+        locationBuilder.setLocationOrientation(130)
+        locationBuilder.setLocationName("0.2.11")
         
         // Gros stue
 //        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 422.cmToMeter(), fromSide: .RightSide)
@@ -79,12 +111,12 @@ class LocationsViewController: UITableViewController {
 //        locationBuilder.setLocationName("Gros Stue")
         
         // Outside
-        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 940.cmToMeter(), fromSide: .RightSide)
-        locationBuilder.addBeaconIdentifiedByMac(mint3, atBoundarySegmentIndex: 1, inDistance: 850.cmToMeter(), fromSide: .RightSide)
-        locationBuilder.addBeaconIdentifiedByMac(ice2, atBoundarySegmentIndex: 2, inDistance: 940.cmToMeter(), fromSide: .RightSide)
-        locationBuilder.addBeaconIdentifiedByMac(ice3, atBoundarySegmentIndex: 3, inDistance: 850.cmToMeter(), fromSide: .RightSide)
-        locationBuilder.setLocationOrientation(219)
-        locationBuilder.setLocationName("Outside")
+//        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 940.cmToMeter(), fromSide: .RightSide)
+//        locationBuilder.addBeaconIdentifiedByMac(mint3, atBoundarySegmentIndex: 1, inDistance: 850.cmToMeter(), fromSide: .RightSide)
+//        locationBuilder.addBeaconIdentifiedByMac(ice2, atBoundarySegmentIndex: 2, inDistance: 940.cmToMeter(), fromSide: .RightSide)
+//        locationBuilder.addBeaconIdentifiedByMac(ice3, atBoundarySegmentIndex: 3, inDistance: 850.cmToMeter(), fromSide: .RightSide)
+//        locationBuilder.setLocationOrientation(219)
+//        locationBuilder.setLocationName("Outside")
         
         // Auditorium
 //        locationBuilder.addBeaconIdentifiedByMac(blueberry3, atBoundarySegmentIndex: 0, inDistance: 400.cmToMeter(), fromSide: .RightSide)

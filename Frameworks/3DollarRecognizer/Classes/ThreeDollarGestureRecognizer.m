@@ -74,8 +74,6 @@
 	NSArray * gestureList;
 	
 	float cutoff = 2.0f * (float) M_PI*(15.0f/360.0f);
-	
-	
 							 
 	
 	while ((gestureList = [enumerator nextObject])) {

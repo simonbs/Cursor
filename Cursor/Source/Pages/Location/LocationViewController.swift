@@ -91,7 +91,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             logger.startLogging([
                 "Date",
                 "X",
-                "Y"
+                "Y",
+                "Beacons"
             ])
         }
         
@@ -153,7 +154,8 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
             logger.log([
                 loggingDateFormatter.stringFromDate(NSDate()),
                 String(position.x),
-                String(position.y)
+                String(position.y),
+                String(location.beacons.count)
             ])
         }
     }

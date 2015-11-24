@@ -36,7 +36,8 @@ class LocationView: UIView {
         loggingButton.setLeadingToSuperview()
         loggingButton.setTrailingToSuperview()
         loggingButton.setHeightEqual(60)
-        constraint(loggingButton, .Bottom, .Equal, availableDevicesLabel, .Top)
+        loggingButton.setTopToSuperview(constant: 60)
+//        constraint(loggingButton, .Bottom, .Equal, availableDevicesLabel, .Top)
         
         indoorLocationView.setEdgesEqualToSuperview(cursorLayoutMargins)
         

@@ -33,4 +33,12 @@ public struct Actuator {
         actions += json["actions"].arrayValue.flatMap { $0.string }
         self.state = state
     }
+    
+    init(id: Int, name: String, coordinate: Coordinate, state: State, actions: [Action] = []) {
+        self.id = id
+        self.name = name
+        self.coordinate = coordinate
+        self.state = state
+        self.actions = actions
+    }
 }

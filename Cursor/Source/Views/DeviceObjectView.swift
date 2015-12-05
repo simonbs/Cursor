@@ -11,6 +11,7 @@ import UIKit
 
 class DeviceObjectView: UIView {
     var fillColor: UIColor = .orangeColor()
+    var title: String? = nil
     
     init() {
         super.init(frame: CGRectZero)
@@ -25,6 +26,18 @@ class DeviceObjectView: UIView {
         let context = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(context, fillColor.CGColor)
         CGContextFillEllipseInRect(context, rect)
+        
+        if let title = title {
+            let attr = [
+                NSFontAttributeName: UIFont.boldSystemFontOfSize(18),
+                NSForegroundColorAttributeName: UIColor.blackColor()
+            ]
+            
+            let titleStr = title as NSString
+            let size = titleStr.boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max), options: [], attributes: attr, context: nil)
+            let titleRect = CGRectMake((rect.width - size.width) / 2, (rect.height - size.height) / 2, size.width, size.height)
+            titleStr.drawInRect(titleRect, withAttributes: attr)
+        }
     }
     
     override func intrinsicContentSize() -> CGSize {

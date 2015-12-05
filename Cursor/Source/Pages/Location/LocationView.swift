@@ -43,7 +43,7 @@ class LocationView: UIView {
         
         availableDevicesLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         availableDevicesLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)
-        availableDevicesLabel.setBottomToSuperview()
+        availableDevicesLabel.setBottomToSuperview(constant: -70)
         
         gestureNameLabel.setLeadingToSuperview(constant: cursorLayoutMargins.left)
         gestureNameLabel.setTrailingToSuperview(constant: -cursorLayoutMargins.right)

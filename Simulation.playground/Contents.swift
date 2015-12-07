@@ -21,8 +21,8 @@ func performTestsUsingSetups(setups: [Setup]) -> TestResult {
 func performTestUsingSetup(setup: Setup) -> TestResult {
     var totalCount: Int = 0
     var acceptanceCount: Int = 0
-    drawSetup(setup, position: setup.position, userColor: .blueColor())
-    usleep(UInt32(0.1 * Double(1000000)))
+//    drawSetup(setup, position: setup.position, userColor: .blueColor())
+//    usleep(UInt32(0.1 * Double(1000000)))
     for _ in 0...99 {
         let offsettedPoint = offsetPoint(setup.position.toPoint(), withAmount: setup.offset, roomSize: setup.roomSize)
         let orientedOffsettedPoint = OrientedPoint(point: offsettedPoint, orientation: setup.position.orientation)
@@ -32,8 +32,8 @@ func performTestUsingSetup(setup: Setup) -> TestResult {
             acceptanceCount += 1
         }
         totalCount += 1
-        drawSetup(setup, position: orientedOffsettedPoint, userColor: isDevicesInLineOfSight ? .greenColor() : .redColor())
-        usleep(UInt32(0.1 * Double(1000000)))
+//        drawSetup(setup, position: orientedOffsettedPoint, userColor: isDevicesInLineOfSight ? .greenColor() : .redColor())
+//        usleep(UInt32(0.1 * Double(1000000)))
     }
     
     return TestResult(totalCount: totalCount, acceptanceCount: acceptanceCount)
@@ -171,6 +171,15 @@ func createSetupWithPosition(point: CGPoint, focusedDeviceId: Int) -> Setup {
     }
     
     let orientation = angleBetween(point, point: focusedDevice.coordinate)
+    let roomSize = CGSizeMake(6.9, 5.37)
+    guard point.x >= 0 && point.x <= roomSize.width else {
+        fatalError("Setup could not be created. Illegal value for x \(point.x) does not fit within 0 - \(roomSize.width)")
+    }
+    
+    guard point.y >= 0 && point.y <= roomSize.height else {
+        fatalError("Setup could not be created. Illegal value for y \(point.y) does not fit within 0 - \(roomSize.height)")
+    }
+    
     return Setup(
         position: OrientedPoint(point: point, orientation: orientation),
         devices: createDevices(),
@@ -241,23 +250,23 @@ func +(lhs: TestResult, rhs: TestResult) -> TestResult {
 
 let result = performTestsUsingSetups([
     createSetupWithPosition(CGPoint(x: 2, y: 2), focusedDeviceId: 1),
-    createSetupWithPosition(CGPoint(x: 3.4, y: 6), focusedDeviceId: 1),
+    createSetupWithPosition(CGPoint(x: 3.4, y: 4.9), focusedDeviceId: 1),
     createSetupWithPosition(CGPoint(x: 1.1, y: 3.6), focusedDeviceId: 1),
-//    createSetupWithPosition(CGPoint(x: 0.5, y: 0.5), focusedDeviceId: 2),
-//    createSetupWithPosition(CGPoint(x: 1.1, y: 3.3), focusedDeviceId: 2),
-//    createSetupWithPosition(CGPoint(x: 5.5, y: 6), focusedDeviceId: 2),
-//    createSetupWithPosition(CGPoint(x: 3, y: 2.9), focusedDeviceId: 3),
-//    createSetupWithPosition(CGPoint(x: 1, y: 2), focusedDeviceId: 3),
-//    createSetupWithPosition(CGPoint(x: 2.5, y: 2.3), focusedDeviceId: 3),
-//    createSetupWithPosition(CGPoint(x: 4.4, y: 3.4), focusedDeviceId: 4),
-//    createSetupWithPosition(CGPoint(x: 6, y: 1.2), focusedDeviceId: 4),
-//    createSetupWithPosition(CGPoint(x: 5.8, y: 2.7), focusedDeviceId: 4),
-//    createSetupWithPosition(CGPoint(x: 4.6, y: 1.4), focusedDeviceId: 5),
-//    createSetupWithPosition(CGPoint(x: 2.3, y: 5.2), focusedDeviceId: 5),
-//    createSetupWithPosition(CGPoint(x: 0.3, y: 0.1), focusedDeviceId: 5),
-//    createSetupWithPosition(CGPoint(x: 6.2, y: 4.4), focusedDeviceId: 6),
-//    createSetupWithPosition(CGPoint(x: 5.1, y: 2.7), focusedDeviceId: 6),
-//    createSetupWithPosition(CGPoint(x: 3.2, y: 5.1), focusedDeviceId: 6)
+    createSetupWithPosition(CGPoint(x: 0.5, y: 0.5), focusedDeviceId: 2),
+    createSetupWithPosition(CGPoint(x: 1.1, y: 3.3), focusedDeviceId: 2),
+    createSetupWithPosition(CGPoint(x: 5.5, y: 5.2), focusedDeviceId: 2),
+    createSetupWithPosition(CGPoint(x: 3, y: 2.9), focusedDeviceId: 3),
+    createSetupWithPosition(CGPoint(x: 1, y: 2), focusedDeviceId: 3),
+    createSetupWithPosition(CGPoint(x: 2.5, y: 2.3), focusedDeviceId: 3),
+    createSetupWithPosition(CGPoint(x: 4.4, y: 3.4), focusedDeviceId: 4),
+    createSetupWithPosition(CGPoint(x: 6, y: 1.2), focusedDeviceId: 4),
+    createSetupWithPosition(CGPoint(x: 5.8, y: 2.7), focusedDeviceId: 4),
+    createSetupWithPosition(CGPoint(x: 4.6, y: 1.4), focusedDeviceId: 5),
+    createSetupWithPosition(CGPoint(x: 2.3, y: 5.2), focusedDeviceId: 5),
+    createSetupWithPosition(CGPoint(x: 0.3, y: 0.1), focusedDeviceId: 5),
+    createSetupWithPosition(CGPoint(x: 6.2, y: 4.4), focusedDeviceId: 6),
+    createSetupWithPosition(CGPoint(x: 5.1, y: 2.7), focusedDeviceId: 6),
+    createSetupWithPosition(CGPoint(x: 3.2, y: 5.1), focusedDeviceId: 6)
 ])
 
 print("\(result.acceptanceRate * 100)% of the tests resulted in acceptance.")

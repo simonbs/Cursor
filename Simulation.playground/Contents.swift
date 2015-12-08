@@ -21,14 +21,14 @@ extension Int: SequenceType {
 }
 
 func performTestsUsingSetups(setups: [Setup]) -> TestResult {
-    return setups.map(performTestUsingSetup).reduce(TestResult(totalCount: 0, acceptanceCount: 0), combine: +)
+    return setups.map(performTestUsingSetup).reduce(TestResult(), combine: +)
 }
 
 func performTestUsingSetup(setup: Setup) -> TestResult {
     var totalCount: Int = 0
     var acceptanceCount: Int = 0
 //    drawSetup(setup, position: setup.position, userColor: .blueColor())
-//    usleep(UInt32(0.1 * Double(1000000)))
+//    usleep(UInt32(1 * Double(1000000)))
     for _ in 0...99 {
         let offsettedPoint = offsetPoint(setup.position.toPoint(), withAmount: setup.offset, roomSize: setup.roomSize)
         let orientedOffsettedPoint = OrientedPoint(point: offsettedPoint, orientation: setup.position.orientation)
@@ -290,5 +290,5 @@ let setups = [
     createSetupWithPosition(CGPoint(x: 3.2, y: 5.1), focusedDeviceId: 6)
 ]
 
-let result = 10.map({ _ in performTestsUsingSetups(setups) }).reduce(TestResult(), combine: +)
+let result = 1.map({ _ in performTestsUsingSetups(setups) }).reduce(TestResult(), combine: +)
 print("\(result.acceptanceRate * 100)% of the tests resulted in acceptance.")

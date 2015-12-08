@@ -14,6 +14,12 @@ extension CGFloat {
     }
 }
 
+extension Int: SequenceType {
+    public func generate() -> RangeGenerator<Int> {
+        return (0..<self).generate()
+    }
+}
+
 func performTestsUsingSetups(setups: [Setup]) -> TestResult {
     return setups.map(performTestUsingSetup).reduce(TestResult(totalCount: 0, acceptanceCount: 0), combine: +)
 }
@@ -190,7 +196,7 @@ func createSetupWithPosition(point: CGPoint, focusedDeviceId: Int) -> Setup {
         devices: createDevices(),
         focusedDevice: focusedDevice,
         roomSize: CGSizeMake(6.9, 5.37),
-        offset: 0.8)
+        offset: 2.92)
 }
 
 func createDevices() -> [Device] {
@@ -245,7 +251,17 @@ struct TestResult {
     let totalCount: Int
     let acceptanceCount: Int
     var acceptanceRate: Float {
-        return Float(result.acceptanceCount) / Float(result.totalCount)
+        return Float(acceptanceCount) / Float(totalCount)
+    }
+    
+    init(totalCount: Int, acceptanceCount: Int) {
+        self.totalCount = totalCount
+        self.acceptanceCount = acceptanceCount
+    }
+    
+    init() {
+        self.totalCount = 0
+        self.acceptanceCount = 0
     }
 }
 
@@ -253,25 +269,26 @@ func +(lhs: TestResult, rhs: TestResult) -> TestResult {
     return TestResult(totalCount: lhs.totalCount + rhs.totalCount, acceptanceCount: lhs.acceptanceCount + rhs.acceptanceCount)
 }
 
-let result = performTestsUsingSetups([
+let setups = [
     createSetupWithPosition(CGPoint(x: 2, y: 2), focusedDeviceId: 1),
-//    createSetupWithPosition(CGPoint(x: 3.4, y: 4.9), focusedDeviceId: 1),
-//    createSetupWithPosition(CGPoint(x: 1.1, y: 3.6), focusedDeviceId: 1),
-//    createSetupWithPosition(CGPoint(x: 0.5, y: 0.5), focusedDeviceId: 2),
-//    createSetupWithPosition(CGPoint(x: 1.1, y: 3.3), focusedDeviceId: 2),
-//    createSetupWithPosition(CGPoint(x: 5.5, y: 5.2), focusedDeviceId: 2),
-//    createSetupWithPosition(CGPoint(x: 3, y: 2.9), focusedDeviceId: 3),
-//    createSetupWithPosition(CGPoint(x: 1, y: 2), focusedDeviceId: 3),
-//    createSetupWithPosition(CGPoint(x: 2.5, y: 2.3), focusedDeviceId: 3),
-//    createSetupWithPosition(CGPoint(x: 4.4, y: 3.4), focusedDeviceId: 4),
-//    createSetupWithPosition(CGPoint(x: 6, y: 1.2), focusedDeviceId: 4),
-//    createSetupWithPosition(CGPoint(x: 5.8, y: 2.7), focusedDeviceId: 4),
-//    createSetupWithPosition(CGPoint(x: 4.6, y: 1.4), focusedDeviceId: 5),
-//    createSetupWithPosition(CGPoint(x: 2.3, y: 5.2), focusedDeviceId: 5),
-//    createSetupWithPosition(CGPoint(x: 0.3, y: 0.1), focusedDeviceId: 5),
-//    createSetupWithPosition(CGPoint(x: 6.2, y: 4.4), focusedDeviceId: 6),
-//    createSetupWithPosition(CGPoint(x: 5.1, y: 2.7), focusedDeviceId: 6),
-//    createSetupWithPosition(CGPoint(x: 3.2, y: 5.1), focusedDeviceId: 6)
-])
+    createSetupWithPosition(CGPoint(x: 3.4, y: 4.9), focusedDeviceId: 1),
+    createSetupWithPosition(CGPoint(x: 1.1, y: 3.6), focusedDeviceId: 1),
+    createSetupWithPosition(CGPoint(x: 0.5, y: 0.5), focusedDeviceId: 2),
+    createSetupWithPosition(CGPoint(x: 1.1, y: 3.3), focusedDeviceId: 2),
+    createSetupWithPosition(CGPoint(x: 5.5, y: 5.2), focusedDeviceId: 2),
+    createSetupWithPosition(CGPoint(x: 3, y: 2.9), focusedDeviceId: 3),
+    createSetupWithPosition(CGPoint(x: 1, y: 2), focusedDeviceId: 3),
+    createSetupWithPosition(CGPoint(x: 2.5, y: 2.3), focusedDeviceId: 3),
+    createSetupWithPosition(CGPoint(x: 4.4, y: 3.4), focusedDeviceId: 4),
+    createSetupWithPosition(CGPoint(x: 6, y: 1.2), focusedDeviceId: 4),
+    createSetupWithPosition(CGPoint(x: 5.8, y: 2.7), focusedDeviceId: 4),
+    createSetupWithPosition(CGPoint(x: 4.6, y: 1.4), focusedDeviceId: 5),
+    createSetupWithPosition(CGPoint(x: 2.3, y: 5.2), focusedDeviceId: 5),
+    createSetupWithPosition(CGPoint(x: 0.3, y: 0.1), focusedDeviceId: 5),
+    createSetupWithPosition(CGPoint(x: 6.2, y: 4.4), focusedDeviceId: 6),
+    createSetupWithPosition(CGPoint(x: 5.1, y: 2.7), focusedDeviceId: 6),
+    createSetupWithPosition(CGPoint(x: 3.2, y: 5.1), focusedDeviceId: 6)
+]
 
+let result = 10.map({ _ in performTestsUsingSetups(setups) }).reduce(TestResult(), combine: +)
 print("\(result.acceptanceRate * 100)% of the tests resulted in acceptance.")

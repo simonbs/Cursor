@@ -40,10 +40,15 @@ func performTestUsingSetup(setup: Setup) -> TestResult {
 }
 
 func offsetPoint(point: CGPoint, withAmount amount: CGFloat, roomSize: CGSize) -> CGPoint {
+    // Find amount we wish to offset x
     let preferredXOffset = randomNumberBetween(-amount, amount)
+    // Adjust the preferred x offset so it fits within the bounds of the room
     let offsettedX = min(roomSize.width, max(0, point.x + preferredXOffset))
+    // Find out how much we actually ended up offsetting x after adjusting it to fit within the bounds
     let trueXOffset = abs(point.x - offsettedX)
-    let yOffset = randomlyFlipOperationalSign(amount - trueXOffset)
+    // Calculate the offset of y and randomly decide if its negative or not
+    let yOffset = randomlyFlipOperationalSign(sqrt(pow(amount, 2) - pow(trueXOffset, 2)))
+    // Offset the y value
     var offsettedY = point.y + yOffset
     
     // We could not adjust in the chosen direction, choose the opposite instead
@@ -185,7 +190,7 @@ func createSetupWithPosition(point: CGPoint, focusedDeviceId: Int) -> Setup {
         devices: createDevices(),
         focusedDevice: focusedDevice,
         roomSize: CGSizeMake(6.9, 5.37),
-        offset: 2.92)
+        offset: 0.8)
 }
 
 func createDevices() -> [Device] {
@@ -250,23 +255,23 @@ func +(lhs: TestResult, rhs: TestResult) -> TestResult {
 
 let result = performTestsUsingSetups([
     createSetupWithPosition(CGPoint(x: 2, y: 2), focusedDeviceId: 1),
-    createSetupWithPosition(CGPoint(x: 3.4, y: 4.9), focusedDeviceId: 1),
-    createSetupWithPosition(CGPoint(x: 1.1, y: 3.6), focusedDeviceId: 1),
-    createSetupWithPosition(CGPoint(x: 0.5, y: 0.5), focusedDeviceId: 2),
-    createSetupWithPosition(CGPoint(x: 1.1, y: 3.3), focusedDeviceId: 2),
-    createSetupWithPosition(CGPoint(x: 5.5, y: 5.2), focusedDeviceId: 2),
-    createSetupWithPosition(CGPoint(x: 3, y: 2.9), focusedDeviceId: 3),
-    createSetupWithPosition(CGPoint(x: 1, y: 2), focusedDeviceId: 3),
-    createSetupWithPosition(CGPoint(x: 2.5, y: 2.3), focusedDeviceId: 3),
-    createSetupWithPosition(CGPoint(x: 4.4, y: 3.4), focusedDeviceId: 4),
-    createSetupWithPosition(CGPoint(x: 6, y: 1.2), focusedDeviceId: 4),
-    createSetupWithPosition(CGPoint(x: 5.8, y: 2.7), focusedDeviceId: 4),
-    createSetupWithPosition(CGPoint(x: 4.6, y: 1.4), focusedDeviceId: 5),
-    createSetupWithPosition(CGPoint(x: 2.3, y: 5.2), focusedDeviceId: 5),
-    createSetupWithPosition(CGPoint(x: 0.3, y: 0.1), focusedDeviceId: 5),
-    createSetupWithPosition(CGPoint(x: 6.2, y: 4.4), focusedDeviceId: 6),
-    createSetupWithPosition(CGPoint(x: 5.1, y: 2.7), focusedDeviceId: 6),
-    createSetupWithPosition(CGPoint(x: 3.2, y: 5.1), focusedDeviceId: 6)
+//    createSetupWithPosition(CGPoint(x: 3.4, y: 4.9), focusedDeviceId: 1),
+//    createSetupWithPosition(CGPoint(x: 1.1, y: 3.6), focusedDeviceId: 1),
+//    createSetupWithPosition(CGPoint(x: 0.5, y: 0.5), focusedDeviceId: 2),
+//    createSetupWithPosition(CGPoint(x: 1.1, y: 3.3), focusedDeviceId: 2),
+//    createSetupWithPosition(CGPoint(x: 5.5, y: 5.2), focusedDeviceId: 2),
+//    createSetupWithPosition(CGPoint(x: 3, y: 2.9), focusedDeviceId: 3),
+//    createSetupWithPosition(CGPoint(x: 1, y: 2), focusedDeviceId: 3),
+//    createSetupWithPosition(CGPoint(x: 2.5, y: 2.3), focusedDeviceId: 3),
+//    createSetupWithPosition(CGPoint(x: 4.4, y: 3.4), focusedDeviceId: 4),
+//    createSetupWithPosition(CGPoint(x: 6, y: 1.2), focusedDeviceId: 4),
+//    createSetupWithPosition(CGPoint(x: 5.8, y: 2.7), focusedDeviceId: 4),
+//    createSetupWithPosition(CGPoint(x: 4.6, y: 1.4), focusedDeviceId: 5),
+//    createSetupWithPosition(CGPoint(x: 2.3, y: 5.2), focusedDeviceId: 5),
+//    createSetupWithPosition(CGPoint(x: 0.3, y: 0.1), focusedDeviceId: 5),
+//    createSetupWithPosition(CGPoint(x: 6.2, y: 4.4), focusedDeviceId: 6),
+//    createSetupWithPosition(CGPoint(x: 5.1, y: 2.7), focusedDeviceId: 6),
+//    createSetupWithPosition(CGPoint(x: 3.2, y: 5.1), focusedDeviceId: 6)
 ])
 
 print("\(result.acceptanceRate * 100)% of the tests resulted in acceptance.")

@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// A simple result. Either success or failure.
+/// Requires an error if the operation failed.
 public enum Failable {
     case Success
     case Failure(ErrorType)
@@ -47,6 +49,9 @@ public enum Failable {
     }
 }
 
+/// A simple result. Either success or failure.
+/// Requires an element of type T if the operation was successful.
+/// Requires an error if the operation failed.
 public enum FailableOf<T> {
     case Success(T)
     case Failure(ErrorType)

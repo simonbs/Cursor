@@ -224,19 +224,16 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     }
 
     private func beginPointDetection() {
-        print("Did begin point detection")
         pointDetector.beginDetecting { [weak self] in self?.didDetectPoint() }
     }
     
     private func endPointDetection() {
-        print("Did end point detection")
         pointDetector.endDetecting()
     }
     
     private func didDetectPoint() {
         guard !isDelayingGestureFromPoint else { return }
         if pointEndsGesture {
-            print("Did detect ending point")
             pointEndsGesture = false
             endPointDetection()
             endPerformingGesture()
@@ -244,8 +241,6 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
         }
         
         guard availableDevices.count > 0 else { return }
-        
-        print("Did detect beginning point")
         
         contentView.showPointDetected()
         devicesPointedAt = availableDevices
@@ -255,7 +250,6 @@ class LocationViewController: UIViewController, ESTIndoorLocationManagerDelegate
     }
     
     dynamic private func didDelayGestureFromPoint(timer: NSTimer) {
-        print("Did delay gesture from point")
         isDelayingGestureFromPoint = false
         startPerformingGesture()
         pointEndsGestureTimer = .scheduledTimerWithTimeInterval(1, target: self, selector: "pointEndsGestureTimerTriggered:", userInfo: nil, repeats: false)

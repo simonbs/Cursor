@@ -8,15 +8,19 @@
 
 import Foundation
 
+/// A resource that instances of Client can send requests to.
 internal protocol Resource {
+    /// The path the resource belongs to.
     var resource: String { get }
 }
 
+/// Available resources on the server.
 internal enum Cursor {
-    case Devices
-    case UpdateDevice
+    case Devices // Get a list of all devices
+    case UpdateDevice // Update a single device
 }
 
+// Make sure all resources conform to the Resource protocol.
 extension Cursor: Resource {
     var resource: String {
         switch self {

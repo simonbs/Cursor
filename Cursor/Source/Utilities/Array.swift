@@ -9,10 +9,15 @@
 import Foundation
 
 extension Array {
-    func take(count: Int, from: Int = 0) -> [Element] {
-        return count <= self.count ? Array(self[from..<count]) : self
-    }
-    
+    /**
+     Safely retrieves an element from the array.
+     By default subscript will throw an error if the index does not exist.
+     Using [safe:] subscript, nil is returned if the index does not exist.
+     
+     - Parameter index: Index to retrieve element from. Zero based.
+     
+     - Returns: The element, if it exists. Nil otherwise.
+     */
     subscript (safe index: Int) -> Element? {
         return indices ~= index ? self[index] : nil
     }

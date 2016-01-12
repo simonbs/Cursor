@@ -32,7 +32,7 @@ func performTestUsingSetup(setup: Setup) -> TestResult {
     for _ in 0...99 {
         let offsettedPoint = offsetPoint(setup.position.toPoint(), withAmount: setup.offset, roomSize: setup.roomSize)
         let orientedOffsettedPoint = OrientedPoint(point: offsettedPoint, orientation: setup.position.orientation)
-        let availableDevices = devicesInLineOfSightFromOrientedPoint(orientedOffsettedPoint, devices: setup.devices)
+        let availableDevices = devicesInLineOfSightFromOrientedPoint(orientedOffsettedPoint, devices: setup.devices, visibilityAngle: setup.visibilityAngle)
         let isDevicesInLineOfSight = availableDevices.contains(setup.focusedDevice)
         if isDevicesInLineOfSight {
             acceptanceCount += 1
@@ -196,7 +196,8 @@ func createSetupWithPosition(point: CGPoint, focusedDeviceId: Int) -> Setup {
         devices: createDevices(),
         focusedDevice: focusedDevice,
         roomSize: CGSizeMake(6.9, 5.37),
-        offset: 2.92)
+        offset: 2.92,
+        visibilityAngle: 30)
 }
 
 func createDevices() -> [Device] {
@@ -227,6 +228,7 @@ struct Setup {
     let focusedDevice: Device
     let roomSize: CGSize
     let offset: CGFloat
+    let visibilityAngle: CGFloat
 }
 
 struct OrientedPoint {

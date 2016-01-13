@@ -1,8 +1,13 @@
-//: Playground - noun: a place where people can play
+//
+//  main.swift
+//  Simulation
+//
+//  Created by Simon Støvring on 13/01/2016.
+//  Copyright © 2016 SimonBS. All rights reserved.
+//
 
 import Foundation
 import CoreGraphics
-import UIKit
 
 extension CGFloat {
     func degreesToRadians() -> CGFloat {
@@ -27,8 +32,8 @@ func performTestsUsingSetups(setups: [Setup]) -> TestResult {
 func performTestUsingSetup(setup: Setup) -> TestResult {
     var totalCount: Int = 0
     var acceptanceCount: Int = 0
-//    drawSetup(setup, position: setup.position, userColor: .blueColor())
-//    usleep(UInt32(1 * Double(1000000)))
+    //    drawSetup(setup, position: setup.position, userColor: .blueColor())
+    //    usleep(UInt32(1 * Double(1000000)))
     for _ in 0...99 {
         let offsettedPoint = offsetPoint(setup.position.toPoint(), withAmount: setup.offset, roomSize: setup.roomSize)
         let orientedOffsettedPoint = OrientedPoint(point: offsettedPoint, orientation: setup.position.orientation)
@@ -38,8 +43,8 @@ func performTestUsingSetup(setup: Setup) -> TestResult {
             acceptanceCount += 1
         }
         totalCount += 1
-//        drawSetup(setup, position: orientedOffsettedPoint, userColor: isDevicesInLineOfSight ? .greenColor() : .redColor())
-//        usleep(UInt32(0.1 * Double(1000000)))
+        //        drawSetup(setup, position: orientedOffsettedPoint, userColor: isDevicesInLineOfSight ? .greenColor() : .redColor())
+        //        usleep(UInt32(0.1 * Double(1000000)))
     }
     
     return TestResult(totalCount: totalCount, acceptanceCount: acceptanceCount)
@@ -110,71 +115,6 @@ func angleBetween(position: CGPoint, point: CGPoint) -> CGFloat {
     return normalizedDegrees
 }
 
-func drawSetup(setup: Setup, position: OrientedPoint, userColor: UIColor = .purpleColor()) -> UIImage {
-    let meterToPixels: CGFloat = 150
-    let rect = CGRectMake(0, 0, setup.roomSize.width * meterToPixels, setup.roomSize.height * meterToPixels)
-
-    UIGraphicsBeginImageContext(rect.size)
-    let context = UIGraphicsGetCurrentContext()
-    CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
-    CGContextFillRect(context, rect)
-    
-    // Configure style for text in a device
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.lineBreakMode = .ByWordWrapping
-    paragraphStyle.alignment = .Center
-    let titleAttr = [
-        NSForegroundColorAttributeName: UIColor.blackColor(),
-        NSFontAttributeName: UIFont.systemFontOfSize(10),
-        NSParagraphStyleAttributeName: paragraphStyle
-    ]
-    
-    // Draw devices
-    setup.devices.forEach { device in
-        let deviceRadius: CGFloat = 0.35 // In meters
-        let deviceRect = CGRectMake(
-            device.coordinate.x * meterToPixels - (deviceRadius * meterToPixels) / 2,
-            rect.height - device.coordinate.y * meterToPixels - (deviceRadius * meterToPixels) / 2, // Inverted y axis
-            deviceRadius * meterToPixels,
-            deviceRadius * meterToPixels)
-        let text = device.name as NSString
-
-        let maxSize = CGSizeMake(deviceRadius * meterToPixels, deviceRadius * meterToPixels)
-        let size = text.boundingRectWithSize(maxSize, options: [ .UsesLineFragmentOrigin, .UsesFontLeading ], attributes: titleAttr, context: nil)
-        let textRect = CGRectMake(deviceRect.minX + (maxSize.width - size.width) / 2, deviceRect.minY + (maxSize.height - size.height) / 2, size.width, size.height)
-        CGContextSetFillColorWithColor(context, UIColor.orangeColor().CGColor)
-        CGContextFillEllipseInRect(context, deviceRect)
-        text.drawInRect(textRect, withAttributes: titleAttr)
-    }
-    
-    // Draw user position
-    let positionRadius: CGFloat = 0.35 // In meters
-    let positionRect = CGRectMake(
-        position.x * meterToPixels - (positionRadius * meterToPixels) / 2,
-        rect.height - position.y * meterToPixels - (positionRadius * meterToPixels) / 2, // Inverted y axis
-        positionRadius * meterToPixels,
-        positionRadius * meterToPixels)
-    CGContextSetFillColorWithColor(context, userColor.CGColor)
-    CGContextFillEllipseInRect(context, positionRect)
-    
-    // Draw visibility indicator
-    CGContextSaveGState(context)
-    CGContextTranslateCTM(context, position.x * meterToPixels, rect.size.height - position.y * meterToPixels)
-    CGContextRotateCTM(context, position.orientation * CGFloat(M_PI) / 180)
-    let path = CGPathCreateMutable()
-    CGPathMoveToPoint(path, nil, 0, 0)
-    CGPathAddLineToPoint(path, nil, 0, -max(rect.width, rect.height) * 2)
-    CGContextSetLineWidth(context, positionRadius * meterToPixels)
-    CGContextSetStrokeColorWithColor(context, userColor.colorWithAlphaComponent(0.4).CGColor)
-    CGContextAddPath(context, path)
-    CGContextStrokePath(context)
-    CGContextRestoreGState(context)
-    
-    let image = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return image
-}
-
 func createSetupWithPosition(point: CGPoint, focusedDeviceId: Int) -> Setup {
     let devices = createDevices()
     guard let focusedDevice = devices.filter({ $0.id == focusedDeviceId }).first else {
@@ -197,7 +137,7 @@ func createSetupWithPosition(point: CGPoint, focusedDeviceId: Int) -> Setup {
         focusedDevice: focusedDevice,
         roomSize: CGSizeMake(6.9, 5.37),
         offset: 0.5,
-        visibilityAngle: 40)
+        visibilityAngle: 45)
 }
 
 func createDevices() -> [Device] {
@@ -294,3 +234,4 @@ let setups = [
 
 let result = 10.map({ _ in performTestsUsingSetups(setups) }).reduce(TestResult(), combine: +)
 print("\(result.acceptanceRate * 100)% of the tests resulted in acceptance.")
+
